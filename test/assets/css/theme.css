@@ -1536,16 +1536,22 @@ html[data-theme="dark"] .dw-wall{background:
 .dw-bolt+.dw-bolt{left:auto;right:18px}
 
 /* Honeycomb: inline-block hexagons, with a float whose shape pushes every other row half a plaque across */
-/* --f must match two rows' height almost exactly (2 × (0.8660254 × size + 2 × margin)): any shortfall
-   adds up row after row, and on a long wall the rows stop alternating near the bottom */
-.dw-hive{--s:170px;--m:3px;--f:calc(1.7320508*var(--s) + 4*var(--m) - .25px);display:flex;justify-content:center;padding-bottom:calc(var(--s)*.2886751)}
+/* --h is one row's height. The float's shape is a thin stripe through the middle of every second row
+   (period exactly two rows), so rounding can't push it into a neighbouring row on a long wall */
+.dw-hive{--s:170px;--m:7px;--h:calc(var(--s)*.8660254 + 2*var(--m));display:flex;justify-content:center;padding-bottom:calc(var(--s)*.2886751)}
 .dw-grid{list-style:none;margin:0;padding:0;font-size:0;max-width:100%}
-.dw-grid::before{content:"";float:left;width:calc(var(--s)/2 + var(--m));height:120%;shape-outside:repeating-linear-gradient(#0000 0 calc(var(--f) - 3px),#000 0 var(--f))}
+.dw-grid::before{content:"";float:left;width:calc(var(--s)/2 + var(--m));height:120%;shape-outside:repeating-linear-gradient(#0000 0 calc(1.5*var(--h) - 2px),#000 0 calc(1.5*var(--h) + 2px),#0000 0 calc(2*var(--h)))}
 .dw-plaque{--face:linear-gradient(150deg,#2D4A7C,#16274A);--fg:#F4F7FC;--fg2:#C7D5EE;
   position:relative;z-index:0;display:inline-block;vertical-align:top;width:var(--s);height:calc(var(--s)*1.1547005);margin:var(--m);margin-bottom:calc(var(--m) - var(--s)*.2886751);font-size:1rem;transition:transform .2s ease}
 .dw-plaque[hidden]{display:none}
-/* warm backlight behind each plaque */
-.dw-plaque::before{content:"";position:absolute;inset:-4% -8%;z-index:-1;background:radial-gradient(closest-side,rgba(242,196,120,.42),rgba(242,196,120,0));opacity:.55}
+/* Backlight: LED light behind each plaque, as on a real recognition wall.
+   The drop-shadows follow the hexagon's edge (the plaque is clipped inside the li), and the
+   ::before is the softer light spilling onto the wall around it. */
+.dw-plaque{--glow:255,176,80;filter:drop-shadow(0 0 1.5px rgba(var(--glow),.9)) drop-shadow(0 0 7px rgba(var(--glow),.55)) drop-shadow(0 8px 14px rgba(120,80,30,.18))}
+.dw-plaque::before{content:"";position:absolute;inset:-10% -12%;z-index:-1;background:radial-gradient(closest-side,rgba(var(--glow),.2),rgba(var(--glow),.06) 60%,rgba(var(--glow),0))}
+/* on the dark wall the light can be stronger */
+html[data-theme="dark"] .dw-plaque{--glow:255,184,92;filter:drop-shadow(0 0 2px rgba(var(--glow),.95)) drop-shadow(0 0 9px rgba(var(--glow),.75)) drop-shadow(0 6px 18px rgba(var(--glow),.45))}
+html[data-theme="dark"] .dw-plaque::before{inset:-14% -16%;background:radial-gradient(closest-side,rgba(var(--glow),.38),rgba(var(--glow),.12) 60%,rgba(var(--glow),0))}
 .dw-hex,.dw-face{position:absolute;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
 .dw-hex{inset:0;background:linear-gradient(160deg,#F1DDA9,#B08A47 45%,#E7CD8F 70%,#8C6A2E)}
 .dw-face{inset:3px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;padding:0 17px;text-align:center;color:var(--fg);background:linear-gradient(160deg,rgba(255,255,255,.1),rgba(255,255,255,0) 42%),var(--face)}
@@ -1562,11 +1568,11 @@ html[data-theme="dark"] .dw-wall{background:
 .dw-plaque.f-silver{--face:linear-gradient(150deg,#ECEFF2,#B7BEC5);--fg:#1D252C;--fg2:#353E47}
 .dw-plaque.f-charcoal{--face:linear-gradient(150deg,#34383C,#1A1C1F);--fg:#F3F1EC;--fg2:#D9C08F}
 .dw-plaque.f-green{--face:linear-gradient(150deg,#0A6E3E,#043D22);--fg:#FFFFFF;--fg2:#E2F1D8}
-.dw-plaque.f-gold{--face:linear-gradient(150deg,#F3DFA8,#DDBC76 55%,#CFAA60);--fg:#2A1D06;--fg2:#3F2D0B;filter:drop-shadow(0 0 10px rgba(240,196,110,.6))}
-.dw-plaque.f-gold::before{opacity:1}
+.dw-plaque.f-gold{--face:linear-gradient(150deg,#F3DFA8,#DDBC76 55%,#CFAA60);--fg:#2A1D06;--fg2:#3F2D0B;--glow:255,196,100}
+.dw-plaque.f-gold,html[data-theme="dark"] .dw-plaque.f-gold{filter:drop-shadow(0 0 3px rgba(var(--glow),1)) drop-shadow(0 0 12px rgba(var(--glow),.85)) drop-shadow(0 6px 22px rgba(var(--glow),.5))}
 
 @media (max-width:576px){
-  .dw-hive{--s:126px;--m:2px}
+  .dw-hive{--s:124px;--m:4px}
   .dw-face{inset:2px;gap:5px;padding:0 12px}
   .dw-face b{font-size:10px;letter-spacing:.04em}
   .dw-plaque.lg .dw-face b{font-size:9px;letter-spacing:.02em}

@@ -25,6 +25,7 @@
   const plaque = (d) => `<li class="dw-plaque ${esc(d.c || 'f-navy')}"><span class="dw-hex"><span class="dw-face">${d.s ? '<span class="dw-star" aria-hidden="true">★</span>' : ''}<b>${esc(d.n)}</b>${d.a ? `<span class="dw-addr">${esc(d.a)}</span>` : ''}</span></span></li>`;
 
   // Every other row is pushed half a plaque across, so the width is n plaques plus that half.
+  let fittedTo = -1; // the wall width the honeycomb was last sized for
   function fit() {
     const cs = getComputedStyle(hive);
     const s = parseFloat(cs.getPropertyValue('--s')) || 170;
@@ -32,6 +33,7 @@
     const cell = s + 2 * m;
     const offset = s / 2 + m;
     const avail = hive.clientWidth;
+    fittedTo = avail;
     let n = Math.max(1, Math.floor((avail - offset) / cell));
     if (list.length > 0 && list.length < n) n = list.length; // few matches: no wide empty row
     grid.style.width = Math.min(avail, Math.ceil(n * cell + offset)) + 'px';
@@ -41,6 +43,7 @@
     if (shown >= list.length) return;
     grid.insertAdjacentHTML('beforeend', list.slice(shown, shown + BATCH).map(plaque).join(''));
     shown = Math.min(list.length, shown + BATCH);
+    if (hive.clientWidth !== fittedTo) fit(); // a longer page may have brought in the scrollbar
     update();
   }
 
@@ -51,6 +54,8 @@
   // Load the next batch when the "Loading more" line comes within 600px of the bottom of the screen
   // (repeats until the screen is filled, e.g. on tall screens)
   function check() {
+    // the wall's width can change without a resize event (e.g. when the page scrollbar appears)
+    if (!hive.hidden && hive.clientWidth !== fittedTo) fit();
     let guard = 20;
     while (more && !more.hidden && guard-- > 0 && more.getBoundingClientRect().top < window.innerHeight + 600) loadMore();
   }

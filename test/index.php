@@ -274,13 +274,13 @@ require __DIR__ . '/includes/header.php';
   </section>
 
   <!-- ============ Gallery (photos managed in the admin panel; hidden until there is at least one) ============ -->
-  <section class="section wrap band" id="gallery" aria-labelledby="gallery-title" data-limit="8" hidden>
+  <section class="section wrap band" id="gallery" aria-labelledby="gallery-title" data-limit="5" hidden>
     <div class="container site-container">
       <div class="sec-head d-flex flex-wrap align-items-end justify-content-between">
         <div class="intro"><span class="kicker">Gallery</span><h2 id="gallery-title">Moments from our <em>community</em></h2><p class="lede">Prayers, classes, events and the people who make our masjid a home.</p></div>
         <a class="btn site-btn btn-ind site-btn-lg" href="gallery">View All Pictures<svg class="ico arr"><use href="#i-arrow"/></svg></a>
       </div>
-      <div class="gallery" id="galleryGrid" aria-live="polite"></div>
+      <div class="gallery gallery-5" id="galleryGrid" aria-live="polite"></div>
     </div>
   </section>
 

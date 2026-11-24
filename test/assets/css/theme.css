@@ -734,6 +734,9 @@ button.link-arrow{align-self:flex-start;background:none;border:0;padding:0;curso
 .gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 @media (min-width:760px){.gallery{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}}
 @media (min-width:1080px){.gallery{grid-template-columns:repeat(4,minmax(0,1fr))}.gallery .g-item:first-child{grid-column:span 2;grid-row:span 2}}
+/* Home page preview (5 photos): one feature photo and four beside or below it, with no gaps at any width */
+@media (max-width:759.98px){.gallery-5 .g-item:first-child{grid-column:span 2}}
+@media (min-width:760px) and (max-width:1079.98px){.gallery-5 .g-item:first-child{grid-row:span 2}}
 .g-item{position:relative;display:block;padding:0;border:0;border-radius:var(--r);overflow:hidden;aspect-ratio:4/3;background:var(--line);cursor:zoom-in}
 .g-item img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
 .g-item:hover img{transform:scale(1.05)}

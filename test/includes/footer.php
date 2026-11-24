@@ -30,11 +30,6 @@ defined('HIUK') or exit;
           <a href="https://www.facebook.com/stepneyshahjalalmosque" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h-2a4 4 0 0 0-4 4v3H7v4h2v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h2z"/></svg></a>
           <a href="https://www.youtube.com/@stepneyshahjalalmosquecult5709" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z"/></svg></a>
             </div>
-            <div class="f-links" aria-label="Our sister organisations">
-              <a class="btn site-btn btn-glass site-btn-sm" href="https://borunamadrasah.org" target="_blank" rel="noopener">Boruna Madrasa<svg class="ico" style="width:14px;height:14px"><use href="#i-arrow-ur"/></svg></a>
-              <a class="btn site-btn btn-glass site-btn-sm" href="https://alkhalil.org.uk" target="_blank" rel="noopener">Al Khalil<svg class="ico" style="width:14px;height:14px"><use href="#i-arrow-ur"/></svg></a>
-              <a class="btn site-btn btn-glass site-btn-sm" href="https://deentv.uk" target="_blank" rel="noopener">Deen TV<svg class="ico" style="width:14px;height:14px"><use href="#i-arrow-ur"/></svg></a>
-            </div>
           </div>
         </div>
         <div class="col-12 f-cols-col"><nav class="f-cols row site-row row-cols-2 row-cols-md-4" aria-label="Footer">

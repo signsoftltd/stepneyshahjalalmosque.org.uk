@@ -1578,3 +1578,7 @@ html[data-theme="dark"] .dw-wall{background:
 }
 @media (prefers-reduced-motion:reduce){.dw-plaque{transition:none}.dw-plaque:hover{transform:none}}
 .dw-empty{margin:8px 0 0;text-align:center;color:var(--muted)}
+.dw-more{display:flex;align-items:center;justify-content:center;gap:10px;padding:8px 0 4px;color:var(--muted);font:500 14px/1 var(--sans)}
+.dw-more[hidden]{display:none}
+.dw-spinner{width:18px;height:18px;border-radius:50%;border:2px solid var(--line-2);border-top-color:#B08A47;animation:pl-spin .8s linear infinite}
+@media (prefers-reduced-motion:reduce){.dw-spinner{animation:none}}

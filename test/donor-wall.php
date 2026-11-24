@@ -23,6 +23,18 @@ function donor_size($name)
 	return $len > 46 ? ' xl' : ($len > 30 ? ' lg' : '');
 }
 
+/* Plaques load in batches as the visitor scrolls: the first batch is in the page,
+   the full list goes to assets/js/donor-wall.js as data (n = name, a = street, c = classes, s = star). */
+const DONOR_BATCH = 60;
+$donor_data = array_map(function ($d) {
+	$name = (string) $d['name'];
+	$addr = trim((string) ($d['address'] ?? ''));
+	if (stripos($addr, 'N/A') === 0) $addr = '';
+	$row = ['n' => $name, 'a' => $addr, 'c' => 'f-' . donor_finish($d) . donor_size($name)];
+	if (!empty($d['star'])) $row['s'] = 1;
+	return $row;
+}, $donors);
+
 $page = [
 	'path' => 'donor-wall',
 	'title' => 'Donor Wall | Stepney Shah Jalal Mosque',
@@ -70,19 +82,17 @@ require __DIR__ . '/includes/header.php';
           <span class="dw-sign-sub">Stepney Shahjalal Mosque &amp; Cultural Centre</span>
         </div>
 
-        <!-- Hexagon plaques in a honeycomb; assets/js/donor-wall.js centres the rows and filters them -->
+        <!-- Hexagon plaques in a honeycomb; assets/js/donor-wall.js centres the rows, loads more on scroll and searches -->
         <div class="dw-hive">
           <ul class="dw-grid" id="dwGrid">
-<?php foreach ($donors as $d):
-	$name = (string) $d['name'];
-	$addr = trim((string) ($d['address'] ?? ''));
-	if (stripos($addr, 'N/A') === 0) $addr = '';
-?>
-            <li class="dw-plaque f-<?= donor_finish($d) ?><?= donor_size($name) ?>" data-search="<?= e(mb_strtolower($name . ' ' . $addr)) ?>"><span class="dw-hex"><span class="dw-face"><?php if (!empty($d['star'])): ?><span class="dw-star" aria-hidden="true">★</span><?php endif; ?><b><?= e($name) ?></b><?php if ($addr !== ''): ?><span class="dw-addr"><?= e($addr) ?></span><?php endif; ?></span></span></li>
+<?php foreach (array_slice($donor_data, 0, DONOR_BATCH) as $d): ?>
+            <li class="dw-plaque <?= e($d['c']) ?>"><span class="dw-hex"><span class="dw-face"><?php if (!empty($d['s'])): ?><span class="dw-star" aria-hidden="true">★</span><?php endif; ?><b><?= e($d['n']) ?></b><?php if ($d['a'] !== ''): ?><span class="dw-addr"><?= e($d['a']) ?></span><?php endif; ?></span></span></li>
 <?php endforeach; ?>
           </ul>
         </div>
+        <div class="dw-more" id="dwMore" role="status"<?= $count > DONOR_BATCH ? '' : ' hidden' ?>><span class="dw-spinner" aria-hidden="true"></span>Loading more donors…</div>
         <p class="dw-empty" id="dwEmpty" hidden>No donors found. Try a different name or street.</p>
+        <script type="application/json" id="dwData" data-batch="<?= DONOR_BATCH ?>"><?= json_encode($donor_data, JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP) ?></script>
       </div>
     </div>
   </section>

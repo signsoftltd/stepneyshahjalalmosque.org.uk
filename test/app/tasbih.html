@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#4B1020">
+<meta name="color-scheme" content="light">
+<meta name="format-detection" content="telephone=no">
+<title>Tasbih | Hefazothe Islam UK</title>
+<link rel="icon" href="assets/images/icons/favicon-32.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/images/icons/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/app.css">
+</head>
+<!-- Tasbih tab: a dhikr counter with a target, and a history of saved recitations -->
+<body data-page="tasbih">
+<div class="app">
+  <!-- this screen's own content: moving between screens swaps only this (nav.js, with HTMX); the tabs and side menu stay -->
+  <div id="view">
+  <div class="view" data-page="tasbih" data-scripts="tasbih.js">
+    <!-- the header stays at the top while scrolling -->
+    <div class="sticky-head">
+      <header class="top top-sm">
+        <div class="pattern" aria-hidden="true"></div>
+        <div class="top-bar">
+          <button class="icon-btn" type="button" data-menu-open aria-controls="drawer" aria-expanded="false" aria-label="Open menu"><svg class="ico"><use href="#i-menu"/></svg></button>
+          <div class="page-title"><h1>Tasbih</h1><p>Remember Allah often</p></div>
+          <button class="icon-btn" type="button" data-share aria-label="Share this app"><svg class="ico"><use href="#i-share"/></svg></button>
+        </div>
+      </header>
+    </div>
+
+    <main class="main t-main" id="main">
+      <!-- the five dhikr (filled by tasbih.js) -->
+      <div class="t-pick" id="tPick" role="radiogroup" aria-label="Choose a dhikr"></div>
+
+      <section class="t-card" aria-labelledby="tName">
+        <div class="t-words">
+          <p class="t-ar" id="tAr" lang="ar" dir="rtl"></p>
+          <h2 class="t-name" id="tName"></h2>
+          <p class="t-en" id="tEn"></p>
+          <div class="t-audio">
+            <button class="t-listen" type="button" id="tListen" aria-pressed="false"><svg class="ico"><use href="#i-sound"/></svg><span>Listen</span></button>
+            <button class="t-repeat" type="button" id="tRepeat" aria-pressed="false" aria-label="Repeat is off" title="Repeat"><svg class="ico"><use href="#i-repeat"/></svg></button>
+          </div>
+        </div>
+
+        <!-- the counter: tap anywhere on the circle -->
+        <button class="t-counter" type="button" id="tTap" aria-describedby="tOf">
+          <svg class="t-ring" viewBox="0 0 220 220" aria-hidden="true">
+            <circle class="t-ring-bg" cx="110" cy="110" r="100"/>
+            <circle class="t-ring-fg" id="tRing" cx="110" cy="110" r="100" pathLength="100"/>
+          </svg>
+          <span class="t-count tnum" id="tCount" aria-live="polite">0</span>
+          <span class="t-of tnum" id="tOf">of 33</span>
+          <span class="t-round" id="tRound" hidden></span>
+        </button>
+        <p class="t-hint" id="tHint">Tap the circle to count</p>
+
+        <div class="t-tools">
+          <button type="button" id="tTarget"><svg class="ico"><use href="#i-target"/></svg><span>Target <b class="tnum" id="tTargetVal">33</b></span></button>
+          <button type="button" id="tUndo" aria-label="Take one off the count"><svg class="ico"><use href="#i-minus"/></svg><span>Undo</span></button>
+          <button type="button" id="tReset"><svg class="ico"><use href="#i-undo"/></svg><span>Reset</span></button>
+          <button type="button" id="tSave" class="t-save"><svg class="ico"><use href="#i-check"/></svg><span>Save</span></button>
+        </div>
+        <button class="t-vibe" type="button" id="tVibe" role="switch" aria-checked="true" hidden><span>Vibrate on each count</span><i class="switch" aria-hidden="true"></i></button>
+      </section>
+
+      <section class="t-hist" aria-labelledby="tHistTitle">
+        <div class="t-hist-head">
+          <h2 id="tHistTitle">Your recitations</h2>
+          <button class="t-clear" type="button" id="tClear" hidden>Clear all</button>
+        </div>
+        <p class="t-life" id="tLife"></p>
+        <!-- day / month / year, and the period shown -->
+        <div class="t-seg" role="tablist" aria-label="History by">
+          <button type="button" role="tab" data-view="day">Day</button><button type="button" role="tab" data-view="month">Month</button><button type="button" role="tab" data-view="year">Year</button>
+        </div>
+        <div class="t-period">
+          <button class="round-btn" type="button" id="tPrev" aria-label="Earlier"><svg class="ico"><use href="#i-left"/></svg></button>
+          <h3 id="tPeriod" aria-live="polite"></h3>
+          <button class="round-btn" type="button" id="tNext" aria-label="Later"><svg class="ico"><use href="#i-right"/></svg></button>
+        </div>
+        <div class="t-stats" id="tStats"></div>
+        <!-- month: a bar for each day; year: a bar for each month (filled by tasbih.js) -->
+        <div class="t-chart" id="tChart" hidden></div>
+        <div id="tBreak"></div>
+        <div id="tList"></div>
+      </section>
+    </main>
+
+    <!-- small window from the bottom: choosing a target, or confirming -->
+    <div class="sheet" id="tSheet" hidden>
+      <div class="sheet-back" data-sheet-close></div>
+      <div class="sheet-panel" role="dialog" aria-modal="true" aria-labelledby="tSheetTitle">
+        <h2 id="tSheetTitle"></h2>
+        <div id="tSheetBody"></div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/data/builtin-data.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/alerts.js"></script>
+<script src="assets/js/vendor/htmx.min.js"></script>
+<script src="assets/js/nav.js"></script>
+</body>
+</html>

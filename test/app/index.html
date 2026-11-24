@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#4B1020">
+<meta name="color-scheme" content="light">
+<meta name="format-detection" content="telephone=no">
+<title>Hefazothe Islam UK</title>
+<link rel="icon" href="assets/images/icons/favicon-32.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/images/icons/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/app.css">
+</head>
+<!-- data-page: which bottom tab is this screen (app.js adds the tabs, the side menu and the icons) -->
+<body data-page="home">
+<div class="app">
+  <!-- this screen's own content: moving between screens swaps only this (nav.js, with HTMX); the tabs and side menu stay -->
+  <div id="view">
+  <div class="view" data-page="home" data-scripts="home.js makrooh.js sky.js update.js popup.js pull.js">
+    <!-- Header: menu, name, share; today's dates -->
+    <header class="top">
+      <div class="pattern" aria-hidden="true"></div>
+      <div class="top-bar">
+        <button class="icon-btn" type="button" data-menu-open aria-controls="drawer" aria-expanded="false" aria-label="Open menu"><svg class="ico"><use href="#i-menu"/></svg></button>
+        <div class="brand brand-logo"><span class="brand-mark" role="img" aria-label="Hefazothe Islam UK"></span></div>
+        <button class="icon-btn" type="button" data-share aria-label="Share this app"><svg class="ico"><use href="#i-share"/></svg></button>
+      </div>
+      <div class="top-dates">
+        <p class="date-g" id="dateG"><i class="sk"></i></p>
+        <p class="date-h"><span id="dateH"><i class="sk"></i></span><span class="date-ar" id="dateAr" lang="ar" dir="rtl"><i class="sk"></i></span></p>
+      </div>
+    </header>
+
+    <!-- class="sk": a grey bar where something will be, until home.js has the prayer times and draws over it -->
+    <main class="main" id="main">
+      <!-- Next prayer -->
+      <section class="next-card" aria-labelledby="nextLabel">
+        <div class="next-head">
+          <span class="kicker" id="nextLabel">Next prayer</span>
+          <span class="next-ar" id="nextAr" lang="ar" dir="rtl"><i class="sk"></i></span>
+        </div>
+        <div class="next-main">
+          <h1 class="next-name" id="nextName"><i class="sk"></i></h1>
+          <div class="next-count tnum" id="nextCount" role="timer" aria-label="Time left"><i class="sk"></i></div>
+        </div>
+        <div class="next-bar" aria-hidden="true"><i id="nextBar"></i></div>
+        <div class="next-meta"><span id="nextBegins"><i class="sk"></i></span><span id="nextJamaah"><i class="sk"></i></span></div>
+      </section>
+
+      <!-- Day timetable -->
+      <section class="day" aria-labelledby="dayTitle">
+        <div class="day-nav">
+          <button class="round-btn" type="button" id="dayPrev" aria-label="Previous day"><svg class="ico"><use href="#i-left"/></svg></button>
+          <div class="day-title">
+            <h2 id="dayTitle">Today</h2>
+            <p id="daySub"><i class="sk"></i></p>
+          </div>
+          <button class="round-btn" type="button" id="dayNext" aria-label="Next day"><svg class="ico"><use href="#i-right"/></svg></button>
+        </div>
+        <div class="pt-head" aria-hidden="true"><span>Prayer</span><span>Begins</span><span>Jama'ah</span></div>
+        <ol class="pt-list" id="ptList" aria-label="Prayer times">
+          <li><span class="pt-name"><i class="sk"></i><i class="sk"></i></span><span class="pt-t"><i class="sk"></i></span><span class="pt-t"><i class="sk"></i></span></li>
+          <li><span class="pt-name"><i class="sk"></i><i class="sk"></i></span><span class="pt-t"><i class="sk"></i></span><span class="pt-t"><i class="sk"></i></span></li>
+          <li><span class="pt-name"><i class="sk"></i><i class="sk"></i></span><span class="pt-t"><i class="sk"></i></span><span class="pt-t"><i class="sk"></i></span></li>
+          <li><span class="pt-name"><i class="sk"></i><i class="sk"></i></span><span class="pt-t"><i class="sk"></i></span><span class="pt-t"><i class="sk"></i></span></li>
+          <li><span class="pt-name"><i class="sk"></i><i class="sk"></i></span><span class="pt-t"><i class="sk"></i></span><span class="pt-t"><i class="sk"></i></span></li>
+          <li><span class="pt-name"><i class="sk"></i><i class="sk"></i></span><span class="pt-t"><i class="sk"></i></span><span class="pt-t"><i class="sk"></i></span></li>
+        </ol>
+        <button class="link-btn" type="button" id="dayToday" hidden>Back to today</button>
+      </section>
+
+      <!-- Makrooh times today (makrooh.js; hidden until loaded). The whole card opens the popup. -->
+      <div class="mk-card" id="mkCard" role="button" tabindex="0" hidden aria-labelledby="mkTitle">
+        <div class="mk-head"><h2 class="mk-title" id="mkTitle">Makrooh times</h2><span class="mk-help">Avoid salah at these times</span></div>
+        <ul class="mk-list" id="mkList"></ul>
+      </div>
+
+      <!-- Jumu'ah -->
+      <section class="jum-card" aria-labelledby="jumTitle">
+        <div class="jum-top">
+          <h2 id="jumTitle">Jumu'ah <span class="jum-ar" lang="ar" dir="rtl">الجمعة</span></h2>
+          <p id="jumDate"><i class="sk"></i></p>
+        </div>
+        <dl class="jum-times" id="jumTimes">
+          <div><dt><i class="sk"></i></dt><dd><i class="sk"></i></dd></div>
+          <div><dt><i class="sk"></i></dt><dd><i class="sk"></i></dd></div>
+          <div><dt><i class="sk"></i></dt><dd><i class="sk"></i></dd></div>
+        </dl>
+      </section>
+
+      <!-- our sister organisations (as in the website's footer); opened by the phone, outside the app -->
+      <nav class="sis-links" aria-label="Our sister organisations">
+        <a href="https://borunamadrasah.org" target="_blank" rel="noopener">Boruna Madrasa<svg class="ico" aria-hidden="true"><use href="#i-external"/></svg></a>
+        <a href="https://alkhalil.org.uk" target="_blank" rel="noopener">Al Khalil<svg class="ico" aria-hidden="true"><use href="#i-external"/></svg></a>
+        <a href="https://deentv.uk" target="_blank" rel="noopener">Deen TV<svg class="ico" aria-hidden="true"><use href="#i-external"/></svg></a>
+      </nav>
+
+      <p class="status" id="status" role="status" hidden></p>
+    </main>
+  </div>
+  </div>
+</div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/data/builtin-data.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/alerts.js"></script>
+<script src="assets/js/vendor/htmx.min.js"></script>
+<script src="assets/js/nav.js"></script>
+</body>
+</html>

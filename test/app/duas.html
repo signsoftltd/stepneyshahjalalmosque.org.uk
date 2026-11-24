@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#4B1020">
+<meta name="color-scheme" content="light">
+<meta name="format-detection" content="telephone=no">
+<title>Daily duas | Hefazothe Islam UK</title>
+<link rel="icon" href="assets/images/icons/favicon-32.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/images/icons/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/app.css">
+</head>
+<!-- Daily duas (side menu) -->
+<body data-page="duas">
+<div class="app">
+  <!-- this screen's own content: moving between screens swaps only this (nav.js, with HTMX); the tabs and side menu stay -->
+  <div id="view">
+  <div class="view" data-page="duas" data-scripts="duas.js">
+    <!-- the header stays at the top while scrolling through the duas -->
+    <div class="sticky-head">
+      <header class="top top-sm">
+        <div class="pattern" aria-hidden="true"></div>
+        <div class="top-bar">
+          <button class="icon-btn" type="button" data-menu-open aria-controls="drawer" aria-expanded="false" aria-label="Open menu"><svg class="ico"><use href="#i-menu"/></svg></button>
+          <div class="page-title"><h1>Daily duas</h1><p>Supplications for every day</p></div>
+          <button class="icon-btn" type="button" data-share aria-label="Share this app"><svg class="ico"><use href="#i-share"/></svg></button>
+        </div>
+      </header>
+    </div>
+
+    <main class="main d-main" id="main">
+      <!-- jump to a dua, and the Arabic text size -->
+      <div class="d-bar">
+        <nav class="d-jump" id="dJump" aria-label="Duas"></nav>
+        <div class="d-size" role="group" aria-label="Arabic text size">
+          <button type="button" id="dSmaller" aria-label="Smaller Arabic text">A<small>−</small></button>
+          <button type="button" id="dBigger" aria-label="Bigger Arabic text">A<small>+</small></button>
+        </div>
+      </div>
+      <ol class="d-list" id="dList"></ol>
+    </main>
+  </div>
+  </div>
+</div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/data/builtin-data.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/alerts.js"></script>
+<script src="assets/js/vendor/htmx.min.js"></script>
+<script src="assets/js/nav.js"></script>
+</body>
+</html>

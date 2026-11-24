@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#4B1020">
+<meta name="color-scheme" content="light">
+<meta name="format-detection" content="telephone=no">
+<title>Live Stream | Hefazothe Islam UK</title>
+<link rel="icon" href="assets/images/icons/favicon-32.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/images/icons/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/app.css">
+</head>
+<!-- Live stream (side menu): the masjid's live video, or a message when there is none -->
+<body data-page="live">
+<div class="app">
+  <!-- this screen's own content: moving between screens swaps only this (nav.js, with HTMX); the tabs and side menu stay -->
+  <div id="view">
+  <div class="view" data-page="live" data-scripts="live.js">
+    <header class="top top-sm">
+      <div class="pattern" aria-hidden="true"></div>
+      <div class="top-bar">
+        <button class="icon-btn" type="button" data-menu-open aria-controls="drawer" aria-expanded="false" aria-label="Open menu"><svg class="ico"><use href="#i-menu"/></svg></button>
+        <div class="page-title"><h1>Live Stream</h1><p>From Hefazothe Islam UK</p></div>
+        <button class="icon-btn" type="button" data-share aria-label="Share this app"><svg class="ico"><use href="#i-share"/></svg></button>
+      </div>
+    </header>
+
+    <main class="main lv-main" id="main">
+      <section class="lv-card" aria-live="polite">
+        <!-- the player (16:9); live.js puts the video in it -->
+        <div class="lv-screen" id="lvScreen">
+          <div class="lv-msg" id="lvLoading"><span class="spinner" aria-hidden="true"></span><p>Checking for a live stream…</p></div>
+          <div class="lv-msg" id="lvNone" hidden>
+            <svg class="ico lv-big"><use href="#i-live"/></svg>
+            <h2>No live video right now</h2>
+            <p>There is no live video available at the moment. Please check again later; this page checks by itself every minute.</p>
+          </div>
+          <div class="lv-msg" id="lvOffline" hidden>
+            <svg class="ico lv-big"><use href="#i-wifi"/></svg>
+            <h2>You're offline</h2>
+            <p>The live stream needs an internet connection.</p>
+          </div>
+        </div>
+        <div class="lv-bar">
+          <span class="lv-badge" id="lvBadge" hidden><i></i>Live</span>
+          <span class="lv-status" id="lvStatus">&nbsp;</span>
+          <button class="btn-line lv-check" type="button" id="lvCheck"><svg class="ico"><use href="#i-undo"/></svg>Check again</button>
+        </div>
+      </section>
+
+      <p class="lv-tip" id="lvTip" hidden>Tip: tap the full-screen button in the video, or turn your phone sideways, for a bigger picture.</p>
+    </main>
+  </div>
+  </div>
+</div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/data/builtin-data.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/alerts.js"></script>
+<script src="assets/js/vendor/htmx.min.js"></script>
+<script src="assets/js/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#4B1020">
+<meta name="color-scheme" content="light">
+<meta name="format-detection" content="telephone=no">
+<title>Ramadhan Timetable | Hefazothe Islam UK</title>
+<link rel="icon" href="assets/images/icons/favicon-32.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/images/icons/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/app.css">
+</head>
+<!-- Ramadhan timetable (side menu): Sehri and Iftar for each day, Eid salah and Sadaqah al-Fitr -->
+<body data-page="ramadan">
+<div class="app">
+  <!-- this screen's own content: moving between screens swaps only this (nav.js, with HTMX); the tabs and side menu stay -->
+  <div id="view">
+  <div class="view" data-page="ramadan" data-scripts="ramadan.js">
+    <div class="sticky-head">
+      <header class="top top-sm">
+        <div class="pattern" aria-hidden="true"></div>
+        <div class="top-bar">
+          <button class="icon-btn" type="button" data-menu-open aria-controls="drawer" aria-expanded="false" aria-label="Open menu"><svg class="ico"><use href="#i-menu"/></svg></button>
+          <div class="page-title"><h1>Ramadhan</h1><p id="rSub">Timetable</p></div>
+          <button class="icon-btn" type="button" data-share aria-label="Share this app"><svg class="ico"><use href="#i-share"/></svg></button>
+        </div>
+      </header>
+    </div>
+
+    <main class="main r-main" id="main">
+      <p class="r-empty" id="rEmpty">Loading the Ramadhan timetable…</p>
+      <div id="rBody" hidden>
+        <!-- today: Sehri and Iftar with a countdown (or the days until Ramadhan, or Eid Mubarak) -->
+        <section class="r-now" id="rNow" aria-live="polite"></section>
+
+        <div class="r-info" id="rInfo"></div>
+
+        <a class="r-dua" href="duas.html#dua-13"><svg class="ico"><use href="#i-book"/></svg><span>Dua for breaking the fast</span><svg class="ico chev"><use href="#i-chev"/></svg></a>
+
+        <table class="r-table" aria-label="Sehri and Iftar for each day of Ramadhan">
+          <thead><tr><th scope="col">Day</th><th scope="col">Date</th><th scope="col">Sehri ends</th><th scope="col">Iftar</th></tr></thead>
+          <tbody id="rRows"></tbody>
+        </table>
+        <p class="r-note">Times are for Hefazothe Islam UK Masjid, London. Ramadhan begins and ends with the sighting of the moon.</p>
+      </div>
+    </main>
+  </div>
+  </div>
+</div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/data/builtin-data.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/alerts.js"></script>
+<script src="assets/js/vendor/htmx.min.js"></script>
+<script src="assets/js/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+# Hefazothe Islam UK website: clean addresses (events instead of events.php).
+# The rules don't name the site's folder, so they work in any folder or at the top level.
+
+Options -MultiViews -Indexes
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Shared page parts are only included by the pages, never opened directly
+RewriteRule ^includes(/|$) - [F,L]
+
+# Old and .php addresses go to the clean address (permanent, so links and search results update):
+#   /index.html, /index.php -> the site's folder      /events.html, /events.php -> /events
+# (REDIRECT_STATUS is empty only for the visitor's own request, not for the internal rewrite below)
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{REQUEST_URI} ^(.*/)index\.(html|php)$ [NC]
+RewriteRule ^ %1 [R=301,L]
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{REQUEST_URI} ^(.+)\.(html|php)$ [NC]
+RewriteRule ^ %1 [R=301,L]
+
+# No slash at the end of a page address: /events/ -> /events
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} ^(.+)/$
+RewriteRule ^ %1 [R=301,L]
+
+# Clean address -> the page's .php file
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.+)$ $1.php [L]
+</IfModule>

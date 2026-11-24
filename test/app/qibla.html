@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#4B1020">
+<meta name="color-scheme" content="light">
+<meta name="format-detection" content="telephone=no">
+<title>Qibla | Hefazothe Islam UK</title>
+<link rel="icon" href="assets/images/icons/favicon-32.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/images/icons/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/app.css">
+</head>
+<!-- Qibla tab: the direction of the Kaaba, with a live compass where the phone has one -->
+<body data-page="qibla">
+<div class="app">
+  <!-- this screen's own content: moving between screens swaps only this (nav.js, with HTMX); the tabs and side menu stay -->
+  <div id="view">
+  <div class="view" data-page="qibla" data-scripts="qibla.js">
+    <!-- the header stays at the top while scrolling -->
+    <div class="sticky-head">
+      <header class="top top-sm">
+        <div class="pattern" aria-hidden="true"></div>
+        <div class="top-bar">
+          <button class="icon-btn" type="button" data-menu-open aria-controls="drawer" aria-expanded="false" aria-label="Open menu"><svg class="ico"><use href="#i-menu"/></svg></button>
+          <div class="page-title"><h1>Qibla</h1><p id="qPlace">&nbsp;</p></div>
+          <button class="icon-btn" type="button" data-share aria-label="Share this app"><svg class="ico"><use href="#i-share"/></svg></button>
+        </div>
+      </header>
+    </div>
+
+    <main class="main q-main" id="main">
+      <section class="q-card" aria-labelledby="qStatus">
+        <p class="q-status" id="qStatus" role="status" aria-live="polite">Finding the Qibla…</p>
+
+        <!-- Compass: the dial turns with the phone; the pointer at the top is where the phone points -->
+        <div class="q-compass" id="qCompass">
+          <svg class="q-pointer" viewBox="0 0 24 16" aria-hidden="true"><path d="M12 0 24 16H0z"/></svg>
+          <svg class="q-dial" id="qDial" viewBox="0 0 300 300" role="img" aria-labelledby="qStatus">
+            <circle class="q-ring" cx="150" cy="150" r="140"/>
+            <g id="qTicks"></g>
+            <g class="q-letters">
+              <text x="150" y="44" class="q-n">N</text><text x="258" y="155">E</text><text x="150" y="266">S</text><text x="42" y="155">W</text>
+            </g>
+            <!-- direction of the Kaaba (rotated to the Qibla bearing by qibla.js) -->
+            <g id="qMark">
+              <line class="q-line" x1="150" y1="150" x2="150" y2="62"/>
+              <g class="q-kaaba" transform="translate(150 40)">
+                <circle r="20"/>
+                <path d="M-9-4 0-8 9-4v10L0 10-9 6z" class="q-cube"/><path d="M-9-4 0 0 9-4M0 0v10" class="q-cube-edge"/>
+                <path d="M-9 0 0 4 9 0" class="q-kiswah"/>
+              </g>
+            </g>
+            <circle class="q-hub" cx="150" cy="150" r="7"/>
+          </svg>
+        </div>
+
+        <div class="q-read">
+          <div><small>Qibla</small><b class="tnum" id="qBearing">—</b></div>
+          <div><small>Phone</small><b class="tnum" id="qHeading">—</b></div>
+          <div><small>Makkah</small><b class="tnum" id="qDistance">—</b></div>
+        </div>
+
+        <div class="q-actions">
+          <button class="btn-main" type="button" id="qStart" hidden>Start compass</button>
+          <button class="btn-line" type="button" id="qLocate"><svg class="ico"><use href="#i-pin"/></svg>Use my location</button>
+        </div>
+      </section>
+
+      <section class="q-tips" aria-labelledby="qTipsTitle">
+        <h2 id="qTipsTitle">For an accurate compass</h2>
+        <ul>
+          <li>Hold the phone flat, screen facing up.</li>
+          <li>Keep away from metal, magnets and electronics.</li>
+          <li>If the direction jumps, calibrate: move the phone in a figure of eight a few times.</li>
+          <li>Inside the masjid, follow the direction of the prayer rows.</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+  </div>
+</div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/data/builtin-data.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/alerts.js"></script>
+<script src="assets/js/vendor/htmx.min.js"></script>
+<script src="assets/js/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#4B1020">
+<meta name="color-scheme" content="light">
+<meta name="format-detection" content="telephone=no">
+<title>Settings | Hefazothe Islam UK</title>
+<link rel="icon" href="assets/images/icons/favicon-32.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/images/icons/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/app.css">
+</head>
+<!-- Settings tab: prayer alerts (Adhan, Jama'ah reminder, Qadha reminder), auto silent mode and appearance -->
+<body data-page="settings">
+<div class="app">
+  <!-- this screen's own content: moving between screens swaps only this (nav.js, with HTMX); the tabs and side menu stay -->
+  <div id="view">
+  <div class="view" data-page="settings" data-scripts="settings.js">
+    <!-- the header stays at the top while scrolling -->
+    <div class="sticky-head">
+      <header class="top top-sm">
+        <div class="pattern" aria-hidden="true"></div>
+        <div class="top-bar">
+          <button class="icon-btn" type="button" data-menu-open aria-controls="drawer" aria-expanded="false" aria-label="Open menu"><svg class="ico"><use href="#i-menu"/></svg></button>
+          <div class="page-title"><h1>Settings</h1><p>Prayer alerts and more</p></div>
+          <button class="icon-btn" type="button" data-share aria-label="Share this app"><svg class="ico"><use href="#i-share"/></svg></button>
+        </div>
+      </header>
+    </div>
+
+    <main class="main s-main" id="main">
+
+      <!-- Adhan -->
+      <section class="s-card" aria-labelledby="sAdhanT">
+        <button class="s-switch" type="button" role="switch" id="sAdhanOn" aria-checked="false">
+          <svg class="ico s-ico"><use href="#i-mosque"/></svg>
+          <span><b id="sAdhanT">Automatic Adhan</b><small>At the start of each prayer</small></span>
+          <i class="switch" aria-hidden="true"></i>
+        </button>
+        <div class="s-more" id="sAdhanMore">
+          <p class="s-help">For each prayer: the full <b>Adhan</b>, a short <b>Alert</b>, or <b>Off</b>.</p>
+          <ul class="s-prayers" id="sAdhanList"></ul>
+          <button class="btn-line s-try" type="button" id="sTry"><svg class="ico"><use href="#i-sound"/></svg><span>Play the Adhan</span></button>
+        </div>
+      </section>
+
+      <!-- Jama'ah reminder -->
+      <section class="s-card" aria-labelledby="sJamT">
+        <button class="s-switch" type="button" role="switch" id="sJamOn" aria-checked="false">
+          <svg class="ico s-ico"><use href="#i-clock"/></svg>
+          <span><b id="sJamT">Jama'ah reminder</b><small id="sJamSub">Before each Jama'ah</small></span>
+          <i class="switch" aria-hidden="true"></i>
+        </button>
+        <div class="s-more" id="sJamMore">
+          <p class="s-help">Tick the prayers to remind you of, and how many minutes before each Jama'ah.</p>
+          <ul class="s-prayers s-remind" data-for="jamaah" data-min="5" data-max="60"></ul>
+        </div>
+      </section>
+
+      <!-- Qadha reminder -->
+      <section class="s-card" aria-labelledby="sQadT">
+        <button class="s-switch" type="button" role="switch" id="sQadOn" aria-checked="false">
+          <svg class="ico s-ico"><use href="#i-bell"/></svg>
+          <span><b id="sQadT">Qadha reminder</b><small id="sQadSub">Before the prayer time ends</small></span>
+          <i class="switch" aria-hidden="true"></i>
+        </button>
+        <div class="s-more" id="sQadMore">
+          <p class="s-help">Tick the prayers to remind you of, and how many minutes before each prayer's time ends.</p>
+          <ul class="s-prayers s-remind" data-for="qadha" data-min="5" data-max="120"></ul>
+          <p class="s-help s-small">Fajr ends at sunrise, Dhuhr at Asr, Asr at Maghrib, Maghrib at Isha, and Isha at Fajr.</p>
+        </div>
+      </section>
+
+      <!-- Auto silent mode (the native app silences the phone; not on iPhone and iPad, settings.js) -->
+      <section class="s-card" id="sSilCard" aria-labelledby="sSilT">
+        <button class="s-switch" type="button" role="switch" id="sSilOn" aria-checked="false">
+          <svg class="ico s-ico"><use href="#i-silent"/></svg>
+          <span><b id="sSilT">Auto silent mode</b><small id="sSilSub">Silent during each Jama'ah</small></span>
+          <i class="switch" aria-hidden="true"></i>
+        </button>
+        <div class="s-more" id="sSilMore">
+          <p class="s-help">Tick the prayers. For each: how many minutes <b>before</b> the Jama'ah the phone goes silent, and how many minutes <b>after</b> it starts the sound comes back on.</p>
+          <ul class="s-prayers s-silent" id="sSilList"></ul>
+          <p class="s-help s-small" id="sSilNote" hidden>This works in the installed app. iPhones don't let apps silence the phone, so on iPhone you can use a Focus instead.</p>
+        </div>
+      </section>
+
+      <!-- what is coming -->
+      <section class="s-card s-next" aria-labelledby="sNextT">
+        <h2 id="sNextT">Next alerts</h2>
+        <ul id="sNext"></ul>
+      </section>
+
+      <section class="s-card" aria-label="Appearance">
+        <button class="s-switch" type="button" role="switch" aria-checked="false" data-theme-toggle>
+          <svg class="ico s-ico"><use href="#i-moon"/></svg>
+          <span><b>Dark mode</b><small>Day mode until you turn this on</small></span>
+          <i class="switch" aria-hidden="true"></i>
+        </button>
+        <div class="s-text">
+          <span class="s-text-head"><b id="sClockT">Time format</b><small>How times are shown in the app</small></span>
+          <span class="s-seg s-seg-clock" role="radiogroup" aria-labelledby="sClockT">
+            <button type="button" role="radio" data-clock="12"><b>1:30 pm</b>12-hour</button>
+            <button type="button" role="radio" data-clock="24"><b>13:30</b>24-hour</button>
+          </span>
+        </div>
+        <div class="s-text">
+          <span class="s-text-head"><b id="sTextT">Text size</b><small>Makes the whole app smaller or bigger</small></span>
+          <span class="s-seg s-seg-text" role="radiogroup" aria-labelledby="sTextT">
+            <button type="button" role="radio" data-text-size="small"><span style="font-size:12px">A</span>Small</button>
+            <button type="button" role="radio" data-text-size="normal"><span style="font-size:15px">A</span>Normal</button>
+            <button type="button" role="radio" data-text-size="large"><span style="font-size:18px">A</span>Large</button>
+            <button type="button" role="radio" data-text-size="xlarge"><span style="font-size:21px">A</span>Extra large</button>
+          </span>
+        </div>
+      </section>
+    </main>
+  </div>
+  </div>
+</div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/data/builtin-data.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/alerts.js"></script>
+<script src="assets/js/vendor/htmx.min.js"></script>
+<script src="assets/js/nav.js"></script>
+</body>
+</html>

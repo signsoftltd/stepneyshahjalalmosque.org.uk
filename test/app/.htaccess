@@ -1,0 +1,8 @@
+# Hefazothe Islam UK app, opened in a browser for testing: its pages keep their .html addresses,
+# so the website's clean-address rules (../.htaccess) don't apply in this folder.
+
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+RewriteEngine Off
+</IfModule>

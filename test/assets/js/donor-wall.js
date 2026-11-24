@@ -25,18 +25,25 @@
   const plaque = (d) => `<li class="dw-plaque ${esc(d.c || 'f-navy')}"><span class="dw-hex"><span class="dw-face">${d.s ? '<span class="dw-star" aria-hidden="true">★</span>' : ''}<b>${esc(d.n)}</b>${d.a ? `<span class="dw-addr">${esc(d.a)}</span>` : ''}</span></span></li>`;
 
   // Every other row is pushed half a plaque across, so the width is n plaques plus that half.
+  const shiftStyle = document.head.appendChild(document.createElement('style'));
   let fittedTo = -1; // the wall width the honeycomb was last sized for
   function fit() {
-    const cs = getComputedStyle(hive);
-    const s = parseFloat(cs.getPropertyValue('--s')) || 170;
-    const m = parseFloat(cs.getPropertyValue('--m')) || 3;
+    // measure a plaque (its size can follow the screen width on phones)
+    const li = grid.querySelector('li');
+    if (!li) return;
+    const lcs = getComputedStyle(li);
+    const s = parseFloat(lcs.width) || 170;
+    const m = parseFloat(lcs.marginRight) || 0;
     const cell = s + 2 * m;
     const offset = s / 2 + m;
     const avail = hive.clientWidth;
     fittedTo = avail;
     let n = Math.max(1, Math.floor((avail - offset) / cell));
     if (list.length > 0 && list.length < n) n = list.length; // few matches: no wide empty row
-    grid.style.width = Math.min(avail, Math.ceil(n * cell + offset)) + 'px';
+    // n plaques on a row, and n on the next one shifted half a plaque across (+1px so rounding can't push one down)
+    grid.style.width = Math.min(avail, Math.ceil(n * cell + offset) + 1) + 'px';
+    // the first plaque of every second row (plaques n+1, 3n+1, 5n+1 ...) gets the extra half-plaque margin
+    shiftStyle.textContent = `#dwGrid>li:nth-child(${2 * n}n+${n + 1}){margin-left:${m + offset}px}`;
   }
 
   function loadMore() {
@@ -76,8 +83,8 @@
     if (status) status.textContent = q ? 'Showing ' + list.length + ' of ' + all.length + ' donors' : 'Showing all ' + all.length + ' donors';
     if (empty) empty.hidden = list.length !== 0;
     hive.hidden = list.length === 0;
-    fit();
     loadMore();
+    fit(); // after the plaques are in, so there is one to measure
     check();
   }
 

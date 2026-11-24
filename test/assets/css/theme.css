@@ -1539,13 +1539,12 @@ html[data-theme="dark"] .dw-wall{background:
 .dw-bolt{position:absolute;top:50%;left:18px;width:12px;height:12px;margin-top:-6px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#E4E6E8,#7B7F83 70%);box-shadow:0 1px 2px rgba(0,0,0,.6)}
 .dw-bolt+.dw-bolt{left:auto;right:18px}
 
-/* Honeycomb: inline-block hexagons, with a float whose shape pushes every other row half a plaque across */
-/* --h is one row's height. The float's shape is a thin stripe through the middle of every second row
-   (period exactly two rows), so rounding can't push it into a neighbouring row on a long wall */
-.dw-hive{--s:170px;--m:7px;--h:calc(var(--s)*.8660254 + 2*var(--m));display:flex;justify-content:center;padding-bottom:calc(var(--s)*.2886751)}
+/* Honeycomb: inline-block hexagons (--s wide, --m margin) in rows that overlap by a quarter of a plaque */
+.dw-hive{--s:170px;--m:7px;display:flex;justify-content:center;padding-bottom:calc(var(--s)*.2886751)}
 .dw-grid{list-style:none;margin:0;padding:0;font-size:0;max-width:100%}
-/* height 100%: exactly the wall's height (any taller and it hangs below the wall, adding blank page after the footer) */
-.dw-grid::before{content:"";float:left;width:calc(var(--s)/2 + var(--m));height:100%;shape-outside:repeating-linear-gradient(#0000 0 calc(1.5*var(--h) - 2px),#000 0 calc(1.5*var(--h) + 2px),#0000 0 calc(2*var(--h)))}
+/* Every second row is pushed half a plaque across by assets/js/donor-wall.js, which knows how many
+   plaques fit on a row: it gives the first plaque of those rows a larger left margin (works in every
+   browser; Safari on iPhone doesn't support the CSS float-shape way of doing this). */
 .dw-plaque{--face:linear-gradient(150deg,#2D4A7C,#16274A);--fg:#F4F7FC;--fg2:#C7D5EE;
   position:relative;z-index:0;display:inline-block;vertical-align:top;width:var(--s);height:calc(var(--s)*1.1547005);margin:var(--m);margin-bottom:calc(var(--m) - var(--s)*.2886751);font-size:1rem;transition:transform .2s ease}
 .dw-plaque[hidden]{display:none}
@@ -1577,7 +1576,8 @@ html[data-theme="dark"] .dw-plaque::before{inset:-14% -16%;background:radial-gra
 .dw-plaque.f-gold,html[data-theme="dark"] .dw-plaque.f-gold{filter:drop-shadow(0 0 3px rgba(var(--glow),1)) drop-shadow(0 0 12px rgba(var(--glow),.85)) drop-shadow(0 6px 22px rgba(var(--glow),.5))}
 
 @media (max-width:576px){
-  .dw-hive{--s:124px;--m:4px}
+  /* two plaques per row on any phone: they shrink with the screen (2.5 plaques + margins fit the wall) */
+  .dw-hive{--s:min(124px,calc((100vw - 80px)/2.5));--m:4px}
   .dw-face{inset:2px;gap:5px;padding:0 12px}
   .dw-face b{font-size:10px;letter-spacing:.04em}
   .dw-plaque.lg .dw-face b{font-size:9px;letter-spacing:.02em}

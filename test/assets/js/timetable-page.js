@@ -76,7 +76,7 @@
   }
 
   function unavailable() {
-    body.innerHTML = '<tr><td colspan="7" class="tt-msg">The timetable could not be loaded right now. Please refresh the page, or call us on 07878 561130.</td></tr>';
+    body.innerHTML = '<tr><td colspan="7" class="tt-msg">The timetable could not be loaded right now. Please refresh the page, or call us on 020 7265 8603.</td></tr>';
     [prev, next, sel].forEach((el) => { el.disabled = true; });
   }
 

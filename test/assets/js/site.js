@@ -225,7 +225,7 @@ const SITE = {
 
   // shown in place of the times if the timetable can't be loaded
   function timesUnavailable() {
-    const msg = 'Prayer times could not be loaded right now. Please refresh the page, or call us on 07878 561130.';
+    const msg = 'Prayer times could not be loaded right now. Please refresh the page, or call us on 020 7265 8603.';
     $('#rows').innerHTML = `<li class="rows-msg">${esc(msg)}</li>`;
     $('#week').innerHTML = `<tr><td colspan="7" class="rows-msg">${esc(msg)}</td></tr>`;
     $('#arc').innerHTML = '';

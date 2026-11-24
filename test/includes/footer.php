@@ -25,12 +25,10 @@ defined('HIUK') or exit;
         <div class="col-12">
           <div class="f-brand">
             <a class="brand" href="<?= home_url() ?>" aria-label="Stepney Shah Jalal Mosque, home"><img class="brand-logo" src="assets/images/logo-full.png" alt="Stepney Shahjalal Mosque &amp; Cultural Centre" width="312" height="99" loading="lazy"></a>
-            <p>A mosque and community centre serving worshippers, families and neighbours through prayer, education and care. Registered charity no. 1115709.</p>
+            <p>A mosque and community centre in Stepney Green, serving worshippers, families and neighbours through prayer, education and care since 1985.</p>
             <div class="socials d-flex">
-          <a href="<?= home_url() ?>" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h-2a4 4 0 0 0-4 4v3H7v4h2v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h2z"/></svg></a>
-          <a href="<?= home_url() ?>" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></a>
-          <a href="<?= home_url() ?>" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z"/></svg></a>
-          <a href="<?= home_url() ?>" aria-label="WhatsApp channel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-13.2 8L3 21l1-4.6A9 9 0 1 1 21 12z"/></svg></a>
+          <a href="https://www.facebook.com/stepneyshahjalalmosque" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h-2a4 4 0 0 0-4 4v3H7v4h2v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h2z"/></svg></a>
+          <a href="https://www.youtube.com/@stepneyshahjalalmosquecult5709" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z"/></svg></a>
             </div>
             <div class="f-links" aria-label="Our sister organisations">
               <a class="btn site-btn btn-glass site-btn-sm" href="https://borunamadrasah.org" target="_blank" rel="noopener">Boruna Madrasa<svg class="ico" style="width:14px;height:14px"><use href="#i-arrow-ur"/></svg></a>
@@ -47,7 +45,7 @@ defined('HIUK') or exit;
 <?php else: ?>
           <div class="col"><h3>Legal</h3><a href="privacy-policy">Privacy Policy</a><a href="privacy-policy#cookies">Cookies</a><button class="ck-open" type="button" data-cookie-settings>Cookie settings</button></div>
 <?php endif; ?>
-          <div class="col"><h3>Contact</h3><span class="f-ct"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span>534 Barking Road<br>London, E13 8QE<br>United Kingdom</span></span><a class="f-ct" href="tel:+447878561130"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><span>07878 561130</span></a><a class="f-ct" href="mailto:info@hefazotheislamuk.org"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg><span>info@<wbr>hefazotheislamuk.org</span></a></div>
+          <div class="col"><h3>Contact</h3><span class="f-ct"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span>Stepney Shahjalal Mosque<br>81-83 Duckett Street<br>London, E1 4TD<br>United Kingdom</span></span><a class="f-ct" href="tel:+442072658603"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><span>020 7265 8603</span></a><a class="f-ct" href="tel:+447442490694"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><span>07442 490694</span></a><a class="f-ct" href="mailto:info@stepneyshahjalalmosque.org.uk"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg><span>info@<wbr>stepneyshahjalalmosque.org.uk</span></a></div>
         </nav></div>
       </div>
     </div>

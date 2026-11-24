@@ -32,9 +32,9 @@
           return;
         }
         if (data.errors) Object.keys(data.errors).forEach((k) => { if (FIELDS[k]) mark(FIELDS[k], false); });
-        show(data.message || 'Sorry, your message could not be sent. Please try again or email info@hefazotheislamuk.org.', true);
+        show(data.message || 'Sorry, your message could not be sent. Please try again or email info@stepneyshahjalalmosque.org.uk.', true);
       })
-      .catch(() => show('Sorry, your message could not be sent. Please check your connection, or email info@hefazotheislamuk.org.', true))
+      .catch(() => show('Sorry, your message could not be sent. Please check your connection, or email info@stepneyshahjalalmosque.org.uk.', true))
       .finally(() => { btn.disabled = false; btn.firstChild.textContent = label; });
   });
 })();

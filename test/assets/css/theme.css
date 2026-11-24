@@ -1576,14 +1576,20 @@ html[data-theme="dark"] .dw-plaque::before{inset:-14% -16%;background:radial-gra
 .dw-plaque.f-gold,html[data-theme="dark"] .dw-plaque.f-gold{filter:drop-shadow(0 0 3px rgba(var(--glow),1)) drop-shadow(0 0 12px rgba(var(--glow),.85)) drop-shadow(0 6px 22px rgba(var(--glow),.5))}
 
 @media (max-width:576px){
-  /* two plaques per row on any phone: they shrink with the screen (2.5 plaques + margins fit the wall) */
+  /* Two plaques per row, as big as the wall allows: assets/js/donor-wall.js sets --s from the wall's
+     width (this is the size before the script runs). The text grows and shrinks with the plaque. */
   .dw-hive{--s:min(124px,calc((100vw - 80px)/2.5));--m:4px}
-  .dw-face{inset:2px;gap:5px;padding:0 12px}
-  .dw-face b{font-size:10px;letter-spacing:.04em}
-  .dw-plaque.lg .dw-face b{font-size:9px;letter-spacing:.02em}
-  .dw-plaque.xl .dw-face b{font-size:8.5px;letter-spacing:0}
-  .dw-addr{font-size:8.5px;letter-spacing:.08em}
+  .dw-wall{padding-inline:4px;border-radius:20px}
+  .dw-face{inset:2px;gap:calc(var(--s)*.04);padding:0 calc(var(--s)*.1)}
+  .dw-face b{font-size:calc(var(--s)*.08);letter-spacing:.04em}
+  .dw-plaque.lg .dw-face b{font-size:calc(var(--s)*.072);letter-spacing:.02em}
+  .dw-plaque.xl .dw-face b{font-size:calc(var(--s)*.066);letter-spacing:0}
+  .dw-addr{font-size:calc(var(--s)*.066);letter-spacing:.08em}
   .dw-addr::before{margin-bottom:4px}
+  .dw-star{font-size:calc(var(--s)*.09)}
+  /* the search box and the count, one above the other, centred */
+  .dw-tools{flex-direction:column;justify-content:center;text-align:center}
+  .dw-search{flex:0 0 auto;width:100%}
   .dw-sign{padding:16px 40px 14px}
   .dw-sign-sub{font-size:10px;letter-spacing:.1em}
   .dw-bolt{left:12px;width:10px;height:10px;margin-top:-5px}

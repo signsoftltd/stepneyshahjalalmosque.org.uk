@@ -27,10 +27,19 @@
   // Every other row is pushed half a plaque across, so the width is n plaques plus that half.
   const shiftStyle = document.head.appendChild(document.createElement('style'));
   let fittedTo = -1; // the wall width the honeycomb was last sized for
+  const phone = window.matchMedia('(max-width: 576px)');
   function fit() {
-    // measure a plaque (its size can follow the screen width on phones)
     const li = grid.querySelector('li');
     if (!li) return;
+    // On phones: two plaques per row filling the wall, i.e. 2.5 plaques plus 5 margins across
+    if (phone.matches) {
+      const pm = parseFloat(getComputedStyle(li).marginRight) || 0;
+      const size = Math.min(190, Math.floor(((hive.clientWidth - 5 * pm - 2) / 2.5) * 10) / 10);
+      hive.style.setProperty('--s', size + 'px');
+    } else {
+      hive.style.removeProperty('--s');
+    }
+    // measure a plaque
     const lcs = getComputedStyle(li);
     const s = parseFloat(lcs.width) || 170;
     const m = parseFloat(lcs.marginRight) || 0;
@@ -125,4 +134,5 @@
   check();
   if ('ResizeObserver' in window) new ResizeObserver(fit).observe(hive.parentElement);
   else window.addEventListener('resize', fit);
+  if (phone.addEventListener) phone.addEventListener('change', fit); // e.g. turning a tablet
 })();

@@ -133,15 +133,18 @@
     { label: 'Full Year Calendar', icon: 'cal', href: 'time.html', key: 'time' },
     { label: 'Ramadhan Timetable', icon: 'crescent', href: 'ramadan.html', key: 'ramadan' },
     { label: 'Digital Tasbih', icon: 'beads', href: 'tasbih.html', key: 'tasbih' },
-    { label: 'News & Events', icon: 'mega', web: 'events' },
     { label: 'Daily Duas', icon: 'book', href: 'duas.html', key: 'duas' },
     { label: '99 Names Of Allah', icon: 'star', href: 'names.html', key: 'names' },
     { label: 'Qibla Compass', icon: 'compass', href: 'qibla.html', key: 'qibla' },
     { label: 'Zakat Calculator', icon: 'calc', web: 'zakat' },
     { label: 'Live Stream', icon: 'live', href: 'live.html', key: 'live' },
     { label: 'Donate', icon: 'donate', href: 'give.html', key: 'give' },
-    { label: 'Services', icon: 'people', web: 'services' },
+    // the website's menu, in the same order
     { label: 'About Us', icon: 'info', web: 'about' },
+    { label: 'What We Do', icon: 'mosque', web: 'services' },
+    { label: 'Trustees', icon: 'people', web: 'trustees' },
+    { label: 'News', icon: 'mega', web: 'events' },
+    { label: 'Donor Wall', icon: 'heart', web: 'donorwall' },
     { label: 'Contact Us', icon: 'phone', web: 'contact' },
     { label: 'Settings', icon: 'gear', href: 'settings.html', key: 'settings' }
   ];

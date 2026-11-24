@@ -36,6 +36,8 @@ window.HIUK_CONFIG = {
     zakat: { title: 'Zakat calculator', sub: 'Work out the Zakat you owe', path: 'zakat' },
     events: { title: 'News', sub: 'What\'s on at the masjid', path: 'events' },
     services: { title: 'What we do', sub: 'Prayer, learning and care', path: 'services' },
+    trustees: { title: 'Trustees', sub: 'Our Board of Trustees', path: 'trustees' },
+    donorwall: { title: 'Donor Wall', sub: 'In recognition of our donors', path: 'donor-wall' },
     about: { title: 'About us', sub: 'Stepney Shah Jalal Mosque', path: 'about' },
     contact: { title: 'Contact us', sub: 'Get in touch with us', path: 'contact' }
   },

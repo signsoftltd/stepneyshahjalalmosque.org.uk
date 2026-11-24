@@ -40,7 +40,10 @@
       if (/^#/.test(link)) return { href: 'index.html', outside: false };   // a section of the website's home page
       const page = link.replace(/^\.?\//, '').replace(/\.(html|php)$/i, '').replace(/#.*$/, '');
       if (page in IN_APP) return { href: IN_APP[page], outside: false };
-      if ((CFG.webPages || {})[page]) return { href: 'web.html#' + page, outside: false };
+      // a website page the app shows inside itself (matched by its address, e.g. donor-wall -> webPages.donorwall)
+      const pages = CFG.webPages || {};
+      const key = Object.keys(pages).find((k) => pages[k].path === page);
+      if (key) return { href: 'web.html#' + key, outside: false };
       return { href: BASE + link.replace(/^\.?\//, ''), outside: true };
     }
     // the button's link: always the full address, opened in the phone's browser (openLink below)

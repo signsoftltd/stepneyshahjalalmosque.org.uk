@@ -5,7 +5,23 @@ require __DIR__ . '/includes/init.php';
    "star": true shows the gold star badge on that plaque (as on the previous website). */
 $donors = json_decode((string) @file_get_contents(__DIR__ . '/includes/donors.json'), true);
 if (!is_array($donors)) $donors = [];
+$donors = array_values(array_filter($donors, function ($d) { return trim((string) ($d['name'] ?? '')) !== ''; }));
 $count = count($donors);
+
+/* Each plaque gets a finish (like a wall of metal and enamel plaques). Starred donors are gold;
+   the others take a finish picked from their name, so it stays the same when the list changes. */
+function donor_finish($d)
+{
+	if (!empty($d['star'])) return 'gold';
+	$finishes = ['navy', 'bronze', 'silver', 'charcoal', 'green'];
+	return $finishes[abs(crc32((string) $d['name'])) % count($finishes)];
+}
+/* Smaller text for long names, so they fit inside the hexagon */
+function donor_size($name)
+{
+	$len = mb_strlen($name);
+	return $len > 46 ? ' xl' : ($len > 30 ? ' lg' : '');
+}
 
 $page = [
 	'path' => 'donor-wall',
@@ -20,7 +36,7 @@ require __DIR__ . '/includes/header.php';
 ?>
 <main id="main">
   <section class="pol-hero dw-hero wrap on-dark">
-    <div class="pattern"></div>
+    <div class="dw-wood" aria-hidden="true"></div>
     <div class="container site-container">
       <div class="bismillah" lang="ar" dir="rtl">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
       <span class="kicker">Stepney Shahjalal Mosque &amp; Cultural Centre</span>
@@ -38,7 +54,6 @@ require __DIR__ . '/includes/header.php';
       </figure>
 
       <div class="dw-tools">
-        <h2 id="dw-title" class="visually-hidden">Our donors</h2>
         <label class="dw-search">
           <span class="visually-hidden">Search donors by name or street</span>
           <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
@@ -47,16 +62,28 @@ require __DIR__ . '/includes/header.php';
         <p class="dw-status" id="dwStatus" aria-live="polite">Showing all <?= $count ?> donors</p>
       </div>
 
-      <ul class="dw-grid" id="dwGrid">
+      <div class="dw-wall">
+        <div class="dw-sign">
+          <span class="dw-bolt" aria-hidden="true"></span><span class="dw-bolt" aria-hidden="true"></span>
+          <svg class="ico dw-sign-leaf" aria-hidden="true"><use href="#i-sprout"/></svg>
+          <h2 id="dw-title">Donor Recognition Wall</h2>
+          <span class="dw-sign-sub">Stepney Shahjalal Mosque &amp; Cultural Centre</span>
+        </div>
+
+        <!-- Hexagon plaques in a honeycomb; assets/js/donor-wall.js centres the rows and filters them -->
+        <div class="dw-hive">
+          <ul class="dw-grid" id="dwGrid">
 <?php foreach ($donors as $d):
-	$name = (string) ($d['name'] ?? '');
-	$addr = (string) ($d['address'] ?? '');
-	if ($name === '') continue;
+	$name = (string) $d['name'];
+	$addr = trim((string) ($d['address'] ?? ''));
+	if (stripos($addr, 'N/A') === 0) $addr = '';
 ?>
-        <li class="dw-plaque" data-search="<?= e(mb_strtolower($name . ' ' . $addr)) ?>"><?php if (!empty($d['star'])): ?><span class="dw-star" aria-hidden="true">★</span><?php endif; ?><b><?= e($name) ?></b><span><?= e($addr) ?></span></li>
+            <li class="dw-plaque f-<?= donor_finish($d) ?><?= donor_size($name) ?>" data-search="<?= e(mb_strtolower($name . ' ' . $addr)) ?>"><span class="dw-hex"><span class="dw-face"><?php if (!empty($d['star'])): ?><span class="dw-star" aria-hidden="true">★</span><?php endif; ?><b><?= e($name) ?></b><?php if ($addr !== ''): ?><span class="dw-addr"><?= e($addr) ?></span><?php endif; ?></span></span></li>
 <?php endforeach; ?>
-      </ul>
-      <p class="dw-empty" id="dwEmpty" hidden>No donors found. Try a different name or street.</p>
+          </ul>
+        </div>
+        <p class="dw-empty" id="dwEmpty" hidden>No donors found. Try a different name or street.</p>
+      </div>
     </div>
   </section>
 </main>

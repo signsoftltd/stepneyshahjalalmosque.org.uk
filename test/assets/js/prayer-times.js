@@ -13,7 +13,7 @@
      .year             the year the timetable is for (the current year) */
 (function () {
   'use strict';
-  const URL = window.HIUK_TIMETABLE || 'https://apps.signsoft.co.uk/api/clients/hefazotheislamuk/yearly-timetable.php';
+  const URL = window.HIUK_TIMETABLE || 'https://apps.signsoft.co.uk/api/clients/stepneyshahjalalmosque/yearly-timetable.php';
   const CACHE_KEY = 'hiuk_timetable';
   const MAX_AGE = 6 * 3600 * 1000; // refresh the saved copy every 6 hours
 

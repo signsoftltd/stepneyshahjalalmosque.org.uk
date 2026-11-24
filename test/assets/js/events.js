@@ -3,7 +3,7 @@
 window.HIUKEvents = (function () {
   'use strict';
   // Events and FAQs are managed in the admin panel; the address is set in config.js.
-  const API_BASE = window.HIUK_API || 'https://admin.hefazotheislamuk.org/api/public';
+  const API_BASE = window.HIUK_API || 'https://manage.stepneyshahjalalmosque.org.uk/api/public';
   const API = API_BASE + '/posts';
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const pad = (n) => String(n).padStart(2, '0');

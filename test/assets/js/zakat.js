@@ -3,7 +3,7 @@
    their own (Manual). Nothing typed here is sent anywhere or stored. */
 (function () {
   'use strict';
-  const API = (window.HIUK_API || 'https://admin.hefazotheislamuk.org/api/public') + '/zakat';
+  const API = (window.HIUK_API || 'https://manage.stepneyshahjalalmosque.org.uk/api/public') + '/zakat';
   const GRAMS = { gold: 87.48, silver: 612.36 };
   const RATE = 0.025;
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));

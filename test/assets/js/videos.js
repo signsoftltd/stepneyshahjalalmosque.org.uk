@@ -11,7 +11,7 @@
   const more = document.getElementById('videoMore');
   if (!section || !grid) return;
 
-  const API = (window.HIUK_API || 'https://admin.hefazotheislamuk.org/api/public') + '/videos';
+  const API = (window.HIUK_API || 'https://manage.stepneyshahjalalmosque.org.uk/api/public') + '/videos';
   const PAGE = Number(section.dataset.limit) || 6;
   const EMPTY = section.dataset.empty || '';
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));

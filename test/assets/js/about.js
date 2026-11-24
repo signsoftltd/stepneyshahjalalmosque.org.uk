@@ -3,7 +3,7 @@
    it as it is if it can't be loaded. Contact details and facilities stay as written in the page. */
 (function () {
   'use strict';
-  const API = (window.HIUK_API || 'https://admin.hefazotheislamuk.org/api/public') + '/about';
+  const API = (window.HIUK_API || 'https://manage.stepneyshahjalalmosque.org.uk/api/public') + '/about';
   const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const highlight = (t) => String(t).split('*').map((part, i) => (i % 2 ? `<em>${esc(part)}</em>` : esc(part))).join('');
   const safeLink = (url) => /^(https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:[+\d\s()-]+|#[\w-]+|\.?\/[^\s<>"]*|[\w-]+(\.html|\.php)?(#[\w-]+)?)$/i.test(String(url || '').trim());

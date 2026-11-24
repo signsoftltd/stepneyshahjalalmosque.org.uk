@@ -31,7 +31,7 @@
     status.hidden = true;
 
     const body = new URLSearchParams({ email: email, source: '/' + location.pathname.split('/').pop() });
-    fetch((window.HIUK_API || 'https://admin.hefazotheislamuk.org/api/public') + '/subscribe', { method: 'POST', body: body, headers: { Accept: 'application/json' } })
+    fetch((window.HIUK_API || 'https://manage.stepneyshahjalalmosque.org.uk/api/public') + '/subscribe', { method: 'POST', body: body, headers: { Accept: 'application/json' } })
       .then((r) => r.json().catch(() => ({})).then((data) => ({ r, data })))
       .then(({ r, data }) => {
         if (r.ok && data.success) {

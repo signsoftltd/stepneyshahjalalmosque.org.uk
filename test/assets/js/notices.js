@@ -4,7 +4,7 @@
    Nothing is shown if the settings can't be loaded. */
 (function () {
   'use strict';
-  const API = (window.HIUK_API || 'https://admin.hefazotheislamuk.org/api/public') + '/notices';
+  const API = (window.HIUK_API || 'https://manage.stepneyshahjalalmosque.org.uk/api/public') + '/notices';
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   // same rule as the admin panel: pages, #sections, /paths, web addresses, mailto: and tel:
   const safeLink = (url) => /^(https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:[+\d\s()-]+|#[\w-]+|\.?\/[^\s<>"]*|[\w-]+(\.html|\.php)?(#[\w-]+)?)$/i.test(String(url || '').trim());

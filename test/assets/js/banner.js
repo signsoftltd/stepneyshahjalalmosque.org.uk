@@ -7,7 +7,7 @@
   const hero = document.getElementById('top');
   if (!hero) return;
 
-  const API = (window.HIUK_API || 'https://admin.hefazotheislamuk.org/api/public') + '/banner';
+  const API = (window.HIUK_API || 'https://manage.stepneyshahjalalmosque.org.uk/api/public') + '/banner';
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const el = (key) => hero.querySelector(`[data-banner="${key}"]`);
   // same rule as the admin panel: pages, #sections, /paths, web addresses, mailto: and tel:

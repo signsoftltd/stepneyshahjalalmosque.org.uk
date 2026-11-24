@@ -5,7 +5,7 @@
   const f = document.getElementById('contactForm');
   if (!f) return;
   const $ = (s, r = document) => r.querySelector(s);
-  const API = (window.HIUK_API || 'https://admin.hefazotheislamuk.org/api/public') + '/contact';
+  const API = (window.HIUK_API || 'https://manage.stepneyshahjalalmosque.org.uk/api/public') + '/contact';
 
   f.addEventListener('submit', (e) => {
     e.preventDefault();

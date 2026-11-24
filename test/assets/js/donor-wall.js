@@ -1,6 +1,7 @@
 /* Donor Wall: plaques load in batches as the visitor scrolls down the wall, the search
    looks through every donor, and the honeycomb is sized so whole rows sit centred.
-   donor-wall.php puts the first batch in the page and the full list in #dwData. */
+   donor-wall.php puts the first batch in the page and its built-in list in #dwData;
+   the list from the admin panel (Donor Wall) then replaces it, if it can be loaded. */
 (function () {
   'use strict';
   const input = document.getElementById('dwSearch');
@@ -54,10 +55,10 @@
     while (more && !more.hidden && guard-- > 0 && more.getBoundingClientRect().top < window.innerHeight + 600) loadMore();
   }
   let ticking = false;
-  const onScroll = () => {
+  const onScroll = () => { // at most every 80ms while scrolling
     if (ticking) return;
     ticking = true;
-    requestAnimationFrame(() => { ticking = false; check(); });
+    setTimeout(() => { ticking = false; check(); }, 80);
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll);
@@ -82,6 +83,30 @@
       timer = setTimeout(search, 150);
     });
   }
+
+  // Replace the built-in list with the admin panel's, keeping as many plaques on the wall as there are now
+  function useList(donors) {
+    all = donors.filter((d) => d && d.n);
+    all.forEach((d) => { d.q = (d.n + ' ' + (d.a || '')).toLowerCase(); });
+    const q = input ? input.value.trim().toLowerCase() : '';
+    list = q ? all.filter((d) => d.q.indexOf(q) !== -1) : all;
+    const keep = Math.min(list.length, Math.max(shown, BATCH));
+    grid.innerHTML = list.slice(0, keep).map(plaque).join('');
+    shown = keep;
+    document.querySelectorAll('[data-dw="count"]').forEach((el) => { el.textContent = all.length; });
+    if (status) status.textContent = q ? 'Showing ' + list.length + ' of ' + all.length + ' donors' : 'Showing all ' + all.length + ' donors';
+    if (empty) empty.hidden = list.length !== 0;
+    hive.hidden = list.length === 0;
+    fit();
+    update();
+    check();
+  }
+
+  const API = (window.HIUK_API || 'https://manage.stepneyshahjalalmosque.org.uk/api/public') + '/donors';
+  fetch(API, { headers: { Accept: 'application/json' } })
+    .then((r) => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then((data) => { if (data && data.success && Array.isArray(data.donors)) useList(data.donors); })
+    .catch(() => {}); // keep the built-in list
 
   fit();
   update();

@@ -1,8 +1,9 @@
 <?php
 require __DIR__ . '/includes/init.php';
 
-/* Donors are kept in includes/donors.json: one entry per plaque, in display order.
-   "star": true shows the gold star badge on that plaque (as on the previous website). */
+/* Donors are managed in the admin panel (Donor Wall) and loaded by assets/js/donor-wall.js.
+   includes/donors.json is the built-in list, shown if the admin panel can't be reached:
+   one entry per plaque, in display order; "star": true shows a gold plaque with a star. */
 $donors = json_decode((string) @file_get_contents(__DIR__ . '/includes/donors.json'), true);
 if (!is_array($donors)) $donors = [];
 $donors = array_values(array_filter($donors, function ($d) { return trim((string) ($d['name'] ?? '')) !== ''; }));
@@ -54,7 +55,7 @@ require __DIR__ . '/includes/header.php';
       <span class="kicker">Stepney Shahjalal Mosque &amp; Cultural Centre</span>
       <h1>Donor <em>Wall</em></h1>
       <p>In eternal recognition of those who gave generously for the sake of Allah</p>
-      <div class="dw-count"><b class="tnum"><?= $count ?></b><span>Honoured donors</span></div>
+      <div class="dw-count"><b class="tnum" data-dw="count"><?= $count ?></b><span>Honoured donors</span></div>
     </div>
   </section>
 

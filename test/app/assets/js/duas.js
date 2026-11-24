@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK app: Daily duas. Each dua: Arabic, transliteration and translation; the Arabic text size can be
+/* Stepney Shah Jalal Mosque app: Daily duas. Each dua: Arabic, transliteration and translation; the Arabic text size can be
    changed (kept on the phone). */
 (function () {
   'use strict';

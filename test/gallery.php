@@ -3,8 +3,8 @@ require __DIR__ . '/includes/init.php';
 
 $page = [
 	'path' => 'gallery',
-	'title' => 'Gallery | Hefazothe Islam UK',
-	'description' => 'Photos from Hefazothe Islam UK: prayers, classes, events and community life at our masjid on Barking Road, London.',
+	'title' => 'Gallery | Stepney Shah Jalal Mosque',
+	'description' => 'Photos from Stepney Shah Jalal Mosque: prayers, classes, events and community life at our masjid on Barking Road, London.',
 	'scripts' => [
 		'assets/js/gallery.js',
 	],

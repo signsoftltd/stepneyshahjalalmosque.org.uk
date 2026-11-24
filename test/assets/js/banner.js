@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK: home page banner (hero) text, buttons and pictures from the admin panel (Banner),
+/* Stepney Shah Jalal Mosque: home page banner (hero) text, buttons and pictures from the admin panel (Banner),
    and the "About the mosque" section's picture and text (Home Page > About Section).
    The banner in index.php is the built-in default; this replaces it once the settings load,
    and leaves it as it is if they can't be loaded. */

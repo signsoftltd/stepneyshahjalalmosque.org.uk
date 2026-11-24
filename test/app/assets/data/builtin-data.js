@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK app: built-in copies of the yearly prayer timetable and Hijri calendar (downloaded 2026-10-28).
+/* Stepney Shah Jalal Mosque app: built-in copies of the yearly prayer timetable and Hijri calendar (downloaded 2026-10-28).
    Used only until the app has fetched the latest data from the APIs (assets/js/config.js), e.g. on first launch offline.
    Update them each year: timetable for the year in 'year', Hijri calendar keyed by year. */
 window.HIUK_BUILTIN = {

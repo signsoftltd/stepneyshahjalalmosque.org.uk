@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK app: prayer times and Hijri dates.
+/* Stepney Shah Jalal Mosque app: prayer times and Hijri dates.
    Data comes from the APIs in config.js and is saved on the phone, so the app keeps working offline.
    Order of preference: saved copy (if recent) > live API > older saved copy > built-in copy (assets/data/builtin-data.js).
 

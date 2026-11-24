@@ -1,11 +1,11 @@
 <?php
-/* Hefazothe Islam UK website: settings and helpers shared by every page.
+/* Stepney Shah Jalal Mosque website: settings and helpers shared by every page.
    Each page sets $page (see below), then includes header.php, prints its content and includes footer.php:
 
    $page = [
      'path'        => 'events',       // the page's clean address after the site folder ('' for the home page)
      'donations'   => true,           // the page has donation forms (see uses_donations())
-     'title'       => 'Events | Hefazothe Islam UK',
+     'title'       => 'Events | Stepney Shah Jalal Mosque',
      'description' => '...',          // search engines and link previews
      'nav'         => 'events',       // menu item to mark as the current page: home, events, services, about, contact
      'home'        => false,          // the home page has the prayer bar, in-page menu links and the "Today" footer column
@@ -19,7 +19,7 @@ define('HIUK', true);
 // The website's full address, without a slash at the end. Used for link previews (Facebook, WhatsApp, X)
 // and search engines.
 const SITE_URL = 'https://hefazotheislamuk.org';
-const SITE_NAME = 'Hefazothe Islam UK';
+const SITE_NAME = 'Stepney Shah Jalal Mosque';
 
 /** Text made safe to print in HTML. */
 function e($text)

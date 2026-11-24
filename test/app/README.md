@@ -1,4 +1,4 @@
-# Hefazothe Islam UK app
+# Stepney Shah Jalal Mosque app
 
 A small web app (HTML, CSS, JavaScript; no build step, no server) that runs inside the Android and iOS apps as a local webview. Open `index.html` in a browser to try it.
 

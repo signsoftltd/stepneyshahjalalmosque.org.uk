@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK: the loading screen (theme.css "Loading screen"). Marks the page ready once it is built and its
+/* Stepney Shah Jalal Mosque: the loading screen (theme.css "Loading screen"). Marks the page ready once it is built and its
    fonts are in (at most 1.5 seconds; not waiting for pictures), and shows the loading screen again while going to
    another page of the website. Loaded at the end of every page (footer.php). */
 (function () {

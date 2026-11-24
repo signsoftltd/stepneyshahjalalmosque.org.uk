@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK app: the sky behind the home screen's header, and the sun's path across it.
+/* Stepney Shah Jalal Mosque app: the sky behind the home screen's header, and the sun's path across it.
    The sky follows the day from the prayer timetable (data.js): night with stars (Isha to Fajr), the dawn glow (Fajr),
    sunrise, morning, noon (Dhuhr), afternoon (Asr), sunset (Maghrib) and dusk, each colour fading into the next.
    An arc from sunrise (left) to sunset (Maghrib, right): by day the sun sits where it is now and the part of the

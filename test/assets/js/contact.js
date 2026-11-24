@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK: "Send us a message" form on contact.php, sent to the admin panel's
+/* Stepney Shah Jalal Mosque: "Send us a message" form on contact.php, sent to the admin panel's
    Messages inbox. The address comes from config.js. */
 (function () {
   'use strict';

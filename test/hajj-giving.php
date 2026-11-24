@@ -4,8 +4,8 @@ require __DIR__ . '/includes/init.php';
 $page = [
 	'path' => 'hajj-giving',
 	'donations' => true,
-	'title' => 'Hajj Giving | Hefazothe Islam UK',
-	'description' => 'Hajj Giving at Hefazothe Islam UK: donate automatically every day of the blessed first ten days of Dhul Hijjah.',
+	'title' => 'Hajj Giving | Stepney Shah Jalal Mosque',
+	'description' => 'Hajj Giving at Stepney Shah Jalal Mosque: donate automatically every day of the blessed first ten days of Dhul Hijjah.',
 ];
 require __DIR__ . '/includes/header.php';
 ?>

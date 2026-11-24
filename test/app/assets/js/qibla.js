@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK app: Qibla. The great-circle direction (bearing from true north) from where you are to the
+/* Stepney Shah Jalal Mosque app: Qibla. The great-circle direction (bearing from true north) from where you are to the
    Kaaba, and a compass that turns with the phone where it has one. Without your location it uses the masjid's.
    Compass: iPhone (webkitCompassHeading, after a tap to allow motion access) and Android (deviceorientationabsolute).
    Phone compasses point to magnetic north; in the UK that is within about 1-2 degrees of true north. */
@@ -9,7 +9,7 @@
     const CFG = window.HIUK_CONFIG || {};
     const $ = (id) => document.getElementById(id);
     const KAABA = { lat: 21.422487, lon: 39.826206 };
-    const MASJID = CFG.masjidLocation || { lat: 51.5299, lon: 0.0258, name: 'Hefazothe Islam UK, London' };
+    const MASJID = CFG.masjidLocation || { lat: 51.5299, lon: 0.0258, name: 'Stepney Shah Jalal Mosque, London' };
     const STORE_KEY = 'hiuk_app_location';
     const rad = (d) => d * Math.PI / 180, deg = (r) => r * 180 / Math.PI;
     const norm = (a) => ((a % 360) + 360) % 360;

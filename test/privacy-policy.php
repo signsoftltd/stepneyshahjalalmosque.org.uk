@@ -3,8 +3,8 @@ require __DIR__ . '/includes/init.php';
 
 $page = [
 	'path' => 'privacy-policy',
-	'title' => 'Privacy Policy | Hefazothe Islam UK',
-	'description' => 'How Hefazothe Islam UK collects, uses and protects your personal information, your rights under UK GDPR, and how we use cookies.',
+	'title' => 'Privacy Policy | Stepney Shah Jalal Mosque',
+	'description' => 'How Stepney Shah Jalal Mosque collects, uses and protects your personal information, your rights under UK GDPR, and how we use cookies.',
 ];
 require __DIR__ . '/includes/header.php';
 ?>
@@ -15,7 +15,7 @@ require __DIR__ . '/includes/header.php';
     <div class="container site-container">
       <span class="kicker">Legal</span>
       <h1>Privacy <em>Policy</em></h1>
-      <p>How Hefazothe Islam UK collects, uses and protects your personal information, and the rights you have over it.</p>
+      <p>How Stepney Shah Jalal Mosque collects, uses and protects your personal information, and the rights you have over it.</p>
       <div class="pol-meta"><span>Last updated: 13 October 2026</span><span>UK GDPR &amp; Data Protection Act 2018</span></div>
     </div>
   </section>
@@ -44,7 +44,7 @@ require __DIR__ . '/includes/header.php';
       <div class="col-lg-9"><article class="pol">
         <section id="who">
           <h2><small>01</small>Who we are</h2>
-          <p>Hefazothe Islam UK ("we", "us") is a mosque and Islamic community centre, established in 1999. We are the controller of the personal information described in this policy.</p>
+          <p>Stepney Shah Jalal Mosque ("we", "us") is a mosque and Islamic community centre, established in 1999. We are the controller of the personal information described in this policy.</p>
           <p>Registered charity no. 1115709. Address: 534 Barking Road, London, E13 8QE, United Kingdom. Email: <a href="mailto:info@hefazotheislamuk.org">info@hefazotheislamuk.org</a>. Telephone: 07878 561130.</p>
         </section>
 
@@ -154,7 +154,7 @@ require __DIR__ . '/includes/header.php';
 
         <section id="complaints">
           <h2><small>12</small>Contact &amp; complaints</h2>
-          <p>If you have a question about this policy or how we handle your information, contact us at <a href="mailto:info@hefazotheislamuk.org">info@hefazotheislamuk.org</a> or write to Hefazothe Islam UK, 534 Barking Road, London, E13 8QE.</p>
+          <p>If you have a question about this policy or how we handle your information, contact us at <a href="mailto:info@hefazotheislamuk.org">info@hefazotheislamuk.org</a> or write to Stepney Shah Jalal Mosque, 534 Barking Road, London, E13 8QE.</p>
           <p>You also have the right to complain to the Information Commissioner's Office (ICO) at <a href="https://ico.org.uk/make-a-complaint/" target="_blank" rel="noopener">ico.org.uk/make-a-complaint</a> or on 0303 123 1113. We would appreciate the chance to put things right first.</p>
         </section>
       </article></div>

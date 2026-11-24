@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK app: prayer alerts (set on the Settings screen).
+/* Stepney Shah Jalal Mosque app: prayer alerts (set on the Settings screen).
    - Adhan: at the start of each prayer, the Adhan or a short alert (or nothing), chosen per prayer
    - Jama'ah reminder: a set number of minutes before each Jama'ah (both Jumu'ah Jama'ahs on Fridays)
    - Qadha reminder: a set number of minutes before the prayer's time ends, so it isn't missed:

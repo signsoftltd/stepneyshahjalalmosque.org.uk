@@ -3,8 +3,8 @@ require __DIR__ . '/includes/init.php';
 
 $page = [
 	'path' => 'timetable',
-	'title' => 'Prayer Timetable | Hefazothe Islam UK',
-	'description' => 'Prayer timetable for Hefazothe Islam UK, London: begins and Jama\'ah times for Fajr, Dhuhr, Asr, Maghrib and Isha, and Jumu\'ah, for every day of the month.',
+	'title' => 'Prayer Timetable | Stepney Shah Jalal Mosque',
+	'description' => 'Prayer timetable for Stepney Shah Jalal Mosque, London: begins and Jama\'ah times for Fajr, Dhuhr, Asr, Maghrib and Isha, and Jumu\'ah, for every day of the month.',
 	'nav' => 'timetable',
 	'scripts' => [
 		'assets/js/hijri.js',
@@ -46,7 +46,7 @@ require __DIR__ . '/includes/header.php';
           <tbody id="ttBody"><tr><td colspan="7" class="tt-msg">Loading the timetable…</td></tr></tbody>
         </table>
       </div>
-      <p class="tt-note">Prayer times are for Hefazothe Islam UK Masjid and the surrounding area and follow UK local time, including British Summer Time (BST) when applicable. Hijri dates follow our Islamic calendar and may be adjusted following the sighting of the moon.</p>
+      <p class="tt-note">Prayer times are for Stepney Shah Jalal Mosque and the surrounding area and follow UK local time, including British Summer Time (BST) when applicable. Hijri dates follow our Islamic calendar and may be adjusted following the sighting of the moon.</p>
     </div>
   </section>
 </main>

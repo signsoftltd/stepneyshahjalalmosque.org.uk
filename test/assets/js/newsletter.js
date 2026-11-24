@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK: "Stay connected" newsletter sign-up in the footer, saved to the admin panel
+/* Stepney Shah Jalal Mosque: "Stay connected" newsletter sign-up in the footer, saved to the admin panel
    (Subscribers). Used on every page; the address comes from config.js. */
 (function () {
   'use strict';

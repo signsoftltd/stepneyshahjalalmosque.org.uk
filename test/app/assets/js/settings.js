@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK app: Settings. Prayer alerts (saved by alerts.js, which also schedules them) and appearance. */
+/* Stepney Shah Jalal Mosque app: Settings. Prayer alerts (saved by alerts.js, which also schedules them) and appearance. */
 (function () {
   'use strict';
   // runs each time this screen is shown; v ends its timers and listeners when it goes (nav.js)

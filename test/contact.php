@@ -3,8 +3,8 @@ require __DIR__ . '/includes/init.php';
 
 $page = [
 	'path' => 'contact',
-	'title' => 'Contact Us | Hefazothe Islam UK',
-	'description' => 'Contact Hefazothe Islam UK: 534 Barking Road, London E13 8QE. Call 07878 561130, email info@hefazotheislamuk.org or send us a message.',
+	'title' => 'Contact Us | Stepney Shah Jalal Mosque',
+	'description' => 'Contact Stepney Shah Jalal Mosque: 534 Barking Road, London E13 8QE. Call 07878 561130, email info@hefazotheislamuk.org or send us a message.',
 	'nav' => 'contact',
 	'scripts' => [
 		'assets/js/contact.js',
@@ -34,7 +34,7 @@ require __DIR__ . '/includes/header.php';
         <div class="c-left">
           <!-- Google Maps embed (loads when scrolled near) -->
           <div class="map map-embed">
-            <iframe src="https://www.google.com/maps?q=534+Barking+Road,+London+E13+8QE,+UK&amp;z=16&amp;output=embed" title="Map showing Hefazothe Islam UK at 534 Barking Road, London E13 8QE" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            <iframe src="https://www.google.com/maps?q=534+Barking+Road,+London+E13+8QE,+UK&amp;z=16&amp;output=embed" title="Map showing Stepney Shah Jalal Mosque at 534 Barking Road, London E13 8QE" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
             <a class="map-open" href="https://www.google.com/maps/search/?api=1&amp;query=534+Barking+Road+London+E13+8QE" target="_blank" rel="noopener">Open in Google Maps<svg class="ico" style="width:14px;height:14px"><use href="#i-arrow-ur"/></svg></a>
           </div>
           <div class="info row site-row">

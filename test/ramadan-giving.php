@@ -4,8 +4,8 @@ require __DIR__ . '/includes/init.php';
 $page = [
 	'path' => 'ramadan-giving',
 	'donations' => true,
-	'title' => 'Ramadan Giving | Hefazothe Islam UK',
-	'description' => 'Ramadan Giving at Hefazothe Islam UK: donate automatically on every night of Ramadan and never miss the reward of Laylatul Qadr.',
+	'title' => 'Ramadan Giving | Stepney Shah Jalal Mosque',
+	'description' => 'Ramadan Giving at Stepney Shah Jalal Mosque: donate automatically on every night of Ramadan and never miss the reward of Laylatul Qadr.',
 ];
 require __DIR__ . '/includes/header.php';
 ?>

@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK: home page "How we can help" section from the admin panel (Home page > Services).
+/* Stepney Shah Jalal Mosque: home page "How we can help" section from the admin panel (Home page > Services).
    The section in index.php is the built-in default; this replaces it once the settings load,
    and leaves it as it is if they can't be loaded. */
 (function () {

@@ -3,8 +3,8 @@ require __DIR__ . '/includes/init.php';
 
 $page = [
 	'path' => 'about',
-	'title' => 'About Us | Hefazothe Islam UK',
-	'description' => 'About Hefazothe Islam UK: a mosque and community centre on Barking Road, East London, working for humanity since 1999 through worship, education and care.',
+	'title' => 'About Us | Stepney Shah Jalal Mosque',
+	'description' => 'About Stepney Shah Jalal Mosque: a mosque and community centre on Barking Road, East London, working for humanity since 1999 through worship, education and care.',
 	'nav' => 'about',
 	'scripts' => [
 		'assets/js/about.js',
@@ -37,7 +37,7 @@ require __DIR__ . '/includes/header.php';
             <span class="kicker">Who we are</span>
             <h2 id="ab-who" data-ab="story_heading">A house of prayer, a <em>home</em> for every generation</h2>
             <div class="ab-story ev-rich" data-ab="story_html">
-              <p>Hefazothe Islam UK was established in 1999 and has worked for humanity ever since, welcoming worshippers and serving families across East London every day of the week.</p>
+              <p>Stepney Shah Jalal Mosque was established in 1999 and has worked for humanity ever since, welcoming worshippers and serving families across East London every day of the week.</p>
               <p class="ab-todo">[Add your history here: who founded the mosque, how it began and how it has grown. Two or three short paragraphs work well.]</p>
               <p>Today the mosque is a centre for the five daily prayers and Jumu'ah, for Quran and Islamic learning at every age, and for practical care, from the food bank to counselling and Zakat assistance.</p>
             </div>
@@ -55,7 +55,7 @@ require __DIR__ . '/includes/header.php';
         <div class="intro"><span class="kicker">Our journey</span><h2 id="ab-journey" data-ab="journey_heading">Milestones along <em>the way</em></h2></div>
       </div>
       <ol class="ab-timeline" data-ab-list="milestones">
-        <li><span class="ab-year">1999</span><div><h3>Hefazothe Islam UK is founded</h3><p class="ab-todo">[How it started: the first prayers, the founders and the first home of the mosque.]</p></div></li>
+        <li><span class="ab-year">1999</span><div><h3>Stepney Shah Jalal Mosque is founded</h3><p class="ab-todo">[How it started: the first prayers, the founders and the first home of the mosque.]</p></div></li>
         <li><span class="ab-year">[Year]</span><div><h3>[Milestone]</h3><p class="ab-todo">[For example: moving to 534 Barking Road, opening the madrasa or the sisters' prayer hall.]</p></div></li>
         <li><span class="ab-year">[Year]</span><div><h3>[Milestone]</h3><p class="ab-todo">[For example: launching the food bank or a building project.]</p></div></li>
         <li><span class="ab-year">Today</span><div><h3>Serving the whole community</h3><p>Five daily prayers and Jumu'ah, classes for children and adults, a weekly food bank and family support, open to everyone.</p></div></li>

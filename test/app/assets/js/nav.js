@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK app: moving between screens with HTMX (assets/js/vendor/htmx.min.js).
+/* Stepney Shah Jalal Mosque app: moving between screens with HTMX (assets/js/vendor/htmx.min.js).
    The shell (side menu, bottom tabs, icons, alerts) is built once by app.js. Each page's own content is
      <div id="view"><div class="view" data-page="time" data-scripts="time.js makrooh.js"> header, main </div></div>
    and tapping a link to another screen fetches that page and swaps in only its .view (hx-boost on <body>).
@@ -61,7 +61,7 @@
   // web.html#zakat -> config.js webPages.zakat (About when the #part isn't one of them)
   HIUK.webPage = function () {
     const pages = CFG.webPages || {}, key = pages[HIUK.route.hash] ? HIUK.route.hash : 'about';
-    return Object.assign({ key, title: 'Hefazothe Islam UK', sub: '', path: '' }, pages[key]);
+    return Object.assign({ key, title: 'Stepney Shah Jalal Mosque', sub: '', path: '' }, pages[key]);
   };
 
   /* ---- showing a screen ---- */

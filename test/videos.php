@@ -3,8 +3,8 @@ require __DIR__ . '/includes/init.php';
 
 $page = [
 	'path' => 'videos',
-	'title' => 'Videos | Hefazothe Islam UK',
-	'description' => 'Videos from Hefazothe Islam UK: khutbahs, lectures, Quran recitations and highlights from events at our masjid in London.',
+	'title' => 'Videos | Stepney Shah Jalal Mosque',
+	'description' => 'Videos from Stepney Shah Jalal Mosque: khutbahs, lectures, Quran recitations and highlights from events at our masjid in London.',
 	'scripts' => [
 		'assets/js/videos.js',
 	],

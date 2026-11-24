@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK app: Live stream. Asks config.js liveVideoUrl for the YouTube video id ({ video_id }) and plays
+/* Stepney Shah Jalal Mosque app: Live stream. Asks config.js liveVideoUrl for the YouTube video id ({ video_id }) and plays
    it through config.js livePlayerUrl?v=<id> (YouTube only plays inside pages served over https). Without a video id:
    a message. Not saved on the phone (live or not has to be current): asks again every minute while there is no video,
    when the screen comes back to the front, and with "Check again". A video that is playing is left alone. */
@@ -24,7 +24,7 @@
           frame = document.createElement('iframe');
           frame.id = 'lvFrame';
           frame.className = 'lv-frame';
-          frame.title = 'Live stream from Hefazothe Islam UK';
+          frame.title = 'Live stream from Stepney Shah Jalal Mosque';
           frame.src = (CFG.livePlayerUrl || 'https://apps.signsoft.co.uk/web-apps/youtube/iframe.php') + '?v=' + encodeURIComponent(id);
           frame.setAttribute('frameborder', '0');
           frame.setAttribute('allowfullscreen', '');

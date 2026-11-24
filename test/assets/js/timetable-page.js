@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK: full prayer timetable (timetable.php), one month at a time, from the yearly
+/* Stepney Shah Jalal Mosque: full prayer timetable (timetable.php), one month at a time, from the yearly
    timetable (prayer-times.js). Today's row is highlighted, with its next prayer marked; ?m=YYYY-MM opens a month. */
 (function () {
   'use strict';

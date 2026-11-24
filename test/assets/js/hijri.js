@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK: Hijri dates from the Hijri calendar API (Sign Soft; address in config.js).
+/* Stepney Shah Jalal Mosque: Hijri dates from the Hijri calendar API (Sign Soft; address in config.js).
    GET <api>?year=2026 returns { "18-10-2026": "07-05-1448", ... }: one entry per Gregorian date (DD-MM-YYYY),
    with the Hijri day-month-year as the value. Each year is saved in the browser for a day.
    If the API can't be reached (and nothing is saved), dates fall back to the browser's Umm al-Qura calendar.

@@ -24,7 +24,7 @@ defined('HIUK') or exit;
       <div class="row site-row gy-4 gx-lg-5">
         <div class="col-12">
           <div class="f-brand">
-            <a class="brand" href="<?= home_url() ?>"><span class="brand-mark" role="img" aria-label="Hefazothe Islam UK logo"></span><span class="brand-text"><b>Hefazothe Islam UK</b><small>Working for humanity</small></span></a>
+            <a class="brand" href="<?= home_url() ?>"><span class="brand-mark" role="img" aria-label="Stepney Shah Jalal Mosque logo"></span><span class="brand-text"><b>Stepney Shah Jalal Mosque</b><small>Working for humanity</small></span></a>
             <p>A mosque and community centre serving worshippers, families and neighbours through prayer, education and care. Registered charity no. 1115709.</p>
             <div class="socials d-flex">
           <a href="<?= home_url() ?>" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h-2a4 4 0 0 0-4 4v3H7v4h2v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h2z"/></svg></a>
@@ -52,7 +52,7 @@ defined('HIUK') or exit;
       </div>
     </div>
     <div class="legal d-flex flex-wrap justify-content-between">
-      <span>© <span id="year"><?= date('Y') ?></span> Hefazothe Islam UK. All rights reserved.</span>
+      <span>© <span id="year"><?= date('Y') ?></span> Stepney Shah Jalal Mosque. All rights reserved.</span>
       <span class="credit">Designed &amp; Developed by <a href="https://www.signsoft.co.uk" target="_blank" rel="noopener">Sign Soft Ltd.</a></span>
       <nav aria-label="Legal"><a href="privacy-policy">Privacy Policy</a><button class="ck-open" type="button" data-cookie-settings>Cookie settings</button><a href="<?= home_url() ?>">Terms &amp; Conditions</a></nav>
     </div>

@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK: event cards and "Read more" dialog, loaded from the admin panel's posts API.
+/* Stepney Shah Jalal Mosque: event cards and "Read more" dialog, loaded from the admin panel's posts API.
    Used by the home page (site.js) and the all-events page (events.php). */
 window.HIUKEvents = (function () {
   'use strict';

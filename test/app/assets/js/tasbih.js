@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK app: Tasbih. A dhikr counter for five dhikr, each with its own count and target (kept on the
+/* Stepney Shah Jalal Mosque app: Tasbih. A dhikr counter for five dhikr, each with its own count and target (kept on the
    phone, so leaving the screen loses nothing). "Save" adds the count to the history and starts again.
    Audio: plays assets/audio/<id>.mp3 if the file is there; otherwise the phone's Arabic voice, where it has one. */
 (function () {

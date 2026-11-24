@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK: next prayer and countdown in the mobile menu (.js-next-name, .js-count) on every page
+/* Stepney Shah Jalal Mosque: next prayer and countdown in the mobile menu (.js-next-name, .js-count) on every page
    except the home page, where site.js already does this. Times come from prayer-times.js. */
 (function () {
   'use strict';

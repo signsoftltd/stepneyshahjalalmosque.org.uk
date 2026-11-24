@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK: About Us page content from the admin panel (About Us).
+/* Stepney Shah Jalal Mosque: About Us page content from the admin panel (About Us).
    about.php holds the built-in default; this replaces it once the content loads, and leaves
    it as it is if it can't be loaded. Contact details and facilities stay as written in the page. */
 (function () {

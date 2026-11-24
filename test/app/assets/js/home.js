@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK app: home screen. Today's dates, the next prayer with a countdown, the day's timetable
+/* Stepney Shah Jalal Mosque app: home screen. Today's dates, the next prayer with a countdown, the day's timetable
    (any day, with the arrows or a swipe) and this week's Jumu'ah. Updates every second and when the app
    comes back to the front. */
 (function () {

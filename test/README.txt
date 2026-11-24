@@ -1,4 +1,4 @@
-Hefazothe Islam UK website (PHP 8, Bootstrap 5.3)
+Stepney Shah Jalal Mosque website (PHP 8, Bootstrap 5.3)
 
 Pages
   index.php, about.php, events.php, ...   one file per page: its settings ($page) and its main content

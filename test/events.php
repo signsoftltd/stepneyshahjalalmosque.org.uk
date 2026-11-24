@@ -3,8 +3,8 @@ require __DIR__ . '/includes/init.php';
 
 $page = [
 	'path' => 'events',
-	'title' => 'Events | Hefazothe Islam UK',
-	'description' => 'Upcoming and past events at Hefazothe Islam UK: lectures, classes, children\'s and youth activities, sisters\' circles and community gatherings.',
+	'title' => 'Events | Stepney Shah Jalal Mosque',
+	'description' => 'Upcoming and past events at Stepney Shah Jalal Mosque: lectures, classes, children\'s and youth activities, sisters\' circles and community gatherings.',
 	'nav' => 'events',
 	'scripts' => [
 		'assets/js/events.js',

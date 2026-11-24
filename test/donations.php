@@ -4,8 +4,8 @@ require __DIR__ . '/includes/init.php';
 $page = [
 	'path' => 'donations',
 	'donations' => true,
-	'title' => 'Donations | Hefazothe Islam UK',
-	'description' => 'Support Hefazothe Islam UK with Sadaqah, Lillah and Zakat. Your donations keep our doors open, our classes running and our food bank stocked.',
+	'title' => 'Donations | Stepney Shah Jalal Mosque',
+	'description' => 'Support Stepney Shah Jalal Mosque with Sadaqah, Lillah and Zakat. Your donations keep our doors open, our classes running and our food bank stocked.',
 ];
 require __DIR__ . '/includes/header.php';
 ?>
@@ -66,7 +66,7 @@ require __DIR__ . '/includes/header.php';
         <article class="way way-bottom">
           <h3>By post</h3>
           <p>Make your cheque or postal order payable to “[Payee name]” and include a note with your name and address.</p>
-          <address class="way-address">Hefazothe Islam UK<br>534 Barking Road<br>London, E13 8QE<br>United Kingdom</address>
+          <address class="way-address">Stepney Shah Jalal Mosque<br>534 Barking Road<br>London, E13 8QE<br>United Kingdom</address>
         </article>
         <article class="way way-bottom">
           <h3>By standing order</h3>

@@ -4,14 +4,14 @@ require __DIR__ . '/includes/init.php';
 $page = [
 	'path' => '',
 	'donations' => true,
-	'title' => 'Hefazothe Islam UK',
-	'description' => 'Hefazothe Islam UK, working for humanity since 1999 — prayer times, Jumu\'ah, events, Islamic education, Zakat and community services.',
+	'title' => 'Stepney Shah Jalal Mosque',
+	'description' => 'Stepney Shah Jalal Mosque, working for humanity since 1999 — prayer times, Jumu\'ah, events, Islamic education, Zakat and community services.',
 	'nav' => 'home',
 	'home' => true,
 	'og_type' => 'website',
 	'head' => <<<'HTML'
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Mosque","name":"Hefazothe Islam UK","foundingDate":"1999","description":"Mosque and Islamic community centre offering daily prayers, Jumu'ah, education, Zakat assistance and community welfare.","address":{"@type":"PostalAddress","streetAddress":"534 Barking Road","addressLocality":"London","postalCode":"E13 8QE","addressCountry":"GB"},"telephone":"+447878561130","email":"info@hefazotheislamuk.org"}
+{"@context":"https://schema.org","@type":"Mosque","name":"Stepney Shah Jalal Mosque","foundingDate":"1999","description":"Mosque and Islamic community centre offering daily prayers, Jumu'ah, education, Zakat assistance and community welfare.","address":{"@type":"PostalAddress","streetAddress":"534 Barking Road","addressLocality":"London","postalCode":"E13 8QE","addressCountry":"GB"},"telephone":"+447878561130","email":"info@hefazotheislamuk.org"}
 </script>
 HTML,
 	'scripts' => [
@@ -38,7 +38,7 @@ require __DIR__ . '/includes/header.php';
         <!-- Banner text, buttons and pictures can be changed in the admin panel (Banner); this is the built-in default -->
         <span class="kicker" data-banner="kicker">Working for humanity · Est. 1999</span>
         <div class="bismillah" lang="ar" dir="rtl" data-banner="bismillah">بِسْمِ ٱللّٰهِ ٱلرَّحْمٰنِ ٱلرَّحِيمِ</div>
-        <h1 id="hero-title" data-banner="heading">Welcome to <em>Hefazothe</em> <span style="white-space:nowrap">Islam UK</span></h1>
+        <h1 id="hero-title" data-banner="heading">Welcome to <em>Stepney Shah Jalal</em> <span style="white-space:nowrap">Mosque</span></h1>
         <p class="hero-sub" data-banner="subtitle">Serving our community through worship, education and unity. A house of prayer and a home for every generation.</p>
         <div class="hero-ctas d-flex flex-wrap">
           <a class="btn site-btn btn-sun site-btn-lg" href="#prayer" data-banner="btn1"><svg class="ico"><use href="#i-clock"/></svg><span>Prayer Times</span></a>
@@ -250,7 +250,7 @@ require __DIR__ . '/includes/header.php';
         <!-- Text can be changed in the admin panel (Home Page > About Section); this is the built-in default -->
         <span class="kicker" data-about="kicker">About the mosque</span>
         <h2 id="about-title" data-about="heading">A place of worship, <em>learning</em> and belonging</h2>
-        <p data-about="body">[Add your history here: who founded the mosque and how it has grown.] Hefazothe Islam UK was established in 1999 and has worked for humanity ever since, welcoming worshippers and serving families across East London every day of the week.</p>
+        <p data-about="body">[Add your history here: who founded the mosque and how it has grown.] Stepney Shah Jalal Mosque was established in 1999 and has worked for humanity ever since, welcoming worshippers and serving families across East London every day of the week.</p>
         <blockquote class="quote" data-about="quote">“Our doors are open to everyone who seeks the remembrance of Allah, and to every neighbour who needs a hand.”</blockquote>
         <div class="values row site-row row-cols-2 row-cols-sm-4" aria-label="Our values" data-about="values">
           <div class="value col"><b>Ihsan</b><span>Excellence in worship and service</span></div>

@@ -1,4 +1,4 @@
-# Hefazothe Islam UK website: clean addresses (events instead of events.php).
+# Stepney Shah Jalal Mosque website: clean addresses (events instead of events.php).
 # The rules don't name the site's folder, so they work in any folder or at the top level.
 
 Options -MultiViews -Indexes

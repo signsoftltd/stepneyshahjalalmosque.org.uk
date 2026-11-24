@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK app: the website's popup message (admin panel > Notices), shown on the home screen.
+/* Stepney Shah Jalal Mosque app: the website's popup message (admin panel > Notices), shown on the home screen.
    Same settings as on the website: shown once per person (until the popup is changed), once each time the app is
    opened ("once per visit"), or every time the home screen opens ("every page"); after the set delay; only between
    its start and end dates (the API leaves it out otherwise). Nothing is shown offline.

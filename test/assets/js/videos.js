@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK: YouTube video gallery, managed in the admin panel (Videos).
+/* Stepney Shah Jalal Mosque: YouTube video gallery, managed in the admin panel (Videos).
    Used on the home page (a preview) and videos.php (all videos). Settings on the #videos section:
      data-limit   videos per load (default 6)
      data-empty   message when there are no videos; without it the section stays hidden instead

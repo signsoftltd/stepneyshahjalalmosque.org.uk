@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK: prayer times from the yearly timetable (Sign Soft timetable API, address in config.js).
+/* Stepney Shah Jalal Mosque: prayer times from the yearly timetable (Sign Soft timetable API, address in config.js).
    The API returns { times: [ ...one entry per day of the year, 1 January first... ], version } where each day has
    f1/f2 Fajr begins/Jama'ah, sun Sunrise, z1/z2 Dhuhr begins/Jama'ah (on Fridays z2 is the first Jumu'ah Jama'ah),
    a1/a2 Asr, m1/m2 Maghrib, i1/i2 Isha and j2 the second Jumu'ah Jama'ah, as "hh:mm AM" clock times

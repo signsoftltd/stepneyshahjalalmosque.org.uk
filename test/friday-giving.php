@@ -4,8 +4,8 @@ require __DIR__ . '/includes/init.php';
 $page = [
 	'path' => 'friday-giving',
 	'donations' => true,
-	'title' => 'Friday Giving | Hefazothe Islam UK',
-	'description' => 'Friday Giving at Hefazothe Islam UK: donate automatically every Jumu\'ah and never miss the reward of charity on the best day of the week.',
+	'title' => 'Friday Giving | Stepney Shah Jalal Mosque',
+	'description' => 'Friday Giving at Stepney Shah Jalal Mosque: donate automatically every Jumu\'ah and never miss the reward of charity on the best day of the week.',
 ];
 require __DIR__ . '/includes/header.php';
 ?>

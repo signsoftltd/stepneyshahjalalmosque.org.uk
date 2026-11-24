@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK app: pull down to refresh the prayer data (home and Time screens).
+/* Stepney Shah Jalal Mosque app: pull down to refresh the prayer data (home and Time screens).
    From the top of the screen, pulling down past READY and letting go fetches the timetable and Hijri dates again,
    then sends the 'hiuk:times' event on document: the screens redraw, makrooh.js fetches its times, alerts.js
    schedules the alerts again. Offline, what is saved stays as it is and a message says so. */

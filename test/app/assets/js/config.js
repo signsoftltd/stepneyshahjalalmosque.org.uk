@@ -1,6 +1,6 @@
-/* Hefazothe Islam UK app: settings. Change addresses here only. */
+/* Stepney Shah Jalal Mosque app: settings. Change addresses here only. */
 window.HIUK_CONFIG = {
-  name: 'Hefazothe Islam UK',
+  name: 'Stepney Shah Jalal Mosque',
   // yearly prayer timetable: { times: [ one entry per day, 1 January first ], version }
   timetableUrl: 'https://apps.signsoft.co.uk/api/clients/stepneyshahjalalmosque/yearly-timetable.php',
   // Hijri calendar: ?year=2026 -> { "DD-MM-YYYY": "DD-MM-YYYY" (Hijri) }
@@ -25,7 +25,7 @@ window.HIUK_CONFIG = {
   // Donate (side menu): the masjid's bank account (empty = shows "coming soon" until filled in; IBAN and SWIFT are optional)
   bank: { name: 'Barclays', accountName: 'HEFAZOTHE ISLAM UK', sortCode: '20-67-90', accountNumber: '63044785', iban: 'GB28 BUKB 2067 9063 0447 85', swift: 'BUKBGB22' },
   shareUrl: 'https://hefazotheislamuk.org',
-  shareText: 'Prayer times, Jumu\'ah and more from Hefazothe Islam UK',
+  shareText: 'Prayer times, Jumu\'ah and more from Stepney Shah Jalal Mosque',
   phone: '+447878561130',
   // side menu: social links (empty = shows "coming soon" until filled in)
   facebookUrl: '',
@@ -36,14 +36,14 @@ window.HIUK_CONFIG = {
     zakat: { title: 'Zakat calculator', sub: 'Work out the Zakat you owe', path: 'zakat' },
     events: { title: 'News & events', sub: 'What\'s on at the masjid', path: 'events' },
     services: { title: 'Services', sub: 'How we can help', path: 'services' },
-    about: { title: 'About us', sub: 'Hefazothe Islam UK', path: 'about' },
+    about: { title: 'About us', sub: 'Stepney Shah Jalal Mosque', path: 'about' },
     contact: { title: 'Contact us', sub: 'Get in touch with us', path: 'contact' }
   },
   // shown at the bottom of the side menu until the app passes its own: index.html?v=1.0
   appVersion: '1.0.0',
   developer: { name: 'Sign Soft Ltd', url: 'https://signsoft.co.uk' },
   // Qibla: used until the user shares their location (534 Barking Road, London E13 8QE; approximate)
-  masjidLocation: { lat: 51.5299, lon: 0.0258, name: 'Hefazothe Islam UK, London' },
+  masjidLocation: { lat: 51.5299, lon: 0.0258, name: 'Stepney Shah Jalal Mosque, London' },
   // how long saved data is used before it is fetched again (milliseconds)
   timetableMaxAge: 6 * 3600 * 1000,
   hijriMaxAge: 24 * 3600 * 1000,

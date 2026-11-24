@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK: site settings (prayer times, donations) and page behaviour. Events and FAQs come from the admin panel. */
+/* Stepney Shah Jalal Mosque: site settings (prayer times, donations) and page behaviour. Events and FAQs come from the admin panel. */
 /* =================================================================
    ADMIN SETTINGS
    Everything the mosque team normally updates lives in this block.

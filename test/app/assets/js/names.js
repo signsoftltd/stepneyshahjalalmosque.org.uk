@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK app: the 99 Names of Allah, with a search (by name, meaning or number). */
+/* Stepney Shah Jalal Mosque app: the 99 Names of Allah, with a search (by name, meaning or number). */
 (function () {
   'use strict';
   // runs each time this screen is shown; v ends its timers and listeners when it goes (nav.js)

@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK app: the whole year's prayer times (Time tab), month by month.
+/* Stepney Shah Jalal Mosque app: the whole year's prayer times (Time tab), month by month.
    Each day: date and Hijri day, then Fajr, Sunrise, Dhuhr, Asr, Maghrib and Isha (begins, with the Jama'ah below).
    Fridays show Jumu'ah. Today is highlighted and shown first; the month buttons jump to a month. */
 (function () {
@@ -16,7 +16,7 @@
       const now = new Date();
       const year = now.getFullYear();
       const nx = HIUK.times.next(now);
-      $('yearSub').textContent = year + ' · Hefazothe Islam UK, London';
+      $('yearSub').textContent = year + ' · Stepney Shah Jalal Mosque, London';
       const mn = (h) => HIUK.hijri.monthName(h.month);
 
       $('months').innerHTML = MONTHS.map((d, i) => `<a class="month-chip" href="#m-${i}" data-month="${i}">${dateText(d, { month: 'short' })}</a>`).join('');

@@ -3,8 +3,8 @@ require __DIR__ . '/includes/init.php';
 
 $page = [
 	'path' => 'zakat',
-	'title' => 'Zakat Calculator | Hefazothe Islam UK',
-	'description' => 'Work out your Zakat with Hefazothe Islam UK\'s free Zakat calculator, using today\'s gold and silver Nisab, then pay your Zakat online.',
+	'title' => 'Zakat Calculator | Stepney Shah Jalal Mosque',
+	'description' => 'Work out your Zakat with Stepney Shah Jalal Mosque\'s free Zakat calculator, using today\'s gold and silver Nisab, then pay your Zakat online.',
 	'scripts' => [
 		'assets/js/zakat.js',
 	],
@@ -16,10 +16,10 @@ require __DIR__ . '/includes/header.php';
   <div class="zk-print-head" aria-hidden="true" style="display:none">
     <div>
       <b>Zakat Calculation</b>
-      <span>Hefazothe Islam UK · 534 Barking Road, London E13 8QE · hefazotheislamuk.org</span>
+      <span>Stepney Shah Jalal Mosque · 534 Barking Road, London E13 8QE · hefazotheislamuk.org</span>
       <span data-zk-print="date"></span>
     </div>
-    <img src="assets/images/logo.svg" alt="Hefazothe Islam UK logo" width="56" height="58" style="width:56px;height:auto;margin-left:auto;flex:none">
+    <img src="assets/images/logo.svg" alt="Stepney Shah Jalal Mosque logo" width="56" height="58" style="width:56px;height:auto;margin-left:auto;flex:none">
   </div>
   <section class="zk-hero wrap on-dark">
     <div class="pattern"></div>

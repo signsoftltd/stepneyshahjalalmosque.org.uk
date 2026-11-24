@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK: where the website loads events, FAQs and sends messages and visit counts.
+/* Stepney Shah Jalal Mosque: where the website loads events, FAQs and sends messages and visit counts.
    Change this one address to point the site at a different admin panel (e.g. a local test copy). */
 window.HIUK_API = 'https://manage.stepneyshahjalalmosque.org.uk/api/public';
 /* Yearly prayer timetable (begins and Jama'ah times for every day), used by prayer-times.js */

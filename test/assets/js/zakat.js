@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK: Zakat calculator (zakat.php) and the home page Zakat section.
+/* Stepney Shah Jalal Mosque: Zakat calculator (zakat.php) and the home page Zakat section.
    Gold and silver prices per gram come from the admin panel (Zakat); visitors can also enter
    their own (Manual). Nothing typed here is sent anywhere or stored. */
 (function () {
@@ -138,7 +138,7 @@
     });
     $('[data-zk="nisab-field"]').hidden = auto;
     const help = $('[data-zk="price-help"]');
-    if (auto) help.textContent = prices && prices.updated_at ? `Today's prices set by Hefazothe Islam UK, updated ${fmtDate(prices.updated_at)}. Choose Manual to use your own.` : '';
+    if (auto) help.textContent = prices && prices.updated_at ? `Today's prices set by Stepney Shah Jalal Mosque, updated ${fmtDate(prices.updated_at)}. Choose Manual to use your own.` : '';
     else help.textContent = 'Price per gram. Enter today\'s price from your dealer or Zakat organisation, or enter a Nisab value below.';
   }
 
@@ -216,7 +216,7 @@
   function summaryText() {
     if (!last) return '';
     return [
-      'Zakat calculation (Hefazothe Islam UK)',
+      'Zakat calculation (Stepney Shah Jalal Mosque)',
       `Total zakatable assets: ${gbp(last.assets)}`,
       `Deductible liabilities: ${gbp(last.debts)}`,
       `Net zakatable wealth: ${gbp(last.net)}`,
@@ -235,7 +235,7 @@
       ['WhatsApp', `https://wa.me/?text=${enc(text)}`, '<path d="M21 12a9 9 0 0 1-13.2 8L3 21l1-4.6A9 9 0 1 1 21 12z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-1.8-1.8l.8-1-1-2z"/>'],
       ['Email', `mailto:?subject=${enc(data.title)}&body=${enc(text)}`, '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>'],
       ['Facebook', `https://www.facebook.com/sharer/sharer.php?u=${enc(data.url)}`, '<path d="M15 3h-2a4 4 0 0 0-4 4v3H7v4h2v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h2z"/>'],
-      ['X', `https://twitter.com/intent/tweet?text=${enc('Work out your Zakat with the Hefazothe Islam UK calculator')}&url=${enc(data.url)}`, '<path d="M4 4l16 16M20 4 4 20"/>'],
+      ['X', `https://twitter.com/intent/tweet?text=${enc('Work out your Zakat with the Stepney Shah Jalal Mosque calculator')}&url=${enc(data.url)}`, '<path d="M4 4l16 16M20 4 4 20"/>'],
       ['Telegram', `https://t.me/share/url?url=${enc(data.url)}&text=${enc(data.text)}`, '<path d="m21 4-18 7 6 2 2 6 3-4 5 4z"/><path d="m9 13 12-9"/>']
     ];
     if (!shareDlg) {
@@ -317,7 +317,7 @@
     else if (tool === 'copy') copy(summaryText()).then(() => toast('Summary copied'), () => toast('Could not copy. Please select and copy it yourself.'));
     else if (tool === 'share') {
       // only the page link and totals are shared, never the individual amounts
-      const data = { title: 'Zakat Calculator | Hefazothe Islam UK', text: summaryText(), url: location.origin + location.pathname };
+      const data = { title: 'Zakat Calculator | Stepney Shah Jalal Mosque', text: summaryText(), url: location.origin + location.pathname };
       // the mobile app's own share sheet, where the app provides it (Android interface, iOS script message handler)
       const ios = iosApp();
       if (window.Android && typeof window.Android.shareText === 'function') {

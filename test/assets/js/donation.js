@@ -1,9 +1,9 @@
-/* Hefazothe Islam UK: Sign Soft donation app settings, shared by every page.
+/* Stepney Shah Jalal Mosque: Sign Soft donation app settings, shared by every page.
    Loaded after https://donations.signsoft.co.uk/web-apps/v1/live/init.js.
    Keeping the settings in this one file means every page uses the same config. */
 const donationApp = new Donation({
     client_id: 3896,
-    client_name: 'Hefazothe Islam UK',
+    client_name: 'Stepney Shah Jalal Mosque',
     quick_donate: true,
     //types: ['Zakat', 'Sadaqah', 'Lillah', 'Fidyah', 'Kaffarah'],
     checkout: {

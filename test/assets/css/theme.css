@@ -1,5 +1,5 @@
 /* ======================================================================
-   Hefazothe Islam UK: theme layer on top of Bootstrap 5.3
+   Stepney Shah Jalal Mosque: theme layer on top of Bootstrap 5.3
    Load order: bootstrap.min.css, then this file.
    Brand colours sampled from the logo:
    burgundy #8C2C34, indigo #2C3494, orange #F47414, green #14844C
@@ -16,7 +16,7 @@
   --bs-focus-ring-color:rgba(244,122,30,.35);
 }
 /* ============ Tokens ============ */
-/* Brand colours sampled from the Hefazothe Islam UK logo:
+/* Brand colours sampled from the Stepney Shah Jalal Mosque logo:
    burgundy banner #8C2C34, indigo laurel #2C3494, orange crescent #F47414, green dome #14844C */
 :root{
   --b-950:#230810; --b-900:#310B16; --b-800:#4B1020; --b-700:#7F2230; --b-600:#9B3340; --b-100:#F2E3E4; --b-50:#F9F1F1;

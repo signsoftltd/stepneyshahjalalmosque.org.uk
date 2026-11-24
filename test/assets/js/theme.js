@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK: light / dark mode. Load in <head> (before the page draws) so the right theme
+/* Stepney Shah Jalal Mosque: light / dark mode. Load in <head> (before the page draws) so the right theme
    shows straight away. Light (day) mode, whatever the device is set to, until the visitor picks a theme with a .theme-btn.
    The choice is remembered permanently only if the visitor allowed "Preferences" in the cookie
    banner; otherwise it lasts until the browser is closed. */

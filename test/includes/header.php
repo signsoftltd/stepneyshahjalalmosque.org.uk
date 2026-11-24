@@ -25,7 +25,7 @@ defined('HIUK') or exit;
 <link rel="manifest" href="site.webmanifest">
 <!-- Sharing (Facebook, WhatsApp, LinkedIn, X). The address comes from SITE_URL in includes/init.php. -->
 <link rel="canonical" href="<?= e(SITE_URL . '/' . ($page['path'] ?? '')) ?>">
-<meta property="og:site_name" content="Hefazothe Islam UK">
+<meta property="og:site_name" content="Stepney Shah Jalal Mosque">
 <meta property="og:type" content="<?= e($page['og_type'] ?? 'article') ?>">
 <meta property="og:locale" content="en_GB">
 <meta property="og:url" content="<?= e(SITE_URL . '/' . ($page['path'] ?? '')) ?>">
@@ -34,7 +34,7 @@ defined('HIUK') or exit;
 <meta property="og:image" content="<?= e(SITE_URL) ?>/assets/images/share.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Hefazothe Islam UK logo: working for humanity since 1999">
+<meta property="og:image:alt" content="Stepney Shah Jalal Mosque logo: working for humanity since 1999">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="<?= e($page['title']) ?>">
 <meta name="twitter:description" content="<?= e($page['description']) ?>">
@@ -111,9 +111,9 @@ defined('HIUK') or exit;
 <header class="site-header wrap" id="siteHeader">
   <nav class="navbar site-navbar navbar-expand-xl" aria-label="Main">
     <div class="container site-container d-flex align-items-center justify-content-between gap-4">
-      <a class="navbar-brand brand m-0 p-0" href="<?= home_url() ?>" aria-label="Hefazothe Islam UK, home">
-        <span class="brand-mark" role="img" aria-label="Hefazothe Islam UK logo"></span>
-        <span class="brand-text"><b>Hefazothe Islam UK</b><small>Working for humanity</small></span>
+      <a class="navbar-brand brand m-0 p-0" href="<?= home_url() ?>" aria-label="Stepney Shah Jalal Mosque, home">
+        <span class="brand-mark" role="img" aria-label="Stepney Shah Jalal Mosque logo"></span>
+        <span class="brand-text"><b>Stepney Shah Jalal Mosque</b><small>Working for humanity</small></span>
       </a>
       <ul class="navbar-nav site-nav flex-row d-none d-xl-flex">
           <li class="nav-item"><a class="nav-link site-nav-link" href="<?= home_url() ?>"<?= nav_current('home') ?>>Home</a></li>
@@ -139,7 +139,7 @@ defined('HIUK') or exit;
 <div class="offcanvas offcanvas-top mnav" tabindex="-1" id="mnav" aria-label="Menu">
   <div class="pattern"></div>
   <div class="offcanvas-header mnav-top">
-    <a class="brand" href="<?= home_url() ?>" style="color:#fff"><span class="brand-mark" role="img" aria-label="Hefazothe Islam UK logo"></span><span class="brand-text"><b>Hefazothe Islam UK</b></span></a>
+    <a class="brand" href="<?= home_url() ?>" style="color:#fff"><span class="brand-mark" role="img" aria-label="Stepney Shah Jalal Mosque logo"></span><span class="brand-text"><b>Stepney Shah Jalal Mosque</b></span></a>
     <div class="mnav-btns">
       <button class="menu-btn theme-btn" type="button" aria-label="Switch to dark mode"><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
       <button class="menu-btn" type="button" data-bs-dismiss="offcanvas" aria-label="Close menu"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>

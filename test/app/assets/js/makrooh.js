@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK app: Makrooh times, when salah is makrooh (disliked). config.js makroohUrl gives the minutes:
+/* Stepney Shah Jalal Mosque app: Makrooh times, when salah is makrooh (disliked). config.js makroohUrl gives the minutes:
    after sunrise begins (from sunrise), and before Dhuhr (zawal) and Maghrib (sunset) begin (until they begin).
    Saved on the phone.
    - a popup with a progress bar while a period is on: opens by itself (once per period), closes when it ends;

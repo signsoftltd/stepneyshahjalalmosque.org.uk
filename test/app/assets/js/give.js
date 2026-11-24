@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK app: Donate (side menu). The bank account from config.js (bank), each with a copy button, as
+/* Stepney Shah Jalal Mosque app: Donate (side menu). The bank account from config.js (bank), each with a copy button, as
    text in the app can't be selected. Until the details are filled in, a message says they are coming soon. */
 (function () {
   'use strict';

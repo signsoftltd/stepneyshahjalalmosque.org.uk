@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK: photo gallery, managed in the admin panel (Gallery).
+/* Stepney Shah Jalal Mosque: photo gallery, managed in the admin panel (Gallery).
    Used on the home page (a preview) and gallery.php (all photos). Settings on the #gallery section:
      data-limit   photos per load (default 8)
      data-empty   message when there are no photos; without it the section stays hidden instead

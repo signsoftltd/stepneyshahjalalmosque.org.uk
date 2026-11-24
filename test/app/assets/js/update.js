@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK app: "update available" popup. Once per app launch (on the home screen) asks config.js
+/* Stepney Shah Jalal Mosque app: "update available" popup. Once per app launch (on the home screen) asks config.js
    updateCheckUrl ?platform=android|ios&current=<app version from index.html?v=>. With has_update it offers
    "Update now", which asks the native app to update:
      Android: the JavaScript interface Android.updateApp()

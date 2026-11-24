@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK app: a website page shown inside the app, in its app mode (?app=1: no website header or
+/* Stepney Shah Jalal Mosque app: a website page shown inside the app, in its app mode (?app=1: no website header or
    footer), in the app's light or dark theme. Used by the Donate tab (config.js donateUrl) and by web.html for the
    other website pages: web.html#zakat, #events, #services, #about, #contact (config.js webPages; nav.js HIUK.webPage()).
    Payments on the donations page are taken by the Sign Soft donation app (Stripe, Apple Pay, Google Pay, PayPal). */
@@ -19,7 +19,7 @@
       $('webTitle').textContent = p.title;
       $('webSub').textContent = p.sub || '';
       frame.title = p.title;
-      document.title = p.title + ' | Hefazothe Islam UK';
+      document.title = p.title + ' | Stepney Shah Jalal Mosque';
       base = (CFG.webBase || 'https://hefazotheislamuk.org/') + p.path;
     }
     const pageUrl = () => base + (base.indexOf('?') < 0 ? '?' : '&') + 'app=1&theme=' + (HIUK.isDark() ? 'dark' : 'light');

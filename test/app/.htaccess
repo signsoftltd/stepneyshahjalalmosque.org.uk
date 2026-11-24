@@ -1,4 +1,4 @@
-# Hefazothe Islam UK app, opened in a browser for testing: its pages keep their .html addresses,
+# Stepney Shah Jalal Mosque app, opened in a browser for testing: its pages keep their .html addresses,
 # so the website's clean-address rules (../.htaccess) don't apply in this folder.
 
 DirectoryIndex index.html

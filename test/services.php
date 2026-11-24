@@ -3,8 +3,8 @@ require __DIR__ . '/includes/init.php';
 
 $page = [
 	'path' => 'services',
-	'title' => 'Services | Hefazothe Islam UK',
-	'description' => 'Services at Hefazothe Islam UK: Nikah and marriage, funeral and Janazah support, counselling, Zakat assistance, a food bank, family support, and Quran and Islamic classes.',
+	'title' => 'Services | Stepney Shah Jalal Mosque',
+	'description' => 'Services at Stepney Shah Jalal Mosque: Nikah and marriage, funeral and Janazah support, counselling, Zakat assistance, a food bank, family support, and Quran and Islamic classes.',
 	'nav' => 'services',
 	'scripts' => [
 		'assets/js/services.js',

@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK app: shared by every screen.
+/* Stepney Shah Jalal Mosque app: shared by every screen.
    - helpers (formatting, saved data), the background pattern and light/dark theme
    - the parts every screen has, added here so each page stays short: icons, the bottom tabs
      (Home, Tasbih, Donate, Qibla, Settings), the side menu (menu button) and sharing the app (share button)
@@ -187,7 +187,7 @@
           <div class="drawer-top">
             <div class="drawer-brand">
               <span class="brand-mark" aria-hidden="true"></span>
-              <span class="drawer-title"><b id="drawerTitle">${esc(CFG.name || 'Hefazothe Islam UK')}</b><small>Working for humanity</small></span>
+              <span class="drawer-title"><b id="drawerTitle">${esc(CFG.name || 'Stepney Shah Jalal Mosque')}</b><small>Working for humanity</small></span>
             </div>
             <button class="icon-btn theme-btn" type="button" role="switch" aria-checked="false" aria-label="Dark mode" data-theme-toggle>${icon('moon', 'i-moon')}${icon('sun', 'i-sun')}</button>
           </div>
@@ -340,7 +340,7 @@
     if (window.Android && typeof window.Android.shareApp === 'function') { window.Android.shareApp(); return; }
     const ios = window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.actionMessageHandler;
     if (ios) { ios.postMessage({ action: 'shareApp' }); return; }
-    const data = { title: CFG.name || 'Hefazothe Islam UK', text: CFG.shareText || '', url: CFG.shareUrl || CFG.website || '' };
+    const data = { title: CFG.name || 'Stepney Shah Jalal Mosque', text: CFG.shareText || '', url: CFG.shareUrl || CFG.website || '' };
     if (window.HIUKNative && typeof window.HIUKNative.share === 'function') { window.HIUKNative.share(JSON.stringify(data)); return; }
     if (navigator.share) { navigator.share(data).catch(() => {}); return; }
     const text = (data.text ? data.text + ' ' : '') + data.url;

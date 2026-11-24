@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK: notices from the admin panel (Notices).
+/* Stepney Shah Jalal Mosque: notices from the admin panel (Notices).
    - a scrolling text bar (marquee) across the very top of the page
    - a popup message, shown once per visitor, once per visit or on every page (as set in the admin panel)
    Nothing is shown if the settings can't be loaded. */

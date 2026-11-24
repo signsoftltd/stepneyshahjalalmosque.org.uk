@@ -1,4 +1,4 @@
-/* Hefazothe Islam UK app: Ramadhan timetable (config.js ramadanUrl). Saved on the phone, so it also works offline.
+/* Stepney Shah Jalal Mosque app: Ramadhan timetable (config.js ramadanUrl). Saved on the phone, so it also works offline.
    The card at the top: before Ramadhan, the days until it begins; during it, today's Sehri and Iftar with a
    countdown to the next one; after it, Eid Mubarak. Today's row is highlighted in the table. */
 (function () {

@@ -111,25 +111,8 @@ require __DIR__ . '/includes/header.php';
     </div>
   </section>
 
-  <!-- ============ People ============ -->
-  <section class="section wrap" aria-labelledby="ab-people">
-    <div class="container site-container">
-      <div class="sec-head d-flex flex-wrap align-items-end justify-content-between">
-        <div class="intro"><span class="kicker">Our people</span><h2 id="ab-people" data-ab="people_heading">Board of <em>trustees</em></h2></div>
-        <a class="btn site-btn btn-ind site-btn-lg" href="trustees">All trustees<svg class="ico arr"><use href="#i-arrow"/></svg></a>
-      </div>
-      <div class="ab-grid" data-ab-list="people">
-        <div class="ab-card ab-person"><div class="avatar" aria-hidden="true">AM</div><h3>Mr Arzoo Miah</h3><span class="ab-role">Chairman</span></div>
-        <div class="ab-card ab-person"><div class="avatar" aria-hidden="true">NH</div><h3>Mr Nazmul Hasan</h3><span class="ab-role">Vice Chair</span></div>
-        <div class="ab-card ab-person"><div class="avatar" aria-hidden="true">AB</div><h3>Mr Abu Bokkor</h3><span class="ab-role">Secretary</span></div>
-        <div class="ab-card ab-person"><div class="avatar" aria-hidden="true">RK</div><h3>Md Rejaul Karim</h3><span class="ab-role">Treasurer</span></div>
-        <div class="ab-card ab-person" data-ab-keep><div class="avatar" aria-hidden="true"><svg class="ico"><use href="#i-heart"/></svg></div><h3>Our volunteers</h3><span class="ab-role">The heart of the mosque</span><p>From teaching and events to the building project, volunteers keep our community going. We would love your help.</p><a class="link-arrow" href="contact">Get involved<svg class="ico"><use href="#i-arrow"/></svg></a></div>
-      </div>
-    </div>
-  </section>
-
   <!-- ============ Visit ============ -->
-  <section class="section wrap band" aria-labelledby="ab-visit">
+  <section class="section wrap" aria-labelledby="ab-visit">
     <div class="container site-container">
       <div class="row site-row g-4 gx-lg-5">
         <div class="col-lg-6">

@@ -13,8 +13,10 @@
   // placeholder text in [square brackets] keeps its "to do" look
   const todo = (t) => (/^\s*\[.*\]\s*$/s.test(t) ? ' class="ab-todo"' : '');
   const initials = (name) => {
-    const words = String(name).replace(/[^\p{L}\s'-]/gu, ' ').trim().split(/\s+/).filter(Boolean);
-    return (words.length ? words.slice(0, 2).map((w) => w[0]).join('') : '•').toUpperCase();
+    // skip titles (Mr, Md, Dr...) and use the first and last name: "Mr Arzoo Miah" -> "AM"
+    const words = String(name).replace(/[^\p{L}\s'-]/gu, ' ').trim().split(/\s+/).filter((w) => w && !/^(mr|mrs|ms|md|dr)$/i.test(w));
+    if (!words.length) return '•';
+    return (words[0][0] + (words.length > 1 ? words[words.length - 1][0] : '')).toUpperCase();
   };
   const GEMS = ['', 'ind', 'grn', 'sun'];
   const one = (sel) => document.querySelector(sel);

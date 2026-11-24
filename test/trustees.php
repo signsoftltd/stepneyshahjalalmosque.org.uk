@@ -6,9 +6,13 @@ $page = [
 	'title' => 'Trustees | Stepney Shah Jalal Mosque',
 	'description' => 'The Board of Directors and Trustees of Stepney Shahjalal Mosque & Cultural Centre.',
 	'nav' => 'trustees',
+	'scripts' => [
+		'assets/js/trustees.js',
+	],
 ];
 
-/* Board of Directors / Trustees: name and role, in the order they are listed.
+/* The board is managed in the admin panel (Trustees); assets/js/trustees.js loads it.
+   This list is the built-in default, shown if the admin panel can't be reached.
    The first four are shown as the leadership; the other officers follow,
    and everyone with the role "Trustee" is listed under Trustees. */
 $board = [
@@ -64,7 +68,7 @@ require __DIR__ . '/includes/header.php';
       <span class="kicker">Our people</span>
       <h1>Board of <em>Trustees</em></h1>
       <p>The Board of Directors and Trustees who oversee Stepney Shahjalal Mosque &amp; Cultural Centre on behalf of our community.</p>
-      <div class="pol-meta"><span><?= count($board) ?> board members</span><span>Elected every two years</span></div>
+      <div class="pol-meta"><span data-tr="count"><?= count($board) ?> board members</span><span>Elected every two years</span></div>
     </div>
   </section>
 
@@ -74,7 +78,7 @@ require __DIR__ . '/includes/header.php';
       <div class="sec-head">
         <div class="intro"><span class="kicker">Board of Directors</span><h2 id="leaders-title">Our <em>leadership</em></h2></div>
       </div>
-      <ul class="tr-leaders">
+      <ul class="tr-leaders" data-tr-list="leaders">
 <?php foreach ($leaders as $i => $t): ?>
         <li class="tr-leader">
           <span class="tr-leader-avatar" aria-hidden="true"><?= e(trustee_initials($t[0])) ?></span>
@@ -84,15 +88,15 @@ require __DIR__ . '/includes/header.php';
 <?php endforeach; ?>
       </ul>
 
-<?php if ($other_officers): ?>
-      <h3 class="tr-subhead">Officers</h3>
-      <ul class="tr-grid">
+      <div data-tr-group="officers"<?= $other_officers ? '' : ' hidden' ?>>
+        <h3 class="tr-subhead">Officers</h3>
+        <ul class="tr-grid" data-tr-list="officers">
 <?php foreach ($other_officers as $t): ?>
-        <?= trustee_card($t, 'ind') ?>
+          <?= trustee_card($t, 'ind') ?>
 
 <?php endforeach; ?>
-      </ul>
-<?php endif; ?>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -102,7 +106,7 @@ require __DIR__ . '/includes/header.php';
       <div class="sec-head">
         <div class="intro"><span class="kicker">Trustees</span><h2 id="trustees-title">Our <em>trustees</em></h2></div>
       </div>
-      <ul class="tr-grid">
+      <ul class="tr-grid" data-tr-list="trustees">
 <?php foreach ($trustees as $t): ?>
         <?= trustee_card($t) ?>
 

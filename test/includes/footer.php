@@ -74,17 +74,10 @@ defined('HIUK') or exit;
 <?php endforeach; ?>
 <?php if (in_app()): ?>
 <script>
-/* Inside the mobile app: the background pattern, and links to other pages open outside the app (the app passes
-   them to the phone's browser) instead of inside this screen */
+/* Inside the mobile app: links to other pages open outside the app (the app passes
+   them to the phone's browser) instead of inside this screen. (The background pattern is set in theme.css.) */
 (function () {
   'use strict';
-  function starPath(cx, cy, R) {
-    const order = [0, 3, 6, 1, 4, 7, 2, 5];
-    return 'M' + order.map((k) => { const a = k * Math.PI / 4 + Math.PI / 8; return (cx + R * Math.cos(a)).toFixed(2) + ' ' + (cy + R * Math.sin(a)).toFixed(2); }).join(' L') + 'Z';
-  }
-  const s = 84, R = s * 0.36, pts = [[s / 2, s / 2], [0, 0], [s, 0], [0, s], [s, s]];
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}"><g fill="none" stroke="#8CC63E" stroke-width="1"><path d="${pts.map(([x, y]) => starPath(x, y, R)).join(' ')}"/>${pts.map(([x, y]) => `<circle cx="${x}" cy="${y}" r="${(R * .38).toFixed(2)}"/>`).join('')}</g></svg>`;
-  document.documentElement.style.setProperty('--pat', `url("data:image/svg+xml,${encodeURIComponent(svg)}")`);
   document.addEventListener('click', (e) => {
     const a = e.target.closest && e.target.closest('a[href]');
     if (!a || a.target) return;
@@ -103,13 +96,6 @@ defined('HIUK') or exit;
 (function () {
   'use strict';
   const $ = (s, r = document) => r.querySelector(s);
-  function starPath(cx, cy, R) {
-    const order = [0, 3, 6, 1, 4, 7, 2, 5];
-    return 'M' + order.map((k) => { const a = k * Math.PI / 4 + Math.PI / 8; return (cx + R * Math.cos(a)).toFixed(2) + ' ' + (cy + R * Math.sin(a)).toFixed(2); }).join(' L') + 'Z';
-  }
-  const s = 84, R = s * 0.36, pts = [[s / 2, s / 2], [0, 0], [s, 0], [0, s], [s, s]];
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}"><g fill="none" stroke="#8CC63E" stroke-width="1"><path d="${pts.map(([x, y]) => starPath(x, y, R)).join(' ')}"/>${pts.map(([x, y]) => `<circle cx="${x}" cy="${y}" r="${(R * .38).toFixed(2)}"/>`).join('')}</g></svg>`;
-  document.documentElement.style.setProperty('--pat', `url("data:image/svg+xml,${encodeURIComponent(svg)}")`);
   const y = $('#year'); if (y) y.textContent = new Date().getFullYear();
   $('#siteHeader').classList.add('solid');
 })();

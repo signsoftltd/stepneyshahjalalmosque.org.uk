@@ -43,21 +43,7 @@ const SITE = {
   const hijriReady = window.HIUKHijri ? HIUKHijri.ready() : Promise.resolve();
   const setText = (sel, v) => $$(sel).forEach((el) => { el.textContent = v; });
 
-  /* ---------- Geometric pattern (8-point star tile) ---------- */
-  function starPath(cx, cy, R) {
-    const order = [0, 3, 6, 1, 4, 7, 2, 5];
-    return 'M' + order.map((k) => {
-      const a = k * Math.PI / 4 + Math.PI / 8;
-      return (cx + R * Math.cos(a)).toFixed(2) + ' ' + (cy + R * Math.sin(a)).toFixed(2);
-    }).join(' L') + 'Z';
-  }
-  function tileSVG(s, color) {
-    const R = s * 0.36, pts = [[s / 2, s / 2], [0, 0], [s, 0], [0, s], [s, s]];
-    const d = pts.map(([x, y]) => starPath(x, y, R)).join(' ');
-    const c = pts.map(([x, y]) => `<circle cx="${x}" cy="${y}" r="${(R * 0.38).toFixed(2)}"/>`).join('');
-    return `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}"><g fill="none" stroke="${color}" stroke-width="1"><path d="${d}"/>${c}</g></svg>`;
-  }
-  document.documentElement.style.setProperty('--pat', `url("data:image/svg+xml,${encodeURIComponent(tileSVG(84, '#8CC63E'))}")`);
+  /* The geometric background pattern (--pat) is set in theme.css */
 
   /* Favicons are set in each page's <head> (favicon.ico and assets/images/icons/) */
 
@@ -129,7 +115,7 @@ const SITE = {
     const pathTo = (t1) => { let d = ''; const n = 90; for (let i = 0; i <= n; i++) { const t = t1 * i / n; const [x, y] = P(t); d += (i ? 'L' : 'M') + x.toFixed(1) + ' ' + y.toFixed(1); } return d; };
     const tn = tOf(nowMin);
     const tc = Math.max(0, Math.min(1, tn));
-    const font = 'font-family="Hanken Grotesk, system-ui, sans-serif"';
+    const font = 'font-family="Manrope, system-ui, sans-serif"';
     const defs = `<defs><linearGradient id="arcG" x1="0" x2="1"><stop offset="0" stop-color="#467C12"/><stop offset="1" stop-color="#A8D56A"/></linearGradient>
       <radialGradient id="sunG"><stop offset="0" stop-color="#FFC27A"/><stop offset="1" stop-color="#FFC27A" stop-opacity="0"/></radialGradient></defs>`;
     // h: the arc, dots, names, times and moon (the drawing is fitted to these); under/over: the pulse

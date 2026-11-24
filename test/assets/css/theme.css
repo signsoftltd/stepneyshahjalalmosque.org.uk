@@ -5,7 +5,7 @@
    burgundy #08703F, indigo #3052A4, orange #7DB832, green #14844C
    ====================================================================== */
 :root{
-  --bs-font-sans-serif:'Hanken Grotesk',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --bs-font-sans-serif:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
   --bs-body-font-family:var(--bs-font-sans-serif);--bs-body-font-size:17px;--bs-body-font-weight:400;--bs-body-line-height:1.65;
   --bs-body-color:#24302A;--bs-body-color-rgb:36,48,42;--bs-body-bg:#F1F4F6;--bs-body-bg-rgb:241,244,246;
   --bs-heading-color:#121A16;--bs-emphasis-color:#121A16;--bs-secondary-color:#5A6660;
@@ -25,18 +25,22 @@
   --ind-950:#14234B; --ind-800:#233D80; --grn-950:#062A1A; --grn-900:#0A3A25; --grn-800:#0F4D31; --grn-700:#1F6B3F; --grn-600:#14844C; --grn-100:#D9ECDF; --grn-50:#EAF4EC;
   --ivory:#F1F4F6; --stone:#E6EAEE; --white:#FFFFFF;
   --ink:#121A16; --text:#24302A; --muted:#5A6660; --faint:#737D78; --line:#DFE4E8; --line-2:#CFD6DC; --on-dark:#CFE3D7; --on-dark-2:#95B8A4;
-  --serif:'Instrument Serif','Iowan Old Style','Palatino Linotype',Georgia,serif;
-  --sans:'Hanken Grotesk',system-ui,-apple-system,'Segoe UI',sans-serif;
+  /* Headings: Cormorant Garamond, loaded at weight 600 only, so every heading uses it whatever weight the rule asks for */
+  --serif:'Cormorant Garamond','Iowan Old Style','Palatino Linotype',Georgia,serif;
+  --sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
   --quran:'Amiri','Traditional Arabic','Scheherazade New',serif;
   --kufi:'Reem Kufi','Amiri','Traditional Arabic',sans-serif;
   --pad:clamp(16px,5vw,88px);
   --max:1320px;
   --hh:92px;
-  --r-lg:28px; --r:20px; --r-sm:14px;
+  --r-lg:18px; --r:14px; --r-sm:10px;
+  /* Background pattern: the 16-point star rosette (also on the Donor Wall) */
+  --pat:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cg fill='none' stroke='%238CC63E' stroke-width='2'%3E%3Crect x='3' y='3' width='194' height='194'/%3E%3Crect x='8' y='8' width='184' height='184'/%3E%3Ccircle cx='100' cy='100' r='90'/%3E%3Ccircle cx='100' cy='100' r='84'/%3E%3Cpath d='M100,64L111.7,41.2L100,16L88.3,41.2ZM113.8,66.7L133.3,50.1L132.1,22.4L111.7,41.2ZM125.5,74.5L149.9,66.7L159.4,40.6L133.3,50.1ZM133.3,86.2L158.8,88.3L177.6,67.9L149.9,66.7ZM136,100L158.8,111.7L184,100L158.8,88.3ZM133.3,113.8L149.9,133.3L177.6,132.1L158.8,111.7ZM125.5,125.5L133.3,149.9L159.4,159.4L149.9,133.3ZM113.8,133.3L111.7,158.8L132.1,177.6L133.3,149.9ZM100,136L88.3,158.8L100,184L111.7,158.8ZM86.2,133.3L66.7,149.9L67.9,177.6L88.3,158.8ZM74.5,125.5L50.1,133.3L40.6,159.4L66.7,149.9ZM66.7,113.8L41.2,111.7L22.4,132.1L50.1,133.3ZM64,100L41.2,88.3L16,100L41.2,111.7ZM66.7,86.2L50.1,66.7L22.4,67.9L41.2,88.3ZM74.5,74.5L66.7,50.1L40.6,40.6L50.1,66.7ZM86.2,66.7L88.3,41.2L67.9,22.4L66.7,50.1Z'/%3E%3Cpolygon points='100,64 104.7,76.5 113.8,66.7 113.3,80 125.5,74.5 120,86.7 133.3,86.2 123.5,95.3 136,100 123.5,104.7 133.3,113.8 120,113.3 125.5,125.5 113.3,120 113.8,133.3 104.7,123.5 100,136 95.3,123.5 86.2,133.3 86.7,120 74.5,125.5 80,113.3 66.7,113.8 76.5,104.7 64,100 76.5,95.3 66.7,86.2 80,86.7 74.5,74.5 86.7,80 86.2,66.7 95.3,76.5'/%3E%3Ccircle cx='100' cy='100' r='12'/%3E%3Cpath d='M8 8L30 30M192 8L170 30M8 192L30 170M192 192L170 170'/%3E%3C/g%3E%3C/svg%3E");
   --shadow-sm:0 1px 2px rgba(2,31,18,.05),0 4px 14px -6px rgba(2,31,18,.09);
   --shadow:0 2px 4px rgba(2,31,18,.04),0 24px 48px -24px rgba(4,67,38,.30);
   --ease:cubic-bezier(.2,.7,.2,1);
-  --star:polygon(50% 0,64.64% 14.64%,85.36% 14.64%,85.36% 35.36%,100% 50%,85.36% 64.64%,85.36% 85.36%,64.64% 85.36%,50% 100%,35.36% 85.36%,14.64% 85.36%,14.64% 64.64%,0 50%,14.64% 35.36%,14.64% 14.64%,35.36% 14.64%);
+  /* badge shape behind icons: a 16-point scalloped rosette */
+  --star:polygon(50% 0%,58.39% 7.83%,69.13% 3.81%,73.89% 14.25%,85.36% 14.64%,85.75% 26.11%,96.19% 30.87%,92.17% 41.61%,100% 50%,92.17% 58.39%,96.19% 69.13%,85.75% 73.89%,85.36% 85.36%,73.89% 85.75%,69.13% 96.19%,58.39% 92.17%,50% 100%,41.61% 92.17%,30.87% 96.19%,26.11% 85.75%,14.64% 85.36%,14.25% 73.89%,3.81% 69.13%,7.83% 58.39%,0% 50%,7.83% 41.61%,3.81% 30.87%,14.25% 26.11%,14.64% 14.64%,26.11% 14.25%,30.87% 3.81%,41.61% 7.83%);
   --logo:url("../images/logo.svg");
   color-scheme:light;
 }
@@ -75,7 +79,7 @@ p{margin:0}
 
 /* Kicker with 8-point star */
 .kicker{display:inline-flex;align-items:center;gap:10px;font:600 12.5px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--o-700)}
-.kicker::before{content:"";width:10px;height:10px;background:var(--o-500);clip-path:var(--star)}
+.kicker::before{content:"";width:26px;height:2px;border-radius:2px;background:linear-gradient(90deg,rgba(201,163,92,0),#C9A35C 70%,var(--o-500))}
 .on-dark .kicker{color:var(--o-400)}
 .lede{font-size:clamp(17px,1.4vw,19px);color:var(--muted);max-width:56ch;line-height:1.65}
 .sec-head{gap:24px 40px}
@@ -85,7 +89,7 @@ p{margin:0}
 .sec-head .intro{display:grid;gap:18px;max-width:760px}
 
 /* Buttons */
-.site-btn{--h:52px;--bs-btn-padding-x:26px;--bs-btn-padding-y:0;--bs-btn-font-family:var(--sans);--bs-btn-font-size:15.5px;--bs-btn-font-weight:600;--bs-btn-line-height:1;--bs-btn-border-width:1px;--bs-btn-border-radius:999px;--bs-btn-focus-box-shadow:none;--bs-btn-disabled-opacity:.6;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:var(--h);letter-spacing:.005em;white-space:nowrap;transition:background-color .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease),transform .25s var(--ease),box-shadow .25s var(--ease)}
+.site-btn{--h:52px;--bs-btn-padding-x:26px;--bs-btn-padding-y:0;--bs-btn-font-family:var(--sans);--bs-btn-font-size:15.5px;--bs-btn-font-weight:600;--bs-btn-line-height:1;--bs-btn-border-width:1px;--bs-btn-border-radius:10px;--bs-btn-focus-box-shadow:none;--bs-btn-disabled-opacity:.6;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:var(--h);letter-spacing:.005em;white-space:nowrap;transition:background-color .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease),transform .25s var(--ease),box-shadow .25s var(--ease)}
 .site-btn svg{width:18px;height:18px;flex-shrink:0;transition:transform .25s var(--ease)}
 .site-btn:hover svg.arr{transform:translateX(3px)}
 .site-btn-lg{--h:58px;--bs-btn-padding-x:30px;--bs-btn-font-size:16px}
@@ -119,7 +123,7 @@ a:hover .gem::before{transform:rotate(45deg)}
 a:hover .gem::after{transform:rotate(90deg)}
 
 /* Pattern overlay (set by script) */
-.pattern{position:absolute;inset:0;pointer-events:none;background-image:var(--pat);background-size:84px 84px;opacity:.10}
+.pattern{position:absolute;inset:0;pointer-events:none;background-image:var(--pat);background-size:150px 150px;opacity:.10}
 .pattern.pat-fade{-webkit-mask-image:radial-gradient(ellipse at 70% 40%,#000 0%,transparent 70%);mask-image:radial-gradient(ellipse at 70% 40%,#000 0%,transparent 70%)}
 
 /* ============ Utility bar ============ */

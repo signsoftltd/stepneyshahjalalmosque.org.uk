@@ -194,11 +194,6 @@ html[data-theme="dark"] .next-count{color:#7BD3A0}
 .jum-times dt{font:600 10px var(--sans);letter-spacing:.1em;text-transform:uppercase;color:#CFE6D8}
 .jum-times dd{margin:1px 0 0;font-weight:700;font-size:15.5px}
 
-/* Sister organisations, under Jumu'ah */
-.sis-links{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:8px}
-.sis-links a{display:flex;align-items:center;justify-content:center;gap:5px;min-height:44px;padding:8px 6px;border:1px solid var(--line);border-radius:16px;background:var(--card);color:var(--ink);font-weight:600;font-size:min(13px,calc(4vw / var(--zoom)));line-height:1.2;text-align:center;text-decoration:none}
-.sis-links a:active{background:var(--stone)}
-.sis-links .ico{flex:none;width:14px;height:14px;color:var(--accent)}
 
 /* Home while the prayer times load: grey bars where they will be, the size of what comes (index.html) */
 .sk{display:inline-block;width:5em;max-width:100%;height:.72em;border-radius:6px;background:var(--line-2);vertical-align:middle;animation:sk-pulse 1.4s ease-in-out infinite}

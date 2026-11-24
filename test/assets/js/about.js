@@ -12,12 +12,6 @@
   const icon = (name) => (/^[a-z-]+$/.test(name || '') ? name : 'mosque');
   // placeholder text in [square brackets] keeps its "to do" look
   const todo = (t) => (/^\s*\[.*\]\s*$/s.test(t) ? ' class="ab-todo"' : '');
-  const initials = (name) => {
-    // skip titles (Mr, Md, Dr...) and use the first and last name: "Mr Arzoo Miah" -> "AM"
-    const words = String(name).replace(/[^\p{L}\s'-]/gu, ' ').trim().split(/\s+/).filter((w) => w && !/^(mr|mrs|ms|md|dr)$/i.test(w));
-    if (!words.length) return '•';
-    return (words[0][0] + (words.length > 1 ? words[words.length - 1][0] : '')).toUpperCase();
-  };
   const GEMS = ['', 'ind', 'grn', 'sun'];
   const one = (sel) => document.querySelector(sel);
 
@@ -27,8 +21,7 @@
     cards: (it, i) => {
       const link = it.label && safeLink(it.link) ? `<a class="link-arrow" href="${esc(cleanLink(it.link))}"${/^https?:/i.test(it.link) ? ' target="_blank" rel="noopener"' : ''}>${esc(it.label)}<svg class="ico"><use href="#i-arrow"/></svg></a>` : '';
       return `<div class="ab-card"><span class="gem sm ${GEMS[i % 4]}"><svg class="ico"><use href="#i-${icon(it.icon)}"/></svg></span><h3>${esc(it.title)}</h3>${it.body ? `<p${todo(it.body)}>${esc(it.body)}</p>` : ''}${link}</div>`;
-    },
-    people: (it) => `<div class="ab-card ab-person"><div class="avatar" aria-hidden="true">${esc(initials(it.title))}</div><h3>${esc(it.title)}</h3>${it.label ? `<span class="ab-role">${esc(it.label)}</span>` : ''}${it.body ? `<p${todo(it.body)}>${esc(it.body)}</p>` : ''}</div>`
+    }
   };
 
   function apply(d) {

@@ -18,20 +18,22 @@ window.HIUK_CONFIG = {
   ramadanUrl: 'https://apps.signsoft.co.uk/api/clients/stepneyshahjalalmosque/ramadan-timetable.php',
   // admin panel public API (events, notices, ...) for later pages
   apiUrl: 'https://manage.stepneyshahjalalmosque.org.uk/api/public',
-  website: 'https://stepneyshahjalalmosque.org.uk',
+  // The new website is at /test/ for now (stepneyshahjalalmosque.org.uk itself is still the previous website).
+  // When it moves to the main address, change '/test/' to '/' in website, donateUrl, shareUrl and webBase.
+  website: 'https://stepneyshahjalalmosque.org.uk/test/',
   // the website's donations page, shown in the Donate tab without the website's header and footer (?app=1).
-  donateUrl: 'https://stepneyshahjalalmosque.org.uk/donations',
+  donateUrl: 'https://stepneyshahjalalmosque.org.uk/test/donations',
   // "Share this app": change shareUrl to the app's store page (or a page linking to both stores) once published
   // Donate (side menu): the masjid's bank account (empty = shows "coming soon" until filled in; IBAN and SWIFT are optional)
   bank: { name: '', accountName: '', sortCode: '', accountNumber: '', iban: '', swift: '' },
-  shareUrl: 'https://stepneyshahjalalmosque.org.uk',
+  shareUrl: 'https://stepneyshahjalalmosque.org.uk/test/',
   shareText: 'Prayer times, Jumu\'ah and more from Stepney Shah Jalal Mosque',
   phone: '+442072658603',
   // side menu: social links (empty = shows "coming soon" until filled in)
   facebookUrl: 'https://www.facebook.com/stepneyshahjalalmosque',
   youtubeUrl: 'https://www.youtube.com/@stepneyshahjalalmosquecult5709',
   // website pages shown inside the app (web.html#zakat), without the website's header and footer.
-  webBase: 'https://stepneyshahjalalmosque.org.uk/',
+  webBase: 'https://stepneyshahjalalmosque.org.uk/test/',
   webPages: {
     zakat: { title: 'Zakat calculator', sub: 'Work out the Zakat you owe', path: 'zakat' },
     events: { title: 'News', sub: 'What\'s on at the masjid', path: 'events' },

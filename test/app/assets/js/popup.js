@@ -12,7 +12,7 @@
     const CFG = window.HIUK_CONFIG || {};
     const { esc } = HIUK.util;
     const KEY = 'hiuk_app_popup_seen';
-    const BASE = CFG.webBase || 'https://stepneyshahjalalmosque.org.uk/';
+    const BASE = CFG.webBase || 'https://stepneyshahjalalmosque.org.uk/test/';
 
     // Arabic runs in the message are shown in the app's Arabic font (as the website does)
     const AR = '؀-ۿݐ-ݿࢠ-ࣿﭐ-﷿ﹰ-﻿';

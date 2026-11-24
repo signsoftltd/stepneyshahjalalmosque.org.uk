@@ -17,8 +17,8 @@
 define('HIUK', true);
 
 // The website's full address, without a slash at the end. Used for link previews (Facebook, WhatsApp, X)
-// and search engines.
-const SITE_URL = 'https://hefazotheislamuk.org';
+// and search engines. (At /test for now; change to 'https://stepneyshahjalalmosque.org.uk' when the site moves there.)
+const SITE_URL = 'https://stepneyshahjalalmosque.org.uk/test';
 const SITE_NAME = 'Stepney Shah Jalal Mosque';
 
 /** Text made safe to print in HTML. */

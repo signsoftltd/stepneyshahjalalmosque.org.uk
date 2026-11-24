@@ -13,14 +13,14 @@
     v.cleanup(() => clearTimeout(timer));
 
     // web.html: which website page, its title in the header
-    let base = CFG.donateUrl || 'https://stepneyshahjalalmosque.org.uk/donations';
+    let base = CFG.donateUrl || 'https://stepneyshahjalalmosque.org.uk/test/donations';
     if (v.el.getAttribute('data-frame') === 'web') {
       const p = HIUK.webPage();
       $('webTitle').textContent = p.title;
       $('webSub').textContent = p.sub || '';
       frame.title = p.title;
       document.title = p.title + ' | Stepney Shah Jalal Mosque';
-      base = (CFG.webBase || 'https://stepneyshahjalalmosque.org.uk/') + p.path;
+      base = (CFG.webBase || 'https://stepneyshahjalalmosque.org.uk/test/') + p.path;
     }
     const pageUrl = () => base + (base.indexOf('?') < 0 ? '?' : '&') + 'app=1&theme=' + (HIUK.isDark() ? 'dark' : 'light');
 

@@ -22,5 +22,5 @@ jobs:
             git fetch origin
             git reset --hard origin/main # Reset local changes to match remote main branch
             #composer install --no-dev --optimize-autoloader
-            php database/runner.php
+            #php database/runner.php
             #rm -rf config-example.php

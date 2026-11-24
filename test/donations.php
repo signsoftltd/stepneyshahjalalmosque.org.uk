@@ -60,15 +60,16 @@ require __DIR__ . '/includes/header.php';
           <a class="btn site-btn btn-glass site-btn-sm" href="assets/docs/standing-order-form.pdf" download="Stepney-Shahjalal-Mosque-standing-order-form.pdf">Download the form (PDF)<svg class="ico arr"><use href="#i-arrow"/></svg></a>
         </article>
         <article class="way way-bottom">
-          <h3>Build Allah’s House</h3>
-          <p>Make a one-off donation of £1,000 towards the building of this Mosque, which can also be given in instalments. UK taxpayers can add Gift Aid to increase their donation.</p>
+          <h3>By post</h3>
+          <p>Make your cheque payable to “Stepney Shahjalal Mosque &amp; Cultural Centre” and include a note with your name and address.</p>
+          <address class="way-address">Stepney Shahjalal Mosque &amp; Cultural Centre<br>81-83 Duckett Street<br>London, E1 4TD<br>United Kingdom</address>
         </article>
         <article class="way way-bottom">
-          <h3>Any questions?</h3>
-          <p>Should you need any further information, please contact us:</p>
+          <h3>By telephone</h3>
+          <p>To give by debit or credit card, or for more information, please call us:</p>
           <dl class="way-dl">
-            <dt>Phone</dt><dd><a href="tel:+447442490694">07442 490694</a><br><a href="tel:+442072658603">020 7265 8603</a></dd>
-            <dt>Email</dt><dd><a href="mailto:info@stepneyshahjalalmosque.org.uk">info@<wbr>stepneyshahjalalmosque.org.uk</a></dd>
+            <dt>UK callers</dt><dd><a href="tel:+442072658603">020 7265 8603</a><br><a href="tel:+447442490694">07442 490694</a></dd>
+            <dt>International</dt><dd><a href="tel:+442072658603">+44 20 7265 8603</a></dd>
           </dl>
         </article>
       </div>

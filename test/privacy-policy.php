@@ -44,8 +44,8 @@ require __DIR__ . '/includes/header.php';
       <div class="col-lg-9"><article class="pol">
         <section id="who">
           <h2><small>01</small>Who we are</h2>
-          <p>Stepney Shah Jalal Mosque ("we", "us") is a mosque and Islamic community centre, established in 1999. We are the controller of the personal information described in this policy.</p>
-          <p>Registered charity no. 1115709. Address: 534 Barking Road, London, E13 8QE, United Kingdom. Email: <a href="mailto:info@hefazotheislamuk.org">info@hefazotheislamuk.org</a>. Telephone: 07878 561130.</p>
+          <p>Stepney Shahjalal Mosque &amp; Cultural Centre ("we", "us") is a mosque and Islamic community centre in Stepney Green, established in 1985, and a registered charity. We are the controller of the personal information described in this policy.</p>
+          <p>Address: 81-83 Duckett Street, London, E1 4TD, United Kingdom. Email: <a href="mailto:info@stepneyshahjalalmosque.org.uk">info@stepneyshahjalalmosque.org.uk</a>. Telephone: <a href="tel:+442072658603">020 7265 8603</a>.</p>
         </section>
 
         <section id="collect">
@@ -111,7 +111,7 @@ require __DIR__ . '/includes/header.php';
             <li>receive information you gave us in a portable format;</li>
             <li>withdraw consent at any time, for example by using the unsubscribe link or changing your <button class="ck-link" type="button" data-cookie-settings style="color:var(--b-700)">cookie preferences</button>.</li>
           </ul>
-          <p>To use any of these rights, email <a href="mailto:info@hefazotheislamuk.org">info@hefazotheislamuk.org</a>. We will respond within one month and may need to confirm your identity first.</p>
+          <p>To use any of these rights, email <a href="mailto:info@stepneyshahjalalmosque.org.uk">info@stepneyshahjalalmosque.org.uk</a>. We will respond within one month and may need to confirm your identity first.</p>
         </section>
 
         <section id="cookies">
@@ -154,7 +154,7 @@ require __DIR__ . '/includes/header.php';
 
         <section id="complaints">
           <h2><small>12</small>Contact &amp; complaints</h2>
-          <p>If you have a question about this policy or how we handle your information, contact us at <a href="mailto:info@hefazotheislamuk.org">info@hefazotheislamuk.org</a> or write to Stepney Shah Jalal Mosque, 534 Barking Road, London, E13 8QE.</p>
+          <p>If you have a question about this policy or how we handle your information, contact us at <a href="mailto:info@stepneyshahjalalmosque.org.uk">info@stepneyshahjalalmosque.org.uk</a>, call <a href="tel:+442072658603">020 7265 8603</a>, or write to Stepney Shahjalal Mosque &amp; Cultural Centre, 81-83 Duckett Street, London, E1 4TD.</p>
           <p>You also have the right to complain to the Information Commissioner's Office (ICO) at <a href="https://ico.org.uk/make-a-complaint/" target="_blank" rel="noopener">ico.org.uk/make-a-complaint</a> or on 0303 123 1113. We would appreciate the chance to put things right first.</p>
         </section>
       </article></div>

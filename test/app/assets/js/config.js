@@ -25,7 +25,7 @@ window.HIUK_CONFIG = {
   donateUrl: 'https://stepneyshahjalalmosque.org.uk/test/donations',
   // "Share this app": change shareUrl to the app's store page (or a page linking to both stores) once published
   // Donate (side menu): the masjid's bank account (empty = shows "coming soon" until filled in; IBAN and SWIFT are optional)
-  bank: { name: '', accountName: '', sortCode: '', accountNumber: '', iban: '', swift: '' },
+  bank: { name: 'Lloyds Bank', accountName: 'Stepney Shahjalal Mosque & Cultural Centre', sortCode: '30-92-21', accountNumber: '00616603', iban: 'GB78 LOYD 3092 2100 6166 03', swift: 'LOYDGB21357' },
   shareUrl: 'https://stepneyshahjalalmosque.org.uk/test/',
   shareText: 'Prayer times, Jumu\'ah and more from Stepney Shah Jalal Mosque',
   phone: '+442072658603',

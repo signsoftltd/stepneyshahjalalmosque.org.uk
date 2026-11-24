@@ -116,11 +116,12 @@ defined('HIUK') or exit;
       </a>
       <ul class="navbar-nav site-nav flex-row d-none d-xl-flex">
           <li class="nav-item"><a class="nav-link site-nav-link" href="<?= home_url() ?>"<?= nav_current('home') ?>>Home</a></li>
-          <li class="nav-item"><a class="nav-link site-nav-link" href="timetable"<?= nav_current('timetable') ?>>Prayer Times</a></li>
-          <li class="nav-item"><a class="nav-link site-nav-link" href="events"<?= nav_current('events') ?>>Events</a></li>
-          <li class="nav-item"><a class="nav-link site-nav-link" href="services"<?= nav_current('services') ?>>Services</a></li>
           <li class="nav-item"><a class="nav-link site-nav-link" href="about"<?= nav_current('about') ?>>About Us</a></li>
-          <li class="nav-item"><a class="nav-link site-nav-link" href="contact"<?= nav_current('contact') ?>>Contact</a></li>
+          <li class="nav-item"><a class="nav-link site-nav-link" href="services"<?= nav_current('services') ?>>What We Do</a></li>
+          <li class="nav-item"><a class="nav-link site-nav-link" href="trustees"<?= nav_current('trustees') ?>>Trustees</a></li>
+          <li class="nav-item"><a class="nav-link site-nav-link" href="events"<?= nav_current('events') ?>>News</a></li>
+          <li class="nav-item"><a class="nav-link site-nav-link" href="donor-wall"<?= nav_current('donor-wall') ?>>Donor Wall</a></li>
+          <li class="nav-item"><a class="nav-link site-nav-link" href="contact"<?= nav_current('contact') ?>>Contact Us</a></li>
       </ul>
       <div class="head-actions d-flex align-items-center gap-2">
         <a class="btn site-btn btn-sun site-btn-sm" href="donations"><svg class="ico"><use href="#i-heart"/></svg><span>Donate<span class="now"> Now</span></span></a>
@@ -148,12 +149,12 @@ defined('HIUK') or exit;
     <nav aria-label="Mobile">
         <ul class="mnav-list">
           <li><a class="nav-link mnav-link" href="<?= home_url() ?>"<?= nav_current('home') ?>>Home</a></li>
-          <li><a class="nav-link mnav-link" href="timetable"<?= nav_current('timetable') ?>>Timetable <span>Monthly</span></a></li>
-          <li><a class="nav-link mnav-link" href="events"<?= nav_current('events') ?>>Events</a></li>
-          <li><a class="nav-link mnav-link" href="services"<?= nav_current('services') ?>>Services</a></li>
           <li><a class="nav-link mnav-link" href="about"<?= nav_current('about') ?>>About Us</a></li>
-          <li><a class="nav-link mnav-link" href="<?= home_url('#faq') ?>">FAQs</a></li>
-          <li><a class="nav-link mnav-link" href="contact"<?= nav_current('contact') ?>>Contact</a></li>
+          <li><a class="nav-link mnav-link" href="services"<?= nav_current('services') ?>>What We Do</a></li>
+          <li><a class="nav-link mnav-link" href="trustees"<?= nav_current('trustees') ?>>Trustees</a></li>
+          <li><a class="nav-link mnav-link" href="events"<?= nav_current('events') ?>>News</a></li>
+          <li><a class="nav-link mnav-link" href="donor-wall"<?= nav_current('donor-wall') ?>>Donor Wall</a></li>
+          <li><a class="nav-link mnav-link" href="contact"<?= nav_current('contact') ?>>Contact Us</a></li>
         </ul>
     </nav>
     <div class="mnav-foot">

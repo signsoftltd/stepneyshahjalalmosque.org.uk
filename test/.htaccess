@@ -25,6 +25,14 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} ^(.+)/$
 RewriteRule ^ %1 [R=301,L]
 
+# Addresses from the previous website -> the matching page here (permanent)
+RewriteCond %{REQUEST_URI} ^(.*/)about-us/?$ [NC]
+RewriteRule ^ %1about [R=301,L]
+RewriteCond %{REQUEST_URI} ^(.*/)what-we-do/?$ [NC]
+RewriteRule ^ %1services [R=301,L]
+RewriteCond %{REQUEST_URI} ^(.*/)news/?$ [NC]
+RewriteRule ^ %1events [R=301,L]
+
 # Clean address -> the page's .php file
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

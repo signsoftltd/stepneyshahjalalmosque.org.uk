@@ -7,7 +7,7 @@
      'donations'   => true,           // the page has donation forms (see uses_donations())
      'title'       => 'Events | Stepney Shah Jalal Mosque',
      'description' => '...',          // search engines and link previews
-     'nav'         => 'events',       // menu item to mark as the current page: home, events, services, about, contact
+     'nav'         => 'events',       // menu item to mark as the current page: home, about, services, trustees, events (News), donor-wall, contact
      'home'        => false,          // the home page has the prayer bar, in-page menu links and the "Today" footer column
      'og_type'     => 'article',      // link previews: 'website' for the home page
      'head'        => '',             // extra HTML for <head> (e.g. structured data)

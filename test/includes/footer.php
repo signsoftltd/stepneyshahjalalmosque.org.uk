@@ -40,7 +40,7 @@ defined('HIUK') or exit;
           </div>
         </div>
         <div class="col-12 f-cols-col"><nav class="f-cols row site-row row-cols-2 row-cols-md-4" aria-label="Footer">
-          <div class="col"><h3>Explore</h3><a href="<?= home_url('#prayer') ?>">Prayer Times</a><a href="timetable">Prayer Timetable</a><a href="events">Events</a><a href="donations">Donations</a><a href="services">Services</a><a href="about">About Us</a><a href="<?= home_url('#faq') ?>">FAQs</a></div>
+          <div class="col"><h3>Explore</h3><a href="about">About Us</a><a href="services">What We Do</a><a href="trustees">Trustees</a><a href="events">News</a><a href="donor-wall">Donor Wall</a><a href="timetable">Prayer Timetable</a><a href="<?= home_url('#faq') ?>">FAQs</a></div>
           <div class="col"><h3>Get involved</h3><a href="<?= home_url('#donate') ?>" data-give="Zakat">Pay Zakat</a><a href="services">Madrasa enrolment</a><a href="contact">Volunteer</a><a href="#newsletter">Newsletter</a></div>
           <?php if (is_home()): ?>
           <div class="col"><h3>Today</h3><span>Fajr <span class="tnum" data-pt="Fajr"></span></span><span>Dhuhr <span class="tnum" data-pt="Dhuhr"></span></span><span>Asr <span class="tnum" data-pt="Asr"></span></span><span>Maghrib <span class="tnum" data-pt="Maghrib"></span></span><span>Isha <span class="tnum" data-pt="Isha"></span></span></div>

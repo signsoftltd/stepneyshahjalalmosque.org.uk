@@ -57,7 +57,7 @@ const SITE = {
     const c = pts.map(([x, y]) => `<circle cx="${x}" cy="${y}" r="${(R * 0.38).toFixed(2)}"/>`).join('');
     return `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}"><g fill="none" stroke="${color}" stroke-width="1"><path d="${d}"/>${c}</g></svg>`;
   }
-  document.documentElement.style.setProperty('--pat', `url("data:image/svg+xml,${encodeURIComponent(tileSVG(84, '#F47A1E'))}")`);
+  document.documentElement.style.setProperty('--pat', `url("data:image/svg+xml,${encodeURIComponent(tileSVG(84, '#8CC63E'))}")`);
 
   /* Favicons are set in each page's <head> (favicon.ico and assets/images/icons/) */
 
@@ -130,7 +130,7 @@ const SITE = {
     const tn = tOf(nowMin);
     const tc = Math.max(0, Math.min(1, tn));
     const font = 'font-family="Hanken Grotesk, system-ui, sans-serif"';
-    const defs = `<defs><linearGradient id="arcG" x1="0" x2="1"><stop offset="0" stop-color="#C9610F"/><stop offset="1" stop-color="#F8A662"/></linearGradient>
+    const defs = `<defs><linearGradient id="arcG" x1="0" x2="1"><stop offset="0" stop-color="#467C12"/><stop offset="1" stop-color="#A8D56A"/></linearGradient>
       <radialGradient id="sunG"><stop offset="0" stop-color="#FFC27A"/><stop offset="1" stop-color="#FFC27A" stop-opacity="0"/></radialGradient></defs>`;
     // h: the arc, dots, names, times and moon (the drawing is fitted to these); under/over: the pulse
     // ring and the moving sun, which may reach a little past the fitted area
@@ -150,16 +150,16 @@ const SITE = {
       const yName = above ? y - L.dy2 + 8 : y + L.dy1, yTime = above ? y - 18 : y + L.dy2;
       if (isNext) under += `<circle class="pulse" cx="${x}" cy="${y}" r="${L.pulse}" fill="#1F6B3F" opacity=".35"/>`;
       // class names let the dark theme recolour these in CSS
-      h += `<circle class="${isNext || past ? '' : 'arc-dot-up'}" cx="${x}" cy="${y}" r="${isNext ? L.rNext : sun ? L.rSun : L.rDot}" fill="${isNext ? '#1F6B3F' : past ? '#F47A1E' : '#FFFFFF'}" stroke="${isNext ? '#F47A1E' : past ? '#F47A1E' : '#1F6B3F'}" stroke-width="${isNext ? 3 : 2}"/>`;
-      h += `<text class="${isNext ? 'arc-next' : sun ? 'arc-dim' : 'arc-name'}" x="${x}" y="${yName}" text-anchor="middle" ${font} font-size="${L.fName}" font-weight="${isNext ? 700 : 600}" fill="${isNext ? '#1F6B3F' : sun ? '#7E7478' : '#1D1317'}">${esc(p.name)}</text>`;
-      h += `<text class="arc-time" x="${x}" y="${yTime}" text-anchor="middle" ${font} font-size="${L.fTime}" fill="#685C60">${fmt12(p.begins)}</text>`;
+      h += `<circle class="${isNext || past ? '' : 'arc-dot-up'}" cx="${x}" cy="${y}" r="${isNext ? L.rNext : sun ? L.rSun : L.rDot}" fill="${isNext ? '#1F6B3F' : past ? '#8CC63E' : '#FFFFFF'}" stroke="${isNext ? '#8CC63E' : past ? '#8CC63E' : '#1F6B3F'}" stroke-width="${isNext ? 3 : 2}"/>`;
+      h += `<text class="${isNext ? 'arc-next' : sun ? 'arc-dim' : 'arc-name'}" x="${x}" y="${yName}" text-anchor="middle" ${font} font-size="${L.fName}" font-weight="${isNext ? 700 : 600}" fill="${isNext ? '#1F6B3F' : sun ? '#737D78' : '#121A16'}">${esc(p.name)}</text>`;
+      h += `<text class="arc-time" x="${x}" y="${yTime}" text-anchor="middle" ${font} font-size="${L.fTime}" fill="#5A6660">${fmt12(p.begins)}</text>`;
     });
     if (tn >= 0 && tn <= 1) {
       const [sx, sy] = P(tn);
       over += `<circle cx="${sx}" cy="${sy}" r="${L.glow}" fill="url(#sunG)"/><circle cx="${sx}" cy="${sy}" r="${L.sun}" fill="#F8A83C" stroke="#fff" stroke-width="3"/>`;
     } else {
       const x = tn < 0 ? L.night[0] : L.night[1], ny = L.night[2];
-      h += `<g transform="translate(${x} ${ny})"><circle r="13" fill="#2C3494"/><circle class="arc-moon-cut" cx="5" cy="-4" r="11" fill="#F7F9FA"/></g><text class="arc-dim" x="${x}" y="${ny - 20}" text-anchor="middle" ${font} font-size="${L.fNight}" fill="#7E7478">Night</text>`;
+      h += `<g transform="translate(${x} ${ny})"><circle r="13" fill="#3052A4"/><circle class="arc-moon-cut" cx="5" cy="-4" r="11" fill="#F7F9FA"/></g><text class="arc-dim" x="${x}" y="${ny - 20}" text-anchor="middle" ${font} font-size="${L.fNight}" fill="#737D78">Night</text>`;
     }
     svg.innerHTML = `${defs}<g>${under}</g><g class="arc-body">${h}</g><g>${over}</g>`;
     // keep only a small margin around the drawing: no empty space above a low arc (e.g. in winter).

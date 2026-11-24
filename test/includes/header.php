@@ -7,7 +7,7 @@ defined('HIUK') or exit;
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#141A55">
+<meta name="theme-color" content="#006738">
 <?php if (app_theme() === ''): /* inside the app, the app chooses light or dark */ ?>
 <script src="<?= asset('assets/js/theme.js') ?>"></script>
 <?php endif; ?>

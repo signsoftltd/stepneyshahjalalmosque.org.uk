@@ -68,8 +68,8 @@ require __DIR__ . '/includes/header.php';
             <g fill="#FFF1DD">
               <circle class="twinkle" cx="62" cy="130" r="1.3"/><circle class="twinkle" cx="112" cy="92" r="1"/><circle class="twinkle" cx="152" cy="162" r="1.5"/><circle class="twinkle" cx="204" cy="78" r="1.1"/><circle class="twinkle" cx="258" cy="118" r="1.2"/><circle class="twinkle" cx="392" cy="196" r="1.4"/><circle class="twinkle" cx="410" cy="150" r="1"/><circle class="twinkle" cx="92" cy="214" r="1"/><circle class="twinkle" cx="352" cy="226" r="1.2"/><circle class="twinkle" cx="182" cy="226" r=".9"/><circle class="twinkle" cx="300" cy="62" r="1"/><circle class="twinkle" cx="424" cy="258" r=".9"/><circle class="twinkle" cx="42" cy="270" r=".9"/><circle class="twinkle" cx="236" cy="178" r=".8"/>
             </g>
-            <circle cx="310" cy="128" r="46" fill="#F47414" opacity=".10"/>
-            <circle cx="310" cy="128" r="27" fill="#F47414" mask="url(#cres)"/>
+            <circle cx="310" cy="128" r="46" fill="#7DB832" opacity=".10"/>
+            <circle cx="310" cy="128" r="27" fill="#7DB832" mask="url(#cres)"/>
             <g fill="#14060C">
               <path d="M0 528 Q230 506 460 528 V590 H0Z"/>
               <rect x="64" y="300" width="26" height="290"/><rect x="58" y="358" width="38" height="8" rx="2"/><rect x="60" y="300" width="34" height="6" rx="2"/><path d="M62 300 L77 248 L92 300Z"/><rect x="76" y="232" width="2" height="18"/><circle cx="77" cy="229" r="3"/>
@@ -82,8 +82,8 @@ require __DIR__ . '/includes/header.php';
               <path d="M278 444 C278 414 296 400 310 390 C324 400 342 414 342 444Z"/>
               <path d="M158 414 C158 348 200 320 230 290 C260 320 302 348 302 414Z"/>
             </g>
-            <rect x="228.5" y="258" width="3" height="34" fill="#F8A662"/>
-            <circle cx="230" cy="254" r="4.5" fill="#F8A662"/>
+            <rect x="228.5" y="258" width="3" height="34" fill="#A8D56A"/>
+            <circle cx="230" cy="254" r="4.5" fill="#A8D56A"/>
             <g fill="url(#win)">
               <path d="M136 520 V496 a8 8 0 0 1 16 0 V520Z" opacity=".9"/>
               <path d="M172 520 V496 a8 8 0 0 1 16 0 V520Z" opacity=".75"/>
@@ -94,8 +94,8 @@ require __DIR__ . '/includes/header.php';
               <rect x="73" y="384" width="8" height="14" rx="4" opacity=".65"/><rect x="379" y="384" width="8" height="14" rx="4" opacity=".65"/>
             </g>
           </g>
-          <path d="M20 590 V250 C20 130 120 50 230 20 C340 50 440 130 440 250 V590" fill="none" stroke="#F8A662" stroke-width="1.4"/>
-          <path d="M6 590 V248 C6 122 112 36 230 4 C348 36 454 122 454 248 V590" fill="none" stroke="#F8A662" stroke-opacity=".38" stroke-width="1"/>
+          <path d="M20 590 V250 C20 130 120 50 230 20 C340 50 440 130 440 250 V590" fill="none" stroke="#A8D56A" stroke-width="1.4"/>
+          <path d="M6 590 V248 C6 122 112 36 230 4 C348 36 454 122 454 248 V590" fill="none" stroke="#A8D56A" stroke-opacity=".38" stroke-width="1"/>
         </svg>
         <!-- To use a photo instead: set SITE.images.hero in the settings at the bottom of the page -->
         <div class="arch-photo" id="heroPhoto" hidden></div>
@@ -217,8 +217,8 @@ require __DIR__ . '/includes/header.php';
             <clipPath id="aClip"><path d="M20 620 V270 C20 140 130 55 250 22 C370 55 480 140 480 270 V620 Z"/></clipPath>
             <linearGradient id="light" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF9EA"/><stop offset="1" stop-color="#F0D9A8"/></linearGradient>
             <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9E0CB"/><stop offset="1" stop-color="#DDD0B2"/></linearGradient>
-            <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4B1020"/><stop offset="1" stop-color="#7F2230"/></linearGradient>
-            <pattern id="lattice" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M12 2 L15 9 L22 12 L15 15 L12 22 L9 15 L2 12 L9 9Z" fill="none" stroke="#F47A1E" stroke-width=".9" stroke-opacity=".55"/></pattern>
+            <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#044326"/><stop offset="1" stop-color="#006738"/></linearGradient>
+            <pattern id="lattice" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M12 2 L15 9 L22 12 L15 15 L12 22 L9 15 L2 12 L9 9Z" fill="none" stroke="#8CC63E" stroke-width=".9" stroke-opacity=".55"/></pattern>
           </defs>
           <g clip-path="url(#aClip)">
             <rect width="500" height="620" fill="url(#wall)"/>
@@ -232,15 +232,15 @@ require __DIR__ . '/includes/header.php';
               <g fill="none" stroke="#B8651F" stroke-width="2"><path d="M86 392 V214 C86 184 106 164 130 147 C154 164 174 184 174 214 V392"/><path d="M196 392 V190 C196 153 222 130 250 111 C278 130 304 153 304 190 V392"/><path d="M326 392 V214 C326 184 346 164 370 147 C394 164 414 184 414 214 V392"/></g>
             </g>
             <line x1="250" y1="0" x2="250" y2="78" stroke="#7A4A12" stroke-width="1.5"/>
-            <ellipse cx="250" cy="86" rx="46" ry="8" fill="none" stroke="#C9610F" stroke-width="2"/>
+            <ellipse cx="250" cy="86" rx="46" ry="8" fill="none" stroke="#467C12" stroke-width="2"/>
             <g fill="#FFC27A"><circle cx="208" cy="88" r="3"/><circle cx="229" cy="93" r="3"/><circle cx="250" cy="94" r="3"/><circle cx="271" cy="93" r="3"/><circle cx="292" cy="88" r="3"/></g>
             <rect x="0" y="390" width="500" height="10" fill="#CDBB94"/>
             <rect x="0" y="400" width="500" height="220" fill="url(#floor)"/>
             <ellipse cx="250" cy="410" rx="230" ry="26" fill="#FFC27A" opacity=".16"/>
-            <g stroke="#F47A1E" stroke-opacity=".6" stroke-width="1.4"><line x1="0" y1="418" x2="500" y2="418"/><line x1="0" y1="440" x2="500" y2="440"/><line x1="0" y1="468" x2="500" y2="468"/><line x1="0" y1="504" x2="500" y2="504"/><line x1="0" y1="550" x2="500" y2="550"/><line x1="0" y1="606" x2="500" y2="606"/></g>
-            <g fill="none" stroke="#F47A1E" stroke-opacity=".35" stroke-width="1"><path d="M10 550 v-24 q12 -14 24 0 v24 M58 550 v-24 q12 -14 24 0 v24 M106 550 v-24 q12 -14 24 0 v24 M154 550 v-24 q12 -14 24 0 v24 M202 550 v-24 q12 -14 24 0 v24 M250 550 v-24 q12 -14 24 0 v24 M298 550 v-24 q12 -14 24 0 v24 M346 550 v-24 q12 -14 24 0 v24 M394 550 v-24 q12 -14 24 0 v24 M442 550 v-24 q12 -14 24 0 v24"/></g>
+            <g stroke="#8CC63E" stroke-opacity=".6" stroke-width="1.4"><line x1="0" y1="418" x2="500" y2="418"/><line x1="0" y1="440" x2="500" y2="440"/><line x1="0" y1="468" x2="500" y2="468"/><line x1="0" y1="504" x2="500" y2="504"/><line x1="0" y1="550" x2="500" y2="550"/><line x1="0" y1="606" x2="500" y2="606"/></g>
+            <g fill="none" stroke="#8CC63E" stroke-opacity=".35" stroke-width="1"><path d="M10 550 v-24 q12 -14 24 0 v24 M58 550 v-24 q12 -14 24 0 v24 M106 550 v-24 q12 -14 24 0 v24 M154 550 v-24 q12 -14 24 0 v24 M202 550 v-24 q12 -14 24 0 v24 M250 550 v-24 q12 -14 24 0 v24 M298 550 v-24 q12 -14 24 0 v24 M346 550 v-24 q12 -14 24 0 v24 M394 550 v-24 q12 -14 24 0 v24 M442 550 v-24 q12 -14 24 0 v24"/></g>
           </g>
-          <path d="M20 620 V270 C20 140 130 55 250 22 C370 55 480 140 480 270 V620" fill="none" stroke="#F47A1E" stroke-width="1.4"/>
+          <path d="M20 620 V270 C20 140 130 55 250 22 C370 55 480 140 480 270 V620" fill="none" stroke="#8CC63E" stroke-width="1.4"/>
         </svg>
         <div class="imam" data-about="imam"><div class="avatar" aria-hidden="true">Im</div><div><b>[Imam's name]</b><span>Head Imam · Hafiz &amp; Alim</span></div></div>
        </div>

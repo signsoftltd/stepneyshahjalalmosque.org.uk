@@ -14,7 +14,7 @@ const donationApp = new Donation({
         quick_donate: 'skip-form' // 'show-form', 'skip-form'
     },
     theme: {
-        primary_color: '#7F2230',
+        primary_color: '#006738',
         secondary_color: '#0A3A25'
     }
 });

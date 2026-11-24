@@ -18,12 +18,12 @@ window.HIUKEvents = (function () {
 
   // Placeholder artwork for events without an image, used in turn
   const ART = [
-    { bg: '#2C3494', line: '#F8A662', icon: 'i-lamp' },
-    { bg: '#F8E6D2', line: '#9A4709', icon: 'i-quran' },
+    { bg: '#3052A4', line: '#A8D56A', icon: 'i-lamp' },
+    { bg: '#E8F3D8', line: '#355F0D', icon: 'i-quran' },
     { bg: '#DCEEDF', line: '#14844C', icon: 'i-sprout' },
-    { bg: '#F2DEE0', line: '#7F2230', icon: 'i-users' },
-    { bg: '#141A55', line: '#F8A662', icon: 'i-play' },
-    { bg: '#7F2230', line: '#FBD9B5', icon: 'i-mosque' }
+    { bg: '#F2DEE0', line: '#006738', icon: 'i-users' },
+    { bg: '#1B2F63', line: '#A8D56A', icon: 'i-play' },
+    { bg: '#006738', line: '#D7EBBB', icon: 'i-mosque' }
   ];
   function eventArt(i, id) {
     const a = ART[i % ART.length];

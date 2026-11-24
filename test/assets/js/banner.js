@@ -15,7 +15,7 @@
   // links saved in the admin panel may use the old page.html form: use the clean address (zakat.html -> zakat, index.html#prayer -> ./#prayer)
   const cleanLink = (url) => String(url || '').trim().replace(/^index\.(html|php)(?=#|$)/i, './').replace(/^([\w-]+)\.(html|php)(?=#|$)/i, '$1');
   // tint kept over an uploaded background photo so the white text stays readable (as in theme.css)
-  const TINT = 'linear-gradient(100deg,rgba(14,18,64,.92) 0,rgba(20,26,85,.72) 55%,rgba(20,26,85,.55) 100%)';
+  const TINT = 'linear-gradient(100deg,rgba(20,35,75,.92) 0,rgba(27,47,99,.72) 55%,rgba(27,47,99,.55) 100%)';
 
   function setText(key, value) {
     const node = el(key);

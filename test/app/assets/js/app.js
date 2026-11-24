@@ -62,7 +62,7 @@
       return 'M' + [0, 3, 6, 1, 4, 7, 2, 5].map((k) => { const a = k * Math.PI / 4 + Math.PI / 8; return (cx + R * Math.cos(a)).toFixed(2) + ' ' + (cy + R * Math.sin(a)).toFixed(2); }).join(' L') + 'Z';
     }
     const s = 84, R = s * 0.36, pts = [[s / 2, s / 2], [0, 0], [s, 0], [0, s], [s, s]];
-    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}"><g fill="none" stroke="#F47A1E" stroke-width="1"><path d="${pts.map(([x, y]) => star(x, y, R)).join(' ')}"/>${pts.map(([x, y]) => `<circle cx="${x}" cy="${y}" r="${(R * 0.38).toFixed(2)}"/>`).join('')}</g></svg>`;
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}"><g fill="none" stroke="#8CC63E" stroke-width="1"><path d="${pts.map(([x, y]) => star(x, y, R)).join(' ')}"/>${pts.map(([x, y]) => `<circle cx="${x}" cy="${y}" r="${(R * 0.38).toFixed(2)}"/>`).join('')}</g></svg>`;
     document.documentElement.style.setProperty('--pat', `url("data:image/svg+xml,${encodeURIComponent(svg)}")`);
   })();
 
@@ -378,7 +378,7 @@
     root.setAttribute('data-theme', isDark ? 'dark' : 'light');
     root.classList.add('theme-set');
     const meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute('content', isDark ? '#16100F' : '#4B1020');
+    if (meta) meta.setAttribute('content', isDark ? '#16100F' : '#044326');
     markTheme();
     document.dispatchEvent(new CustomEvent('hiuk:theme', { detail: { dark: isDark } }));
   }

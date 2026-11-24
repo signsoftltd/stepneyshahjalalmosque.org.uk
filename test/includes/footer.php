@@ -24,7 +24,7 @@ defined('HIUK') or exit;
       <div class="row site-row gy-4 gx-lg-5">
         <div class="col-12">
           <div class="f-brand">
-            <a class="brand" href="<?= home_url() ?>"><span class="brand-mark" role="img" aria-label="Stepney Shah Jalal Mosque logo"></span><span class="brand-text"><b>Stepney Shah Jalal Mosque</b><small>Working for humanity</small></span></a>
+            <a class="brand" href="<?= home_url() ?>" aria-label="Stepney Shah Jalal Mosque, home"><img class="brand-logo" src="assets/images/logo-full.png" alt="Stepney Shahjalal Mosque &amp; Cultural Centre" width="312" height="99" loading="lazy"></a>
             <p>A mosque and community centre serving worshippers, families and neighbours through prayer, education and care. Registered charity no. 1115709.</p>
             <div class="socials d-flex">
           <a href="<?= home_url() ?>" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h-2a4 4 0 0 0-4 4v3H7v4h2v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h2z"/></svg></a>

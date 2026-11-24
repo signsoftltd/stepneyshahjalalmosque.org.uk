@@ -186,8 +186,7 @@
           <div class="pattern" aria-hidden="true"></div>
           <div class="drawer-top">
             <div class="drawer-brand">
-              <span class="brand-mark" aria-hidden="true"></span>
-              <span class="drawer-title"><b id="drawerTitle">${esc(CFG.name || 'Stepney Shah Jalal Mosque')}</b><small>Working for humanity</small></span>
+              <img class="brand-full" id="drawerTitle" src="assets/images/logo-full.png" alt="${esc(CFG.name || 'Stepney Shah Jalal Mosque')}" width="312" height="99">
             </div>
             <button class="icon-btn theme-btn" type="button" role="switch" aria-checked="false" aria-label="Dark mode" data-theme-toggle>${icon('moon', 'i-moon')}${icon('sun', 'i-sun')}</button>
           </div>

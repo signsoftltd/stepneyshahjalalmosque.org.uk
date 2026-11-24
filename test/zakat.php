@@ -19,7 +19,7 @@ require __DIR__ . '/includes/header.php';
       <span>Stepney Shah Jalal Mosque · 534 Barking Road, London E13 8QE · hefazotheislamuk.org</span>
       <span data-zk-print="date"></span>
     </div>
-    <img src="assets/images/logo.svg" alt="Stepney Shah Jalal Mosque logo" width="56" height="58" style="width:56px;height:auto;margin-left:auto;flex:none">
+    <img src="assets/images/logo-full.png" alt="Stepney Shahjalal Mosque &amp; Cultural Centre" width="312" height="99" style="width:180px;height:auto;margin-left:auto;flex:none">
   </div>
   <section class="zk-hero wrap on-dark">
     <div class="pattern"></div>

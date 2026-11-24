@@ -112,8 +112,7 @@ defined('HIUK') or exit;
   <nav class="navbar site-navbar navbar-expand-xl" aria-label="Main">
     <div class="container site-container d-flex align-items-center justify-content-between gap-4">
       <a class="navbar-brand brand m-0 p-0" href="<?= home_url() ?>" aria-label="Stepney Shah Jalal Mosque, home">
-        <span class="brand-mark" role="img" aria-label="Stepney Shah Jalal Mosque logo"></span>
-        <span class="brand-text"><b>Stepney Shah Jalal Mosque</b><small>Working for humanity</small></span>
+        <img class="brand-logo" src="assets/images/logo-full.png" alt="Stepney Shahjalal Mosque &amp; Cultural Centre" width="312" height="99">
       </a>
       <ul class="navbar-nav site-nav flex-row d-none d-xl-flex">
           <li class="nav-item"><a class="nav-link site-nav-link" href="<?= home_url() ?>"<?= nav_current('home') ?>>Home</a></li>
@@ -139,7 +138,7 @@ defined('HIUK') or exit;
 <div class="offcanvas offcanvas-top mnav" tabindex="-1" id="mnav" aria-label="Menu">
   <div class="pattern"></div>
   <div class="offcanvas-header mnav-top">
-    <a class="brand" href="<?= home_url() ?>" style="color:#fff"><span class="brand-mark" role="img" aria-label="Stepney Shah Jalal Mosque logo"></span><span class="brand-text"><b>Stepney Shah Jalal Mosque</b></span></a>
+    <a class="brand" href="<?= home_url() ?>" aria-label="Stepney Shah Jalal Mosque, home"><img class="brand-logo" src="assets/images/logo-full.png" alt="Stepney Shahjalal Mosque &amp; Cultural Centre" width="312" height="99"></a>
     <div class="mnav-btns">
       <button class="menu-btn theme-btn" type="button" aria-label="Switch to dark mode"><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
       <button class="menu-btn" type="button" data-bs-dismiss="offcanvas" aria-label="Close menu"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>

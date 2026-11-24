@@ -1461,12 +1461,40 @@ html:not(.pl-ready):not(.pl-leaving) body::after{animation:pl-spin .9s linear in
 }
 
 /* ============ Trustees ============ */
+/* Leadership: four larger cards with a green header band and a gold-ringed avatar */
+.tr-leaders{list-style:none;margin:0;padding:0;display:grid;gap:20px;grid-template-columns:repeat(4,1fr)}
+.tr-leader{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 22px 26px;border-radius:22px;background:var(--white);border:1px solid var(--line);box-shadow:var(--shadow-sm);transition:transform .25s ease,box-shadow .25s ease}
+.tr-leader::before{content:"";position:absolute;inset:0 0 auto;height:78px;background-image:radial-gradient(circle at 85% 20%,rgba(140,198,62,.35),transparent 55%),linear-gradient(135deg,var(--b-700),var(--b-900))}
+.tr-leader:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.tr-leader-avatar{position:relative;margin-top:30px;display:grid;place-items:center;width:96px;height:96px;border-radius:50%;background:linear-gradient(145deg,var(--b-600),var(--b-900));color:#fff;font:400 38px/1 var(--serif);letter-spacing:.02em;border:4px solid var(--white);box-shadow:0 0 0 2px var(--zk-gold),0 10px 24px -10px rgba(2,31,18,.55)}
+.tr-leader h3{margin:18px 0 10px;font:600 19px/1.25 var(--sans);color:var(--ink)}
+.tr-role{display:inline-flex;align-items:center;gap:7px;padding:6px 13px;border-radius:999px;background:var(--o-50);color:var(--o-700);font:600 12px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase}
+.tr-role .ico{width:14px;height:14px}
+.tr-subhead{margin:44px 0 18px;display:flex;align-items:center;gap:14px;font:600 13px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.tr-subhead::after{content:"";flex:1;height:1px;background:var(--line)}
+
+/* Officers and trustees: compact cards */
 .tr-grid{list-style:none;margin:0;padding:0;display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
-.tr-card{display:flex;align-items:center;gap:16px;padding:18px 20px;border-radius:var(--r,18px);background:var(--white);border:1px solid var(--line);box-shadow:0 1px 2px rgba(0,0,0,.03)}
-.tr-avatar{flex:none;display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:linear-gradient(145deg,var(--b-700),var(--b-900));color:#fff;font:600 18px/1 var(--sans);letter-spacing:.04em}
-.tr-text{display:grid;gap:4px;min-width:0}
-.tr-text b{font:600 17px/1.25 var(--sans);color:var(--ink)}
-.tr-text span{font:600 12px/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--o-700)}
+.tr-card{display:flex;align-items:center;gap:16px;padding:16px 20px;border-radius:18px;background:var(--white);border:1px solid var(--line);box-shadow:var(--shadow-sm);transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.tr-card:hover{transform:translateY(-2px);border-color:var(--b-100);box-shadow:var(--shadow)}
+.tr-avatar{flex:none;display:grid;place-items:center;width:54px;height:54px;border-radius:50%;background:var(--grn-50);color:var(--grn-700);border:1px solid var(--grn-100);font:400 22px/1 var(--serif)}
+.tr-card.ind .tr-avatar{background:var(--ind-50);color:var(--ind-700);border-color:var(--ind-100)}
+.tr-text{display:grid;gap:5px;min-width:0}
+.tr-text b{font:600 16px/1.25 var(--sans);color:var(--ink)}
+.tr-text span{font:600 11.5px/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--o-700)}
+@media (max-width:991.98px){.tr-leaders{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){
+  .tr-leaders{gap:14px}
+  .tr-leader{padding:0 12px 20px}
+  .tr-leader::before{height:62px}
+  .tr-leader-avatar{margin-top:22px;width:76px;height:76px;font-size:30px}
+  .tr-leader h3{font-size:16px}
+  .tr-role{padding:5px 10px;font-size:10.5px;letter-spacing:.06em}
+}
+@media (prefers-reduced-motion:reduce){.tr-leader,.tr-card{transition:none}.tr-leader:hover,.tr-card:hover{transform:none}}
+html[data-theme="dark"] .tr-avatar{color:#CFE8D8;background:var(--grn-900);border-color:var(--grn-800)}
+html[data-theme="dark"] .tr-card.ind .tr-avatar{color:#DCE4F4;background:var(--ind-900);border-color:var(--ind-800)}
+html[data-theme="dark"] .tr-card:hover{border-color:var(--line-2)}
 
 /* ============ Donor Wall ============ */
 .dw-hero .bismillah{margin-bottom:-6px}

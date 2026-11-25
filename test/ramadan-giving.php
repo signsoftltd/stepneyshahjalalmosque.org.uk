@@ -58,13 +58,13 @@ require __DIR__ . '/includes/header.php';
     </div>
   </section>
 
-  <!-- ============ Give (Sign Soft donation app, causes 423-426) ============ -->
+  <!-- ============ Give (Sign Soft donation app, causes 439-442) ============ -->
   <section class="section wrap band fg-give" id="gv-give" aria-labelledby="gv-give-title">
     <div class="container site-container">
       <div class="sec-head text-center d-grid justify-content-center">
         <div class="intro"><span class="kicker">Set up your gift</span><h2 id="gv-give-title">Select your preferred <em>regular giving</em></h2><p class="lede mx-auto">Choose a daily donation for the nights of Ramadan. UK taxpayers can add 25% through Gift Aid at no extra cost.</p></div>
       </div>
-      <div class="gv-widget"><div class="donation-root" data-causes="423,424,425,426" data-columns="col-12 col-md-6 col-xl-3" data-allow-quick="true"></div></div>
+      <div class="gv-widget"><div class="donation-root" data-causes="439,440,441,442" data-columns="col-12 col-md-6 col-xl-3" data-allow-quick="true"></div></div>
     </div>
   </section>
 

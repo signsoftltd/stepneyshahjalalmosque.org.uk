@@ -295,7 +295,7 @@ require __DIR__ . '/includes/header.php';
     </div>
   </section>
 
-  <!-- ============ Friday Giving (Sign Soft donation app, cause 421) ============ -->
+  <!-- ============ Friday Giving (Sign Soft donation app, cause 438) ============ -->
   <section class="section wrap band fg-home" id="friday-giving" aria-labelledby="fg-home-title">
     <div class="pattern"></div>
     <div class="container site-container">
@@ -309,31 +309,31 @@ require __DIR__ . '/includes/header.php';
           </div>
         </div>
         <div class="col-lg-5">
-          <div class="fg-widget"><div class="donation-root" data-causes="421" data-columns="col-12" data-allow-quick="true"></div></div>
+          <div class="fg-widget"><div class="donation-root" data-causes="438" data-columns="col-12" data-allow-quick="true"></div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ Ramadan Giving (Sign Soft donation app, causes 423-426) ============ -->
+  <!-- ============ Ramadan Giving (Sign Soft donation app, causes 439-442) ============ -->
   <section class="section wrap gv-home" id="ramadan-giving" aria-labelledby="gv-ramadan-title">
     <div class="container site-container">
       <div class="sec-head d-flex flex-wrap align-items-end justify-content-between">
         <div class="intro"><span class="kicker">Ramadan Giving</span><h2 id="gv-ramadan-title">Give every night of <em>Ramadan</em></h2></div>
         <a class="btn site-btn btn-ind site-btn-lg" href="ramadan-giving">Learn more<svg class="ico arr"><use href="#i-arrow"/></svg></a>
       </div>
-      <div class="gv-widget"><div class="donation-root" data-causes="423,424,425,426" data-columns="col-12 col-md-6 col-xl-3" data-allow-quick="true"></div></div>
+      <div class="gv-widget"><div class="donation-root" data-causes="439,440,441,442" data-columns="col-12 col-md-6 col-xl-3" data-allow-quick="true"></div></div>
     </div>
   </section>
 
-  <!-- ============ Hajj Giving (Sign Soft donation app, causes 427-428) ============ -->
+  <!-- ============ Hajj Giving (Sign Soft donation app, causes 443-444) ============ -->
   <section class="section wrap band gv-home" id="hajj-giving" aria-labelledby="gv-hajj-title">
     <div class="container site-container">
       <div class="sec-head d-flex flex-wrap align-items-end justify-content-between">
         <div class="intro"><span class="kicker">Hajj Giving</span><h2 id="gv-hajj-title">Give through the days of <em>Dhul Hijjah</em></h2></div>
         <a class="btn site-btn btn-ind site-btn-lg" href="hajj-giving">Learn more<svg class="ico arr"><use href="#i-arrow"/></svg></a>
       </div>
-      <div class="gv-widget gv-widget-2"><div class="donation-root" data-causes="427,428" data-columns="col-12 col-md-6" data-allow-quick="true"></div></div>
+      <div class="gv-widget gv-widget-2"><div class="donation-root" data-causes="443,444" data-columns="col-12 col-md-6" data-allow-quick="true"></div></div>
     </div>
   </section>
 

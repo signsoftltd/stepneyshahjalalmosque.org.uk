@@ -2,7 +2,7 @@
    Loaded after https://donations.signsoft.co.uk/web-apps/v1/live/init.js.
    Keeping the settings in this one file means every page uses the same config. */
 const donationApp = new Donation({
-    client_id: 3896,
+    client_id: 153,
     client_name: 'Stepney Shah Jalal Mosque',
     quick_donate: true,
     //types: ['Zakat', 'Sadaqah', 'Lillah', 'Fidyah', 'Kaffarah'],

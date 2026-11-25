@@ -390,7 +390,7 @@ require __DIR__ . '/includes/header.php';
         </div>
       </div>
 
-      <div class="col-lg-5"><div class="donation-root" data-causes="422" data-columns="col-12" data-allow-quick="true"></div></div>
+      <div class="col-lg-5"><div class="donation-root" data-causes="74" data-columns="col-12" data-allow-quick="true"></div></div>
      </div>
     </div>
   </section>

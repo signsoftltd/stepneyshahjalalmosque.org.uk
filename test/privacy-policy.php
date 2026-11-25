@@ -145,6 +145,7 @@ require __DIR__ . '/includes/header.php';
           <p>Our site links to services such as Google Maps for directions, and to social media. These have their own privacy policies and we are not responsible for them.</p>
           <p>The map in our Contact &amp; Location section is an embedded Google Map. It loads from Google's servers when you scroll to it, and Google's privacy policy applies to it.</p>
           <p>Our video gallery shows videos hosted on YouTube. Video preview pictures load from YouTube's servers. The YouTube player itself only loads when you choose to play a video, and uses YouTube's privacy-enhanced mode (youtube-nocookie.com); once playing, YouTube's own privacy policy applies.</p>
+          <p>Our contact and newsletter forms are protected by Google reCAPTCHA, which checks that a person, not an automated program, is using them. It loads only when you start filling in one of these forms. Google's <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Terms of Service</a> apply to it.</p>
         </section>
 
         <section id="changes">

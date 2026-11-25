@@ -6,6 +6,8 @@
   if (!f) return;
   const $ = (s, r = document) => r.querySelector(s);
   const API = (window.HIUK_API || 'https://manage.stepneyshahjalalmosque.org.uk/api/public') + '/contact';
+  // "I'm not a robot" (recaptcha.js); its token is sent with the form as g-recaptcha-response
+  const captcha = window.HIUKCaptcha ? HIUKCaptcha.attach(f, $('#contactCaptcha'), { theme: 'dark', onTick: () => { const st = $('#formStatus'); if (st.dataset.captcha) { st.hidden = true; delete st.dataset.captcha; } } }) : null;
 
   f.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -20,10 +22,21 @@
     const show = (text, isError) => { st.textContent = text; st.classList.toggle('is-error', !!isError); st.hidden = false; };
     if (!ok) { st.hidden = true; return; }
 
+    const token = captcha ? captcha.token() : '';
+    if (captcha && !token) {
+      st.dataset.captcha = '1';
+      show('Please tick "I\'m not a robot" before sending your message.', true);
+      captcha.start().then(() => captcha.reveal())
+        .catch(() => show('The "I\'m not a robot" check could not load. Please check your connection and try again, or email info@stepneyshahjalalmosque.org.uk.', true));
+      return;
+    }
+
     const label = btn.firstChild.textContent;
     btn.disabled = true; btn.firstChild.textContent = 'Sending… ';
     st.hidden = true;
-    fetch(API, { method: 'POST', body: new URLSearchParams(new FormData(f)), headers: { Accept: 'application/json' } })
+    const body = new URLSearchParams(new FormData(f));
+    body.set('g-recaptcha-response', token);
+    fetch(API, { method: 'POST', body: body, headers: { Accept: 'application/json' } })
       .then((r) => r.json().catch(() => ({})).then((data) => ({ r, data })))
       .then(({ r, data }) => {
         if (r.ok && data.success) {
@@ -35,6 +48,6 @@
         show(data.message || 'Sorry, your message could not be sent. Please try again or email info@stepneyshahjalalmosque.org.uk.', true);
       })
       .catch(() => show('Sorry, your message could not be sent. Please check your connection, or email info@stepneyshahjalalmosque.org.uk.', true))
-      .finally(() => { btn.disabled = false; btn.firstChild.textContent = label; });
+      .finally(() => { btn.disabled = false; btn.firstChild.textContent = label; if (captcha) captcha.reset(); });
   });
 })();

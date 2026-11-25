@@ -506,6 +506,10 @@ button.link-arrow{align-self:flex-start;background:none;border:0;padding:0;curso
 .field .err{font-size:13px;color:#D7EBBB}
 .form-status{margin:0;padding:14px 16px;border:0;border-radius:14px;background:rgba(140,198,62,.16);color:var(--o-400);font-weight:500;font-size:15px}
 .form-status.is-error{background:rgba(246,201,176,.14);color:#D7EBBB}
+/* reCAPTCHA "I'm not a robot" box (assets/js/recaptcha.js) */
+.form-captcha{min-height:78px;max-width:100%;overflow:hidden}
+.form-captcha[hidden]{display:none}
+.news-captcha{margin-top:12px}
 
 /* ============ Footer ============ */
 .footer{background:var(--b-950);color:var(--on-dark);position:relative;overflow:hidden}

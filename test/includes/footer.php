@@ -16,6 +16,8 @@ defined('HIUK') or exit;
             <input id="n-email" class="form-control news-input" type="email" placeholder="Your email address" autocomplete="email">
             <button class="btn site-btn btn-sun" type="submit">Subscribe</button>
           </form>
+          <!-- "I'm not a robot" (assets/js/recaptcha.js; appears once the visitor starts using the form) -->
+          <div class="form-captcha news-captcha" id="newsCaptcha" hidden></div>
           <p class="news-status" id="newsStatus" role="status" hidden></p>
         </div>
       </div>
@@ -56,6 +58,7 @@ defined('HIUK') or exit;
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script src="<?= asset('assets/js/config.js') ?>"></script>
+<script src="<?= asset('assets/js/recaptcha.js') ?>"></script>
 <?php if (!in_app()): /* inside the app: no notices popup, cookie banner or visit counting, and the app has its own prayer times */ ?>
 <script src="<?= asset('assets/js/notices.js') ?>" defer></script>
 <script src="<?= asset('assets/js/consent.js') ?>"></script>

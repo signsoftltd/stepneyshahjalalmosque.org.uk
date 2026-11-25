@@ -60,6 +60,8 @@ require __DIR__ . '/includes/header.php';
           <div class="field"><label class="form-label field-label" for="f-topic">Enquiry about</label>
             <select class="form-select c-select" id="f-topic" name="topic"><option>General enquiry</option><option>Nikah &amp; marriage</option><option>Funeral &amp; Janazah</option><option>Classes &amp; madrasa</option><option>Donations &amp; Zakat</option><option>Counselling &amp; support</option><option>Venue hire</option></select></div>
           <div class="field"><label class="form-label field-label" for="f-msg">Message</label><textarea class="form-control c-input" id="f-msg" name="message" required></textarea><span class="err" hidden>Please write a short message.</span></div>
+          <!-- "I'm not a robot" (assets/js/recaptcha.js; appears once the visitor starts filling in the form) -->
+          <div class="form-captcha" id="contactCaptcha" hidden></div>
           <button class="btn site-btn btn-sun site-btn-lg" type="submit">Send message<svg class="ico arr"><use href="#i-arrow"/></svg></button>
           <div class="form-status" id="formStatus" role="status" hidden></div>
         </form>

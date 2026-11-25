@@ -384,7 +384,7 @@ require __DIR__ . '/includes/header.php';
           <figcaption><span class="en">“The example of those who spend their wealth in the way of Allah is like a seed which grows seven ears.”</span><br><small>Al-Baqarah 2:261</small></figcaption>
         </figure>
         <div class="ways d-flex flex-wrap">
-          <span><svg class="ico"><use href="#i-check"/></svg>Registered charity 1115709</span>
+          <span><svg class="ico"><use href="#i-check"/></svg>Registered charity 1079423</span>
           <span><svg class="ico"><use href="#i-check"/></svg>100% Zakat policy</span>
           <span><svg class="ico"><use href="#i-check"/></svg>Bank transfer &amp; standing order</span>
         </div>

@@ -44,7 +44,7 @@ require __DIR__ . '/includes/header.php';
       <div class="col-lg-9"><article class="pol">
         <section id="who">
           <h2><small>01</small>Who we are</h2>
-          <p>Stepney Shahjalal Mosque &amp; Cultural Centre ("we", "us") is a mosque and Islamic community centre in Stepney Green, established in 1985, and a registered charity. We are the controller of the personal information described in this policy.</p>
+          <p>Stepney Shahjalal Mosque &amp; Cultural Centre ("we", "us") is a mosque and Islamic community centre in Stepney Green, established in 1985, and a registered charity (no. 1079423). We are the controller of the personal information described in this policy.</p>
           <p>Address: 81-83 Duckett Street, London, E1 4TD, United Kingdom. Email: <a href="mailto:info@stepneyshahjalalmosque.org.uk">info@stepneyshahjalalmosque.org.uk</a>. Telephone: <a href="tel:+442072658603">020 7265 8603</a>.</p>
         </section>
 

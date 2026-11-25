@@ -506,10 +506,14 @@ button.link-arrow{align-self:flex-start;background:none;border:0;padding:0;curso
 .field .err{font-size:13px;color:#D7EBBB}
 .form-status{margin:0;padding:14px 16px;border:0;border-radius:14px;background:rgba(140,198,62,.16);color:var(--o-400);font-weight:500;font-size:15px}
 .form-status.is-error{background:rgba(246,201,176,.14);color:#D7EBBB}
-/* reCAPTCHA "I'm not a robot" box (assets/js/recaptcha.js) */
-.form-captcha{min-height:78px;max-width:100%;overflow:hidden}
+/* reCAPTCHA "I'm not a robot" box (assets/js/recaptcha.js). Google draws the box itself (light or dark only),
+   so the frame trims its 1px grey border, rounds it and outlines it in the site's lime, and a light tint
+   moves its dark grey towards the site's deep green. */
+.form-captcha{display:flex;max-width:100%}
 .form-captcha[hidden]{display:none}
-.news-captcha{margin-top:12px}
+.captcha-frame{display:inline-block;line-height:0;border-radius:12px;overflow:hidden;box-shadow:0 0 0 1px rgba(140,198,62,.45),0 8px 24px -12px rgba(0,0,0,.5);filter:sepia(.35) hue-rotate(85deg) saturate(1.35)}
+.captcha-frame>div{margin:-1px}
+.news-captcha{justify-content:center;margin-top:14px}
 
 /* ============ Footer ============ */
 .footer{background:var(--b-950);color:var(--on-dark);position:relative;overflow:hidden}

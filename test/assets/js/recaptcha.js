@@ -46,7 +46,11 @@
           slot.hidden = false;
           // the standard box is 304px wide; a narrower space gets the compact one
           const size = slot.clientWidth && slot.clientWidth < 304 ? 'compact' : 'normal';
-          widget = window.grecaptcha.render(slot, {
+          // rendered inside a frame (.captcha-frame) that trims Google's own border and gives it the site's look
+          const frame = document.createElement('span');
+          frame.className = 'captcha-frame' + (size === 'compact' ? ' is-compact' : '');
+          slot.appendChild(frame);
+          widget = window.grecaptcha.render(frame, {
             sitekey: key, theme: opts.theme || 'light', size,
             callback: () => { if (opts.onTick) opts.onTick(); }
           });

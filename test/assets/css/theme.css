@@ -514,6 +514,8 @@ button.link-arrow{align-self:flex-start;background:none;border:0;padding:0;curso
 .captcha-frame{display:inline-block;line-height:0;border-radius:12px;overflow:hidden;box-shadow:0 0 0 1px rgba(140,198,62,.45),0 8px 24px -12px rgba(0,0,0,.5);filter:sepia(.35) hue-rotate(85deg) saturate(1.35)}
 .captcha-frame>div{margin:-1px}
 .news-captcha{justify-content:center;margin-top:14px}
+/* Contact form: its panel is blue (--ind-800), so the box is tinted blue and outlined like the form's own fields */
+.c-form .captcha-frame{border-radius:14px;box-shadow:0 0 0 1px rgba(255,255,255,.16);filter:sepia(.4) hue-rotate(185deg) saturate(1.6)}
 
 /* ============ Footer ============ */
 .footer{background:var(--b-950);color:var(--on-dark);position:relative;overflow:hidden}

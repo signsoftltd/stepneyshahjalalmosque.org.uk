@@ -16,7 +16,7 @@
 
   // "I'm not a robot" (recaptcha.js); the box sits just under the form and loads when the email box is used
   const slot = document.getElementById('newsCaptcha');
-  const captcha = window.HIUKCaptcha && slot ? HIUKCaptcha.attach(form, slot, { theme: 'dark', onTick: () => { if (status.dataset.captcha) { status.hidden = true; delete status.dataset.captcha; } } }) : null;
+  const captcha = window.HIUKCaptcha && slot ? HIUKCaptcha.attach(form, slot, { onTick: () => { if (status.dataset.captcha) { status.hidden = true; delete status.dataset.captcha; } } }) : null;
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();

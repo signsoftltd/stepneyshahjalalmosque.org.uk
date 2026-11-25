@@ -7,7 +7,7 @@
   const $ = (s, r = document) => r.querySelector(s);
   const API = (window.HIUK_API || 'https://manage.stepneyshahjalalmosque.org.uk/api/public') + '/contact';
   // "I'm not a robot" (recaptcha.js); its token is sent with the form as g-recaptcha-response
-  const captcha = window.HIUKCaptcha ? HIUKCaptcha.attach(f, $('#contactCaptcha'), { theme: 'dark', onTick: () => { const st = $('#formStatus'); if (st.dataset.captcha) { st.hidden = true; delete st.dataset.captcha; } } }) : null;
+  const captcha = window.HIUKCaptcha ? HIUKCaptcha.attach(f, $('#contactCaptcha'), { onTick: () => { const st = $('#formStatus'); if (st.dataset.captcha) { st.hidden = true; delete st.dataset.captcha; } } }) : null;
 
   f.addEventListener('submit', (e) => {
     e.preventDefault();

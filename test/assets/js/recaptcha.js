@@ -2,13 +2,18 @@
    The site key comes from the admin panel (GET /api/public/recaptcha), which also checks the tick on
    every submission. Google's script loads only when a visitor starts using a form, not on every page view.
 
-   Use:  const captcha = HIUKCaptcha.attach(form, slot, { theme: 'dark' });
+   The box follows the site's day / night mode (theme.js sets html[data-theme]): Google's light box by day,
+   its dark box at night, redrawn when the visitor switches (after their submission if they have already ticked it).
+
+   Use:  const captcha = HIUKCaptcha.attach(form, slot, { onTick });
          captcha.token()   the tick's token, or '' if not ticked yet (also starts loading the box)
          captcha.reset()   untick after each submission (a token can only be used once)          */
 (function () {
   'use strict';
   const API = (window.HIUK_API || 'https://manage.stepneyshahjalalmosque.org.uk/api/public') + '/recaptcha';
   let keyPromise = null, scriptPromise = null;
+  const siteTheme = () => (document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
+  const boxes = []; // every attached form's box, to redraw when the mode changes
 
   function siteKey() {
     if (!keyPromise) {
@@ -37,27 +42,42 @@
 
   function attach(form, slot, opts) {
     opts = opts || {};
-    let widget = null, starting = null;
+    let widget = null, starting = null, key = '', frame = null, drawnTheme = '', redrawLater = false;
+
+    // (re)draw the box in the site's current mode, inside a frame (.captcha-frame) that trims Google's
+    // own border and gives it the site's look; the standard box is 304px wide, a narrower space gets the compact one
+    function draw() {
+      if (frame) frame.remove();
+      const size = slot.clientWidth && slot.clientWidth < 304 ? 'compact' : 'normal';
+      frame = document.createElement('span');
+      frame.className = 'captcha-frame' + (size === 'compact' ? ' is-compact' : '');
+      slot.appendChild(frame);
+      drawnTheme = siteTheme();
+      redrawLater = false;
+      widget = window.grecaptcha.render(frame, {
+        sitekey: key, theme: drawnTheme, size,
+        callback: () => { if (opts.onTick) opts.onTick(); }
+      });
+    }
 
     function start() {
       if (widget !== null) return Promise.resolve();
       if (!starting) {
-        starting = Promise.all([siteKey(), loadScript()]).then(([key]) => {
+        starting = Promise.all([siteKey(), loadScript()]).then(([k]) => {
+          key = k;
           slot.hidden = false;
-          // the standard box is 304px wide; a narrower space gets the compact one
-          const size = slot.clientWidth && slot.clientWidth < 304 ? 'compact' : 'normal';
-          // rendered inside a frame (.captcha-frame) that trims Google's own border and gives it the site's look
-          const frame = document.createElement('span');
-          frame.className = 'captcha-frame' + (size === 'compact' ? ' is-compact' : '');
-          slot.appendChild(frame);
-          widget = window.grecaptcha.render(frame, {
-            sitekey: key, theme: opts.theme || 'light', size,
-            callback: () => { if (opts.onTick) opts.onTick(); }
-          });
+          draw();
         }).catch((e) => { starting = null; throw e; });
       }
       return starting;
     }
+
+    const ticked = () => widget !== null && !!window.grecaptcha.getResponse(widget);
+    // day / night switched: redraw now, or after the submission if the box is already ticked
+    boxes.push(() => {
+      if (widget === null || drawnTheme === siteTheme()) return;
+      if (ticked()) redrawLater = true; else draw();
+    });
 
     // start loading as soon as the visitor begins to use the form
     const begin = () => { start().catch(() => {}); };
@@ -70,11 +90,18 @@
         if (widget === null) { begin(); return ''; }
         return window.grecaptcha.getResponse(widget) || '';
       },
-      reset() { if (widget !== null) window.grecaptcha.reset(widget); },
+      reset() {
+        if (widget === null) return;
+        if (redrawLater || drawnTheme !== siteTheme()) draw(); else window.grecaptcha.reset(widget);
+      },
       // focus the box so the visitor sees what to tick
       reveal() { slot.hidden = false; slot.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); }
     };
   }
+
+  // follow the day / night switch (theme.js changes html[data-theme])
+  new MutationObserver(() => boxes.forEach((redraw) => redraw()))
+    .observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 
   window.HIUKCaptcha = { attach };
 })();

@@ -164,6 +164,86 @@
     return `<a class="${cls}" ${attrs}${key ? ` data-key="${esc(key)}"` : ''}>${inner}</a>`;
   }
 
+  /* ---- The bottom menu's movement ----
+     - a soft pill behind the selected tab's icon slides (with a slight bounce) to the newly opened tab; it fades
+       away on Donate (the raised button already stands out) and on screens that aren't a tab
+     - pressing a tab shrinks its icon; when the tab opens the icon pops back up and the label turns bold
+     - a quick ripple where the finger lands
+     - Donate bounces and its icon wiggles when tapped; on other screens a gentle gold glow pulses around it
+     - a light vibration when switching tabs (phones that can)
+     Uses pointer events, not click: in the Android / iOS apps the Donate click is taken by the app (below). */
+  const tabFx = (function () {
+    let bar = null, pill = null, current = null, placed = false;
+    const reduced = () => window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const restart = (el, cls) => { el.classList.remove(cls); void el.offsetWidth; el.classList.add(cls); };
+
+    function placePill(animate) {
+      const tab = bar.querySelector('.tab[aria-current="page"]');
+      const ico = tab && !tab.classList.contains('tab-donate') ? tab.querySelector('.tab-ico') : null;
+      bar.classList.toggle('pill-off', !ico);
+      if (!ico) return; // stays where it was, faded, so it slides from there next time
+      const b = bar.getBoundingClientRect(), r = ico.getBoundingClientRect();
+      if (!animate || !placed) pill.classList.add('no-move');
+      // relative to the bar's padding box (where the pill is positioned), centred on the icon
+      pill.style.setProperty('--px', (r.left - b.left - bar.clientLeft + r.width / 2 - pill.offsetWidth / 2) + 'px');
+      pill.style.setProperty('--py', (r.top - b.top - bar.clientTop + r.height / 2 - pill.offsetHeight / 2) + 'px');
+      if (!animate || !placed) { void pill.offsetWidth; pill.classList.remove('no-move'); }
+      placed = true;
+    }
+
+    function ripple(tab, e) {
+      if (reduced()) return;
+      const host = tab.querySelector('.tab-donate-btn') || tab;
+      const r = host.getBoundingClientRect();
+      const size = Math.max(r.width, r.height) * 1.6;
+      const dot = document.createElement('span');
+      dot.className = 'tab-ripple';
+      dot.style.width = dot.style.height = size + 'px';
+      dot.style.left = (e.clientX - r.left - size / 2) + 'px';
+      dot.style.top = (e.clientY - r.top - size / 2) + 'px';
+      host.appendChild(dot);
+      dot.addEventListener('animationend', () => dot.remove());
+    }
+
+    return {
+      init(tabs) {
+        bar = tabs;
+        pill = tabs.querySelector('.tab-pill');
+        bar.addEventListener('pointerdown', (e) => {
+          const tab = e.target.closest('.tab');
+          if (!tab) return;
+          tab.classList.add('is-pressed');
+          ripple(tab, e);
+        });
+        const release = (e) => {
+          bar.querySelectorAll('.tab.is-pressed').forEach((t) => t.classList.remove('is-pressed'));
+          const tab = e.type === 'pointerup' && e.target.closest('.tab');
+          if (!tab) return;
+          if (tab.classList.contains('tab-donate') && !reduced()) restart(tab.querySelector('.tab-donate-btn'), 'is-bouncing');
+          if (tab.getAttribute('aria-current') !== 'page') HIUK.haptic(12); // switching tabs
+        };
+        bar.addEventListener('pointerup', release);
+        bar.addEventListener('pointercancel', release);
+        bar.addEventListener('pointerleave', release);
+        bar.addEventListener('animationend', (e) => { e.target.classList.remove('is-popping', 'is-bouncing'); });
+        window.addEventListener('resize', () => placePill(false));
+      },
+      // each time a screen is shown (after the tabs' aria-current is set)
+      update(page) {
+        if (!bar) return;
+        const tab = bar.querySelector('.tab[aria-current="page"]');
+        if (tab && tab !== current && placed && !reduced()) {
+          const ico = tab.querySelector('.tab-ico');
+          if (ico) restart(ico, 'is-popping');
+        }
+        current = tab;
+        placePill(true);
+        // a hint to give: Donate glows gently on every other screen
+        bar.classList.toggle('donate-glow', page !== 'donate');
+      }
+    };
+  })();
+
   // built once; the screens' content changes inside it (nav.js)
   function buildShell() {
     const sprite = document.createElement('div');
@@ -173,10 +253,11 @@
     const tabs = document.createElement('nav');
     tabs.className = 'tabs';
     tabs.setAttribute('aria-label', 'Main');
-    // Donate (the middle tab) is a raised round button
-    tabs.innerHTML = TABS.map((t) => link(t, 'tab' + (t.key === 'donate' ? ' tab-donate' : ''), t.key,
-      t.key === 'donate' ? `<i class="tab-donate-btn">${icon(t.icon)}</i><span>${esc(t.label)}</span>` : `${icon(t.icon)}<span>${esc(t.label)}</span>`)).join('');
+    // Donate (the middle tab) is a raised round button; the pill slides behind the selected tab's icon (tabFx below)
+    tabs.innerHTML = '<span class="tab-pill" aria-hidden="true"></span>' + TABS.map((t) => link(t, 'tab' + (t.key === 'donate' ? ' tab-donate' : ''), t.key,
+      t.key === 'donate' ? `<i class="tab-donate-btn">${icon(t.icon)}</i><span>${esc(t.label)}</span>` : `<i class="tab-ico">${icon(t.icon)}</i><span>${esc(t.label)}</span>`)).join('');
     (document.querySelector('.app') || document.body).appendChild(tabs);
+    tabFx.init(tabs);
 
     const drawer = document.createElement('div');
     drawer.className = 'drawer';
@@ -211,6 +292,7 @@
       document.querySelectorAll('.tabs [data-key], .drawer-list [data-key]').forEach((a) => {
         if (a.getAttribute('data-key') === page) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
       });
+      tabFx.update(page);
 
       // a header that stays at the top (<div class="sticky-head">): its height as --head-h, so things that
       // stick below it (table column names, a bar of buttons) and jumps to a section stop just under it

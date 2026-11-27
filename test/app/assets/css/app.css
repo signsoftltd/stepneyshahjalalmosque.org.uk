@@ -58,6 +58,11 @@ html:not(.is-ready):not(.is-leaving) body::after{animation:load-spin .9s linear 
 #view,.view{display:contents}
 /* moving between screens: a crossfade (the unchanged bottom tabs stay still), or a fade-in on older webviews */
 ::view-transition-old(root),::view-transition-new(root){animation-duration:.22s}
+/* the tab bar is kept out of the crossfade: it stays on screen, live, so its own pill / pop / glow play
+   (in the crossfade its old and new pictures differed, so it flickered away and jumped) */
+.tabs{view-transition-name:tabs}
+::view-transition-group(tabs),::view-transition-new(tabs){animation:none}
+::view-transition-old(tabs){display:none}
 html.view-in .view>*{animation:view-in .22s ease-out}
 @keyframes view-in{from{opacity:0}}
 @media (prefers-reduced-motion:reduce){::view-transition-old(root),::view-transition-new(root){animation:none}html.view-in .view>*{animation:none}}

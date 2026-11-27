@@ -175,7 +175,9 @@
   const tabFx = (function () {
     let bar = null, pill = null, current = null, placed = false;
     const reduced = () => window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const restart = (el, cls) => { el.classList.remove(cls); void el.offsetWidth; el.classList.add(cls); };
+    // restarts a CSS animation on the next frame (no forced layout in the middle of a screen change)
+    const restart = (el, cls) => { el.classList.remove(cls); requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add(cls))); };
+    let settleTimer = 0;
 
     function placePill(animate) {
       const tab = bar.querySelector('.tab[aria-current="page"]');
@@ -238,8 +240,11 @@
         }
         current = tab;
         placePill(true);
-        // a hint to give: Donate glows gently on every other screen
+        // a hint to give: Donate glows gently on every other screen (resting while the screen crossfades)
         bar.classList.toggle('donate-glow', page !== 'donate');
+        bar.classList.add('is-settling');
+        clearTimeout(settleTimer);
+        settleTimer = setTimeout(() => bar.classList.remove('is-settling'), 450);
       }
     };
   })();

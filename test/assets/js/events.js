@@ -71,9 +71,10 @@ window.HIUKEvents = (function () {
     }
     // body is HTML from the admin panel's rich text editor, already cleaned by the API (allowlisted tags, attributes and URLs)
     const details = e.body || `<p>${esc(e.text)}</p>`;
+    // the close button sits in the picture's top-right corner
     dlg.querySelector('.modal-content').innerHTML = `
-      <div class="ev-art ev-modal-art">${e.image ? `<img src="${esc(e.image)}" alt="">` : eventArt(i, 'epm')}<span class="badge tag">${esc(e.type_label || 'Event')}</span></div>
-      <div class="ck-head"><h2 id="evDlgTitle">${esc(e.title)}</h2><button class="ck-x" type="button" data-bs-dismiss="modal" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+      <div class="ev-art ev-modal-art">${e.image ? `<img src="${esc(e.image)}" alt="">` : eventArt(i, 'epm')}<span class="badge tag">${esc(e.type_label || 'Event')}</span><button class="ck-x" type="button" data-bs-dismiss="modal" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+      <div class="ck-head"><h2 id="evDlgTitle">${esc(e.title)}</h2></div>
       <div class="ev-modal-body">
         <div class="ev-meta"><span><svg class="ico"><use href="#i-clock"/></svg>${when(e, true)}</span>${e.loc ? `<span><svg class="ico"><use href="#i-pin"/></svg>${esc(e.loc)}</span>` : ''}</div>
         <div class="ev-rich">${details}</div>

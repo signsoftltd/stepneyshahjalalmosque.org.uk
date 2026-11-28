@@ -386,6 +386,9 @@ a:hover .gem::after{transform:rotate(90deg)}
 button.link-arrow{align-self:flex-start;background:none;border:0;padding:0;cursor:pointer}
 .ev-modal-art{aspect-ratio:16/7;border-radius:var(--r) var(--r) 0 0}
 .ev-modal .ck-head{padding-top:22px}
+/* News "Read more": the close button in the picture's top-right corner */
+.ev-modal-art .ck-x{position:absolute;top:14px;right:14px;z-index:2;color:var(--ink);box-shadow:var(--shadow-sm)}
+.ev-modal-art .ck-x svg{position:static;inset:auto;width:18px;height:18px;transition:none}
 .ev-modal-body{padding:6px 28px 8px;display:grid;gap:14px}
 /* modal-dialog-scrollable caps the dialog height and hides overflow; this is the part that scrolls */
 .ev-modal .ev-modal-body{flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain}

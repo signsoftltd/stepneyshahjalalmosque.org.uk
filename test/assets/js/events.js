@@ -76,7 +76,7 @@ window.HIUKEvents = (function () {
       <div class="ev-art ev-modal-art">${e.image ? `<img src="${esc(e.image)}" alt="">` : eventArt(i, 'epm')}<span class="badge tag">${esc(e.type_label || 'Event')}</span><button class="ck-x" type="button" data-bs-dismiss="modal" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
       <div class="ck-head"><h2 id="evDlgTitle">${esc(e.title)}</h2></div>
       <div class="ev-modal-body">
-        <div class="ev-meta"><span><svg class="ico"><use href="#i-clock"/></svg>${when(e, true)}</span>${e.loc ? `<span><svg class="ico"><use href="#i-pin"/></svg>${esc(e.loc)}</span>` : ''}</div>
+        <div class="ev-meta"><span><svg class="ico"><use href="#i-clock"/></svg>${when(e, true)}</span>${e.loc ? `<span class="ev-loc" title="${esc(e.loc)}"><svg class="ico"><use href="#i-pin"/></svg><span>${esc(e.loc)}</span></span>` : ''}</div>
         <div class="ev-rich">${details}</div>
       </div>`;
     bootstrap.Modal.getOrCreateInstance(dlg).show();

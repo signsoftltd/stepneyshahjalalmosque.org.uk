@@ -389,6 +389,14 @@ button.link-arrow{align-self:flex-start;background:none;border:0;padding:0;curso
 /* News "Read more": the close button in the picture's top-right corner */
 .ev-modal:not(.nt-modal) .ck-head{justify-content:center;text-align:center}
 .ev-modal:not(.nt-modal) .ev-modal-body>.ev-meta{justify-content:center;text-align:center}
+/* phones: date and location smaller, kept on one line (a long location is shortened with "…") */
+@media (max-width:576px){
+  .ev-modal:not(.nt-modal) .ev-modal-body>.ev-meta{min-width:0;flex-wrap:nowrap;gap:12px;font-size:12px;white-space:nowrap}
+  .ev-modal:not(.nt-modal) .ev-modal-body>.ev-meta>span{flex:none;gap:5px}
+  .ev-modal:not(.nt-modal) .ev-modal-body>.ev-meta>.ev-loc{flex:0 1 auto;min-width:0}
+  .ev-modal:not(.nt-modal) .ev-meta .ev-loc>span{display:block;min-width:0;overflow:hidden;text-overflow:ellipsis}
+  .ev-modal:not(.nt-modal) .ev-modal-body>.ev-meta svg{width:14px;height:14px;flex:none}
+}
 .ev-modal:not(.nt-modal) .ev-modal-body:last-child{padding-bottom:28px}
 .ev-modal-art .ck-x{position:absolute;top:14px;right:14px;z-index:2;color:var(--ink);box-shadow:var(--shadow-sm)}
 .ev-modal-art .ck-x svg{position:static;inset:auto;width:18px;height:18px;transition:none}

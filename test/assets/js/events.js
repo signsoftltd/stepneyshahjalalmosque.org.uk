@@ -52,7 +52,7 @@ window.HIUKEvents = (function () {
         <span class="badge tag">${esc(e.type_label || 'Event')}</span>
         <span class="ev-cal"><small>${d.toLocaleDateString('en-GB', { month: 'short' }).toUpperCase()}</small><b>${d.getDate()}</b></span></div>
       <div class="ev-body card-body">
-        <div class="ev-meta"><span><svg class="ico"><use href="#i-clock"/></svg><time datetime="${esc(e.date + (e.time ? 'T' + e.time : ''))}">${when(e, o.withYear)}</time></span>${e.loc ? `<span><svg class="ico"><use href="#i-pin"/></svg>${esc(e.loc)}</span>` : ''}</div>
+        <div class="ev-meta"><span><svg class="ico"><use href="#i-clock"/></svg><time datetime="${esc(e.date + (e.time ? 'T' + e.time : ''))}">${when(e, o.withYear)}</time></span>${e.loc ? `<span class="ev-loc" title="${esc(e.loc)}"><svg class="ico"><use href="#i-pin"/></svg><span>${esc(e.loc)}</span></span>` : ''}</div>
         <h3>${esc(e.title)}</h3><p>${esc(e.text)}</p>
         <button class="link-arrow ev-more" type="button" data-ev="${i}" style="margin-top:auto">Read more<svg class="ico"><use href="#i-arrow"/></svg></button>
       </div></article>`;

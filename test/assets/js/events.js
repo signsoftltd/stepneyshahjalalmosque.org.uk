@@ -78,8 +78,7 @@ window.HIUKEvents = (function () {
       <div class="ev-modal-body">
         <div class="ev-meta"><span><svg class="ico"><use href="#i-clock"/></svg>${when(e, true)}</span>${e.loc ? `<span><svg class="ico"><use href="#i-pin"/></svg>${esc(e.loc)}</span>` : ''}</div>
         <div class="ev-rich">${details}</div>
-      </div>
-      <div class="ck-foot"><a class="btn site-btn btn-em" href="${esc(o.contactHref)}">Ask about this event</a></div>`;
+      </div>`;
     bootstrap.Modal.getOrCreateInstance(dlg).show();
   }
 
